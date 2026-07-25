@@ -10,17 +10,17 @@ type HotelSocialLinksSectionProps = {
 
 const SOCIAL_LINKS = [
   {
-    href: "https://www.facebook.com/vuelo78hoteltarapoto",
+    href: "https://www.facebook.com/hotelPunoTerra",
     iconSrc: "/assets/social/facebook.svg",
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/vuelo78hotel/",
+    href: "https://www.instagram.com/hotelpunoterra/",
     iconSrc: "/assets/social/instagram.svg",
     label: "Instagram",
   },
   {
-    href: "https://www.tiktok.com/@vuelo78hoteltarapoto",
+    href: "https://www.tiktok.com/@hotelPunoTerra",
     iconSrc: "/assets/social/tiktok.svg",
     label: "TikTok",
   },

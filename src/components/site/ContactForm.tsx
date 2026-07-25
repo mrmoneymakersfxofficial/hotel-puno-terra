@@ -45,7 +45,7 @@ function validateForm(data: FormData, locale: HotelLocale): FieldErrors {
   return errors;
 }
 
-export function ContactForm({ title, description, brandName = "Vuelo 78 Hotel", locale = "es", whatsappNumber, editorMode = false, editorTextControls }: ContactFormProps) {
+export function ContactForm({ title, description, brandName = "Hotel Puno Terra", locale = "es", whatsappNumber, editorMode = false, editorTextControls }: ContactFormProps) {
   const ui = getHotelUi(locale);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");

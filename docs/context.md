@@ -2,10 +2,10 @@
 
 ## Identidad
 
-- Codigo cliente: `CLIENTE 4`
-- Nombre del cliente: `Vuelo 78 Hotel Tarapoto`
-- Nombre del negocio: `Vuelo 78 Hotel Tarapoto`
-- Carpeta local: `CLIENTE 4 - Vuelo 78 Hotel Tarapoto`
+- Codigo cliente: `Hotel Puno Terra`
+- Nombre del cliente: `Hotel Puno Terra`
+- Nombre del negocio: `Hotel Puno Terra`
+- Carpeta local: `Hotel Puno Terra`
 - Tipo de proyecto: `Sin preset`
 - Rubro de negocio: `Sin preset`
 - Responsable tecnico: `Pendiente de asignar`

@@ -1,6 +1,6 @@
 # Responsive Mockups
 
-Esta carpeta almacena las capturas que documentan cómo se comporta el layout en `https://vuelo78hotel.vercel.app/` para desktop y mobile. Usamos fotografías reales (sin edición de diseño) y las acompañamos de notas técnicas para veer las diferencias por sección.
+Esta carpeta almacena las capturas que documentan cómo se comporta el layout en `https://hotel-puno-terra.vercel.app/` para desktop y mobile. Usamos fotografías reales (sin edición de diseño) y las acompañamos de notas técnicas para veer las diferencias por sección.
 
 ## Guía rápida
 

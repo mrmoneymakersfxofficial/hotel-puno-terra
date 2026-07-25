@@ -1,9 +1,9 @@
-# CLIENTE 4 - Vuelo 78 Hotel Tarapoto
+# Hotel Puno Terra
 
 ## Resumen
 
-- Cliente: `Vuelo 78 Hotel Tarapoto`
-- Negocio: `Vuelo 78 Hotel Tarapoto`
+- Cliente: `Hotel Puno Terra`
+- Negocio: `Hotel Puno Terra`
 - Tipo de proyecto: `Sin preset`
 - Rubro: `Sin preset`
 - Tema: `Dark`

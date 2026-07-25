@@ -114,7 +114,7 @@ export function HotelPremiumTestimonials({ items, locale, subtitle, title }: Hot
                 <div className="hotel-home-testimonial-media-panel">
                   {item.imageSrc ? (
                     <Image
-                      alt={`${item.name} en Vuelo 78 Hotel`}
+                      alt={`${item.name} en Hotel Puno Terra`}
                       className="hotel-home-testimonial-image"
                       fill
                       priority={index === 0}

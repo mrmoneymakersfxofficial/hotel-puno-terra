@@ -120,7 +120,7 @@ export function HotelReferenceSubpage({
   const rail: RailItem[] = [
     ...galleryItems.map((item, index) => ({
       title: item.title,
-      subtitle: index === 0 ? currentPageLabel : item.subtitle || "Vuelo 78",
+      subtitle: index === 0 ? currentPageLabel : item.subtitle || "Hotel Puno Terra",
       imageSrc: item.imageSrc || heroImage,
       imagePosition: item.imagePosition || heroImagePosition,
       description: getHotelReferenceRailCopy(pageSlug, index, locale),

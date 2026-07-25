@@ -5,8 +5,20 @@
       "key": "hotel",
       "label": "Hotel Signature",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["hotel", "hoteleria", "hostal", "hostel", "resort", "hospitality", "habitacion", "turismo"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "hotel",
+          "hoteleria",
+          "hostal",
+          "hostel",
+          "resort",
+          "hospitality",
+          "habitacion",
+          "turismo"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -15,8 +27,8 @@
         "shellMode": "full-bleed",
         "textAlign": "left",
         "buttonShape": "rounded",
-        "primaryColor": "#C9A44F",
-        "secondaryColor": "#173F7B",
+        "primaryColor": "#173F7B",
+        "secondaryColor": "#4A90D9",
         "visualSignature": "signature-aura"
       },
       "designSystem": {
@@ -50,8 +62,20 @@
       "key": "clinic",
       "label": "Clinical Trust",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["clinica", "clinic", "medical", "salud", "odontologia", "dentista", "doctor", "psicologia"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "clinica",
+          "clinic",
+          "medical",
+          "salud",
+          "odontologia",
+          "dentista",
+          "doctor",
+          "psicologia"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -95,8 +119,20 @@
       "key": "restaurant",
       "label": "Restaurant Showcase",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["restaurante", "restaurant", "gastro", "cafeteria", "cafe", "bar", "menu", "carta"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "restaurante",
+          "restaurant",
+          "gastro",
+          "cafeteria",
+          "cafe",
+          "bar",
+          "menu",
+          "carta"
+        ]
       },
       "theme": {
         "mode": "Dark",
@@ -140,8 +176,20 @@
       "key": "law-firm",
       "label": "Legal Authority",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["abogado", "law", "legal", "juridico", "estudio", "bufete", "litigio", "asesoria legal"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "abogado",
+          "law",
+          "legal",
+          "juridico",
+          "estudio",
+          "bufete",
+          "litigio",
+          "asesoria legal"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -185,8 +233,20 @@
       "key": "beauty",
       "label": "Beauty Editorial",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["belleza", "beauty", "peluqueria", "salon", "spa", "lashes", "cosmetica", "estetica"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "belleza",
+          "beauty",
+          "peluqueria",
+          "salon",
+          "spa",
+          "lashes",
+          "cosmetica",
+          "estetica"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -230,8 +290,21 @@
       "key": "saas-ops",
       "label": "SaaS Ops Console",
       "match": {
-        "projectTypes": ["Landing Page", "Website", "E-commerce"],
-        "keywords": ["saas", "software", "crm", "operaciones", "ops", "dashboard", "leads", "automation"]
+        "projectTypes": [
+          "Landing Page",
+          "Website",
+          "E-commerce"
+        ],
+        "keywords": [
+          "saas",
+          "software",
+          "crm",
+          "operaciones",
+          "ops",
+          "dashboard",
+          "leads",
+          "automation"
+        ]
       },
       "theme": {
         "mode": "Dark",
@@ -275,8 +348,20 @@
       "key": "luxury-service",
       "label": "Luxury Service",
       "match": {
-        "projectTypes": ["Landing Page", "Website"],
-        "keywords": ["luxury", "premium", "boutique", "alta gama", "exclusive", "concierge", "wedding", "interiorismo"]
+        "projectTypes": [
+          "Landing Page",
+          "Website"
+        ],
+        "keywords": [
+          "luxury",
+          "premium",
+          "boutique",
+          "alta gama",
+          "exclusive",
+          "concierge",
+          "wedding",
+          "interiorismo"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -320,8 +405,21 @@
       "key": "fintech-trust",
       "label": "Fintech Trust",
       "match": {
-        "projectTypes": ["Landing Page", "Website", "E-commerce"],
-        "keywords": ["fintech", "finance", "finanzas", "payments", "pagos", "inversion", "banking", "wallet"]
+        "projectTypes": [
+          "Landing Page",
+          "Website",
+          "E-commerce"
+        ],
+        "keywords": [
+          "fintech",
+          "finance",
+          "finanzas",
+          "payments",
+          "pagos",
+          "inversion",
+          "banking",
+          "wallet"
+        ]
       },
       "theme": {
         "mode": "Dark",
@@ -365,8 +463,21 @@
       "key": "creative-tool",
       "label": "Creative Tool",
       "match": {
-        "projectTypes": ["Landing Page", "Website", "E-commerce"],
-        "keywords": ["creative", "design", "editor", "studio", "creator", "portfolio", "tool", "canvas"]
+        "projectTypes": [
+          "Landing Page",
+          "Website",
+          "E-commerce"
+        ],
+        "keywords": [
+          "creative",
+          "design",
+          "editor",
+          "studio",
+          "creator",
+          "portfolio",
+          "tool",
+          "canvas"
+        ]
       },
       "theme": {
         "mode": "Light",
@@ -410,8 +521,21 @@
       "key": "ai-app",
       "label": "AI App Launch",
       "match": {
-        "projectTypes": ["Landing Page", "Website", "E-commerce"],
-        "keywords": ["ai", "artificial intelligence", "inteligencia artificial", "agent", "automation", "copilot", "model", "assistant"]
+        "projectTypes": [
+          "Landing Page",
+          "Website",
+          "E-commerce"
+        ],
+        "keywords": [
+          "ai",
+          "artificial intelligence",
+          "inteligencia artificial",
+          "agent",
+          "automation",
+          "copilot",
+          "model",
+          "assistant"
+        ]
       },
       "theme": {
         "mode": "Dark",

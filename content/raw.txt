@@ -1,5 +1,5 @@
 General business data:
-- Business name: Vuelo 78 Hotel Tarapoto
+- Business name: Hotel Puno Terra
 - Project type: Landing Page
 - Industry: Hoteleria
 - Main offer: Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium
@@ -14,8 +14,8 @@ General business data:
 - Shell mode: full-bleed
 - Text align: left
 - Button shape: rounded
-- Primary color: #C9A44F
-- Secondary color: #173F7B
+- Primary color: #4A90D9
+- Secondary color: #4A90D9
 
 Reference cloning:
 - REFERENCE_MODE: true
@@ -23,7 +23,7 @@ Reference cloning:
 - REFERENCE_CAPTURE_MODE: layout-text-widgets
 
 Business context:
-Vuelo 78 Hotel Tarapoto necesita una web hotelera inspirada en https://www.estelarmiraflores.com/es/habitaciones/suite-estelar/, conservando layout, ritmo visual, widgets y jerarquia premium de secciones. Todo texto, branding, logos e imagenes deben ser nuevos y orientados a reservas directas.
+Hotel Puno Terra necesita una web hotelera inspirada en https://www.estelarmiraflores.com/es/habitaciones/suite-estelar/, conservando layout, ritmo visual, widgets y jerarquia premium de secciones. Todo texto, branding, logos e imagenes deben ser nuevos y orientados a reservas directas.
 
 Recommended page flow:
 - Navbar | hero split con media dominante | widgets: cta-group

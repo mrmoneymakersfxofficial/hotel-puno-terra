@@ -4,7 +4,7 @@ Usa este prompt como base para arrancar el proyecto en Codex.
 
 ## Prompt
 
-Construye el proyecto "Vuelo 78 Hotel Tarapoto" respetando AGENTS.md, docs/context.md, docs/contract.md, docs/site-blueprint.md, docs/feature-checklist.md, docs/visual-direction.md, docs/content-architecture.md, docs/launch-checklist.md y config/client-profile.json.
+Construye el proyecto "Hotel Puno Terra" respetando AGENTS.md, docs/context.md, docs/contract.md, docs/site-blueprint.md, docs/feature-checklist.md, docs/visual-direction.md, docs/content-architecture.md, docs/launch-checklist.md y config/client-profile.json.
 
 Reglas maestras:
 - preserva primero lo que ya funciona
@@ -12,7 +12,8 @@ Reglas maestras:
 - respeta el orden de decisiones: tipo de proyecto, rubro, objetivo, modulos, estilo visual, layout, estructura real, tema y colores
 - no generes paginas genericas ni bloques sin proposito
 - valida responsive real en desktop, tablet y mobile
-- si eference.enabled esta activo, analiza la web de referencia solo para inspirarte en layout, widgets, tabs, popups y estructura; no copies marca, logos, texto ni imagenes
+- si 
+eference.enabled esta activo, analiza la web de referencia solo para inspirarte en layout, widgets, tabs, popups y estructura; no copies marca, logos, texto ni imagenes
 - si una seccion no ayuda al objetivo principal, simplificala o elimÃ­nala
 
 - cuando el usuario mencione .cmd, interpretalo como todos los ejecutables y flujos TOOLS/*.ps1 asociados del workspace

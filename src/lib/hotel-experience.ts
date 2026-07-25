@@ -2,7 +2,7 @@ import type { SiteContent } from "@/types/site";
 
 export type HotelLocale = "es" | "en";
 
-export const HOTEL_LOCALE_STORAGE_KEY = "vuelo78hotel-locale";
+export const HOTEL_LOCALE_STORAGE_KEY = "hotelPunoTerra-locale";
 export const HOTEL_WHATSAPP_PHONE_DISPLAY = "+51 941 714 132";
 export const HOTEL_WHATSAPP_PHONE_DIGITS = "51941714132";
 const HOTEL_WHATSAPP_BASE_URL = "https://api.whatsapp.com/send/";
@@ -747,7 +747,7 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       {
         ...withPhone.galleryItems?.[0],
         title: "Main suite with natural view",
-        subtitle: "Vuelo 78 Hotel Tarapoto",
+        subtitle: "Hotel Puno Terra Tarapoto",
       },
       {
         ...withPhone.galleryItems?.[1],
@@ -876,7 +876,7 @@ export function buildHotelWhatsAppHref({
   nights = 0,
   notes,
 }: HotelWhatsappParams) {
-  const resolvedHotelName = `*${hotelName.trim() || "Vuelo 78 Hotel"}*`;
+  const resolvedHotelName = `*${hotelName.trim() || "Hotel Puno Terra"}*`;
   const cleanLines =
     locale === "en"
       ? [
@@ -969,7 +969,7 @@ export function buildProfessionalHotelWhatsAppHref({
   nights = 0,
   notes,
 }: HotelWhatsappParams) {
-  const resolvedHotelName = `*${hotelName.trim() || "Vuelo 78 Hotel"}*`;
+  const resolvedHotelName = `*${hotelName.trim() || "Hotel Puno Terra"}*`;
   const wave = "\u{1F44B}";
   const sparkle = "\u2728";
   const hotel = "\u{1F3E8}";
@@ -1050,7 +1050,7 @@ export function buildHotelWhatsAppHrefV2({
   nights = 0,
   notes,
 }: HotelWhatsappParams) {
-  const resolvedHotelName = `*${hotelName.trim() || "Vuelo 78 Hotel"}*`;
+  const resolvedHotelName = `*${hotelName.trim() || "Hotel Puno Terra"}*`;
   const wave = "\u{1F44B}";
   const sparkle = "\u2728";
   const hotel = "\u{1F3E8}";

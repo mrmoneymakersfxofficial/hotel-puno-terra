@@ -20,12 +20,12 @@ export function HotelBrandLogo({
 
   return (
     <Image
-      alt="Vuelo 78 Hotel"
+      alt="Hotel Puno Terra"
       className={className}
       height={height}
       priority={priority}
       sizes={sizes}
-      src="/assets/branding/logo-vuelo78.png"
+      src="/assets/branding/logo-puno-terra.png"
       width={width}
     />
   );

@@ -257,7 +257,7 @@ export function ReferenceCloneHotelEngine({
           brandName={displayBrandName}
           contactPhone={contactPhone}
           detailsHref={detailsHref}
-          heroHeadline={localizedContent.brand.headline || t(locale, "Bienvenido a Vuelo 78 Hotel", "Welcome to Vuelo 78 Hotel")}
+          heroHeadline={localizedContent.brand.headline || t(locale, "Bienvenido a Hotel Puno Terra", "Welcome to Hotel Puno Terra")}
           heroTag={localizedContent.brand.heroTag || t(locale, "Hotel en Tarapoto", "Hotel in Tarapoto")}
           locale={locale}
           reservationHref={heroReservationHref}

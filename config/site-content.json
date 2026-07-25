@@ -1,14 +1,14 @@
 {
   "brand": {
-    "name": "Vuelo 78 Hotel Tarapoto",
-    "headline": "Somos un hotel 3 estrellas, lider gracias a nuestros clientes y usuarios.",
+    "name": "Hotel Puno Terra",
+    "headline": "Hotel 3 estrellas en Tarapoto, lider gracias a nuestros clientes y usuarios.",
     "description": "Descansa cerca del aeropuerto con habitaciones comodas, piscina y desayuno incluido.",
     "subheadline": "Habitaciones comodas, piscina y atencion las 24 horas.",
     "primaryCtaLabel": "Reservar",
-    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51941714132&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Vuelo%2078%20Hotel*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
+    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51941714132&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Hotel%20Puno%20Terra*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
     "secondaryCtaLabel": "Ver habitaciones",
     "secondaryCtaHref": "#habitaciones",
-    "heroTag": "HOTEL EN TARAPOTO",
+    "heroTag": "HOTEL PUNO TERRA",
     "heroImageSrc": "/assets/hero/hero-main.webp",
     "heroImagePosition": {
       "x": 50,
@@ -28,8 +28,8 @@
     "textAlign": "center",
     "buttonShape": "rounded",
     "starterKit": "hotel",
-    "accentColor": "#010afe",
-    "accentAltColor": "#010afe"
+    "accentColor": "#173F7B",
+    "accentAltColor": "#4A90D9"
   },
   "uiText": {
     "heroLabel": "Hotel y descanso",
@@ -114,7 +114,7 @@
     {
       "name": "Daniela Rojas",
       "role": "Tarapoto, San Martin",
-      "quote": "Gracias a todo el equipo de Vuelo 78 Hotel por una estadia tan comoda. La llegada fue rapida, la habitacion estuvo impecable y descansamos con total tranquilidad.",
+      "quote": "Gracias a todo el equipo de Hotel Puno Terra por una estadia tan comoda. La llegada fue rapida, la habitacion estuvo impecable y descansamos con total tranquilidad.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-01.jpg",
       "location": "Escapada de fin de semana",
       "segment": "Atencion cercana y descanso real",
@@ -168,16 +168,16 @@
   ],
   "faqs": [
     {
-      "question": "¿Que debe clonarse de la web de referencia?",
-      "answer": "Solo layout, composicion, patrones interactivos y jerarquia visual. Nunca marca, logos, textos ni imagenes reales."
+      "question": "¿Como puedo reservar una habitacion?",
+      "answer": "Puedes reservar directamente por WhatsApp contactando al equipo de reservas del Hotel Puno Terra, o completando el formulario de reserva en la pagina."
     },
     {
-      "question": "¿Se deben conservar las tabs detectadas?",
-      "answer": "Si. Deben replicarse las tabs con labels nuevas y contenido real del nuevo cliente."
+      "question": "¿Que servicios incluye el hotel?",
+      "answer": "El Hotel Puno Terra ofrece recepcion 24 horas, piscina, desayuno incluido, WiFi gratuito, aire acondicionado y reserva directa sin intermediarios."
     },
     {
-      "question": "¿El popup o modal debe mantenerse?",
-      "answer": "Si, pero con nuevo copy, nuevos triggers y sin copiar ningun asset del sitio original."
+      "question": "¿Donde esta ubicado el hotel?",
+      "answer": "El Hotel Puno Terra se encuentra en Jr. Jorge Chavez 1793, Barrio Huayco, Tarapoto, San Martin, Peru - a una cuadra del aeropuerto."
     }
   ],
   "pages": [
@@ -193,7 +193,7 @@
   ],
   "products": [],
   "galleryKeywords": [
-    "Vuelo 78 Hotel Tarapoto",
+    "Hotel Puno Terra Tarapoto",
     "Hoteleria",
     "Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium",
     "Suite principal con vista natural",
@@ -203,7 +203,7 @@
   "galleryItems": [
     {
       "title": "Suite principal con vista natural",
-      "subtitle": "Vuelo 78 Hotel Tarapoto",
+      "subtitle": "Hotel Puno Terra Tarapoto",
       "imageSrc": "/assets/uploads/hotel-e958a5dd-c4f1-4619-b0cd-7449eb4b6695.webp",
       "imagePosition": {
         "x": 50,

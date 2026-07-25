@@ -1,7 +1,7 @@
 const { chromium, devices } = require("playwright");
 const path = require("path");
 
-const url = "https://vuelo78hotel.vercel.app/";
+const url = "https://hotel-puno-terra.vercel.app/";
 const outputDir = path.resolve("docs", "responsive-mockups");
 
 const targets = [

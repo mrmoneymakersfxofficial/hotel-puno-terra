@@ -6,10 +6,10 @@
   --line: rgba(255, 255, 255, 0.1);
   --text: #f7f5ef;
   --muted: #98a4b3;
-  --accent: #d9ff67;
-  --accent-alt: #62e6cb;
-  --accent-contrast: #111827;
-  --accent-alt-contrast: #111827;
+  --accent: #4A90D9;
+  --accent-alt: #B0C4DE;
+  --accent-contrast: #f7f5ef;
+  --accent-alt-contrast: #173F7B;
   --surface-contrast: #f7f5ef;
   --danger: #f87171;
   --shell-radius: clamp(28px, 3.6vw, 50px);
@@ -22,8 +22,8 @@
   --stage-offset: clamp(0px, 1.6vw, 22px);
   --theme-transition: 0.5s ease;
   --page-bg:
-    radial-gradient(circle at 14% 12%, rgba(217, 255, 103, 0.12), transparent 26%),
-    radial-gradient(circle at 84% 18%, rgba(98, 230, 203, 0.12), transparent 24%),
+    radial-gradient(circle at 14% 12%, rgba(74, 144, 217, 0.15), transparent 26%),
+    radial-gradient(circle at 84% 18%, rgba(176, 196, 222, 0.12), transparent 24%),
     linear-gradient(180deg, #04070b 0%, #09111a 48%, #0b121d 100%);
 }
 
@@ -370,7 +370,7 @@
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #efd9a0, #c9a44f);
+  background: linear-gradient(135deg, #efd9a0, #4A90D9);
   box-shadow: 0 0 0 6px rgba(201, 164, 79, 0.12);
 }
 
@@ -3385,7 +3385,7 @@ button {
 .contact-form select {
   width: 100%;
   padding: 16px 18px;
-  border: 1px solid color-mix(in srgb, #173f7b 10%, var(--line));
+  border: 1px solid color-mix(in srgb, #4A90D9 10%, var(--line));
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(246, 248, 251, 0.98));
   color: #223047;
@@ -3469,7 +3469,7 @@ button {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #173f7b;
+  background: #4A90D9;
   box-shadow: 0 0 0 5px rgba(23, 63, 123, 0.12);
 }
 
@@ -3482,7 +3482,7 @@ button {
 .contact-signal-card strong,
 .contact-panel-facts strong,
 .contact-form-shell-kicker {
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .whatsapp-link-copy small {
@@ -3568,7 +3568,7 @@ button {
   min-height: 56px;
   padding-inline: 28px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #173f7b, #315be0);
+  background: linear-gradient(135deg, #4A90D9, #315be0);
   color: #ffffff;
   box-shadow: 0 18px 36px rgba(49, 91, 224, 0.22);
 }
@@ -9162,7 +9162,7 @@ button {
 }
 
 .page-shell.mode-reference-clone-hotel .primary-button {
-  background: #173f7b;
+  background: #4A90D9;
   color: #ffffff;
   box-shadow: none;
   font-family: var(--body-font, var(--font-sans)), sans-serif;
@@ -9176,7 +9176,7 @@ button {
 
 .page-shell.mode-reference-clone-hotel .secondary-button {
   border-color: rgba(23, 63, 123, 0.18);
-  color: #173f7b;
+  color: #4A90D9;
   background: #ffffff;
   font-family: var(--body-font, var(--font-sans)), sans-serif;
   font-weight: 600;
@@ -9582,7 +9582,7 @@ button {
   min-height: 100%;
   width: 100%;
   padding: 22px;
-  background: #173f7b;
+  background: #4A90D9;
   color: #ffffff;
   font-weight: 700;
   border: 0;
@@ -9688,7 +9688,7 @@ button {
 }
 
 .hotel-reference-gallery-dots .is-active {
-  background: #c9a44f;
+  background: #4A90D9;
 }
 
 .hotel-reference-details {
@@ -9732,7 +9732,7 @@ button {
     linear-gradient(180deg, rgba(201, 164, 79, 0.18), rgba(201, 164, 79, 0.08)),
     #ffffff;
   border: 1px solid rgba(201, 164, 79, 0.22);
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-amenity-icon svg {
@@ -9743,7 +9743,7 @@ button {
 .hotel-reference-amenity strong {
   font-size: 1rem;
   line-height: 1.25;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-room-copy {
@@ -9833,7 +9833,7 @@ button {
   font-family: var(--body-font, var(--font-sans)), sans-serif;
   font-size: 1.45rem;
   line-height: 1.06;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-rate-tab strong {
@@ -9844,7 +9844,7 @@ button {
 .hotel-reference-rate-tab small {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-rate-tab.is-active,
@@ -9877,7 +9877,7 @@ button {
 .hotel-reference-rate-panel-meta b {
   font-size: 1.85rem;
   line-height: 1;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-rate-panel-meta small {
@@ -10091,7 +10091,7 @@ button {
   font-size: 0.88rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-proof-carousel-status span {
@@ -10282,7 +10282,7 @@ button {
 
 .hotel-reference-proof-card strong {
   font-size: 1.1rem;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-proof-card span {
@@ -10462,7 +10462,7 @@ button {
 }
 
 .page-shell.mode-reference-clone-hotel.theme-dark .primary-button {
-  background: #c9a44f;
+  background: #4A90D9;
   color: #10274f;
 }
 
@@ -10548,7 +10548,7 @@ button {
 }
 
 .page-shell.mode-reference-clone-hotel.theme-dark .hotel-reference-booking-button {
-  background: #c9a44f;
+  background: #4A90D9;
   color: #10274f;
 }
 
@@ -11436,7 +11436,7 @@ button {
   gap: 8px;
   width: min(calc(100vw - 32px), 220px);
   text-decoration: none;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-mobile-float-word {
@@ -11455,7 +11455,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #173f7b;
+  color: #4A90D9;
   opacity: 0;
   transform: translateY(12px) scale(0.94);
   filter: blur(8px);
@@ -11503,7 +11503,7 @@ button {
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #173f7b, #315da6);
+  background: linear-gradient(135deg, #4A90D9, #315da6);
   box-shadow: 0 12px 24px rgba(23, 63, 123, 0.28);
 }
 
@@ -11676,7 +11676,7 @@ button {
   font-weight: 600;
   line-height: 0.92;
   letter-spacing: -0.03em;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-tab-intro p {
@@ -11755,7 +11755,7 @@ button {
   font-weight: 600;
   line-height: 0.96;
   letter-spacing: -0.04em;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-tab-panel p {
@@ -11793,7 +11793,7 @@ button {
   width: min(100%, 540px);
   padding: 20px;
   border-radius: 24px;
-  background: linear-gradient(180deg, #173f7b, #102f5c);
+  background: linear-gradient(180deg, #4A90D9, #102f5c);
   color: #f3f6fb;
 }
 
@@ -11816,7 +11816,7 @@ button {
 }
 
 .hotel-reference-tab-link {
-  color: #173f7b;
+  color: #4A90D9;
   font-size: 0.86rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -11876,7 +11876,7 @@ button {
 
 .hotel-reference-inline-summary span,
 .hotel-reference-modal-summary span {
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-inline-panel,
@@ -12021,7 +12021,7 @@ button {
   display: grid;
   place-items: center;
   min-height: 320px;
-  color: #173f7b;
+  color: #4A90D9;
   font-weight: 600;
   text-decoration: none;
 }
@@ -12056,7 +12056,7 @@ button {
 
 .hotel-reference-map-gallery-copy strong {
   font-size: 1rem;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-map-gallery-copy span {
@@ -12514,7 +12514,7 @@ button {
   height: 34px;
   border-radius: 50%;
   background: rgba(23, 63, 123, 0.08);
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-benefit-pill strong {
@@ -12548,7 +12548,7 @@ button {
   height: 42px;
   border-radius: 50%;
   background: rgba(23, 63, 123, 0.08);
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-amenity-copy {
@@ -12754,7 +12754,7 @@ button {
   height: 42px;
   border-radius: 50%;
   background: rgba(23, 63, 123, 0.08);
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-location-row strong,
@@ -12966,7 +12966,7 @@ button {
   gap: 10px;
   width: min(292px, calc(100vw - 36px));
   text-decoration: none;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-mobile-float-button {
@@ -13012,7 +13012,7 @@ button {
   font-size: 0.98rem;
   font-weight: 800;
   line-height: 1.05;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-reference-mobile-float-note {
@@ -13107,13 +13107,13 @@ button {
   background: rgba(247, 243, 236, 0.84);
   backdrop-filter: blur(18px);
   box-shadow: 0 24px 52px rgba(24, 39, 67, 0.12);
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-deluxe-brand,
 .hotel-deluxe-nav a,
 .hotel-deluxe-header-cta {
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-deluxe-brand-mark {
@@ -13353,7 +13353,7 @@ button {
   height: 42px;
   border-radius: 14px;
   background: rgba(23, 63, 123, 0.08);
-  color: #173f7b;
+  color: #4A90D9;
   font-weight: 800;
 }
 
@@ -13535,7 +13535,7 @@ button {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #c9a44f;
+  background: #4A90D9;
 }
 
 .hotel-deluxe-room-footer {
@@ -13597,7 +13597,7 @@ button {
   border-radius: 50%;
   background:
     radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.3), transparent 28%),
-    linear-gradient(135deg, #d7c08e, #c9a44f);
+    linear-gradient(135deg, #d7c08e, #4A90D9);
   color: #16345f;
   font-weight: 800;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
@@ -13630,7 +13630,7 @@ button {
 }
 
 .hotel-deluxe-testimonial-stars .is-filled {
-  color: #c9a44f;
+  color: #4A90D9;
 }
 
 .hotel-deluxe-testimonial-card blockquote {
@@ -13672,7 +13672,7 @@ button {
   height: 46px;
   border-radius: 16px;
   background: rgba(201, 164, 79, 0.12);
-  color: #173f7b;
+  color: #4A90D9;
   font-weight: 800;
 }
 
@@ -13989,7 +13989,7 @@ button {
   }
 
   .hotel-deluxe-header .hotel-reference-mobile-toggle span {
-    background: #173f7b;
+    background: #4A90D9;
   }
 
   .hotel-deluxe-header .hotel-reference-mobile-menu[open] .hotel-reference-mobile-panel {
@@ -14529,7 +14529,7 @@ button {
   width: 10px;
   height: 10px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #efd9a0, #c9a44f);
+  background: linear-gradient(135deg, #efd9a0, #4A90D9);
   box-shadow: 0 0 0 6px rgba(201, 164, 79, 0.12);
 }
 
@@ -16372,7 +16372,7 @@ body {
 
 .page-shell.mode-reference-clone-hotel .hotel-home-booking-summary strong,
 .page-shell.mode-reference-clone-hotel .hotel-home-booking-summary b {
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-benefits-strip {
@@ -17142,7 +17142,7 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-testimonial-carousel-meta strong {
-  color: #173f7b;
+  color: #4A90D9;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.18em;
@@ -17172,7 +17172,7 @@ body {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 239, 230, 0.92)),
     #ffffff;
-  color: #173f7b;
+  color: #4A90D9;
   box-shadow:
     0 14px 24px rgba(78, 58, 31, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.72);
@@ -17369,7 +17369,7 @@ body {
 
 .page-shell.mode-reference-clone-hotel .hotel-home-testimonial-dots button.is-active {
   transform: scale(1.18);
-  background: #173f7b;
+  background: #4A90D9;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-amenities {
@@ -17423,7 +17423,7 @@ body {
     linear-gradient(180deg, rgba(214, 185, 122, 0.18), rgba(214, 185, 122, 0.08)),
     rgba(255, 255, 255, 0.88);
   border: 1px solid rgba(191, 149, 79, 0.18);
-  color: #173f7b;
+  color: #4A90D9;
   box-shadow: 0 10px 22px rgba(133, 102, 58, 0.08);
   transition:
     transform 0.26s ease,
@@ -17445,7 +17445,7 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-amenity-copy strong {
-  color: #173f7b;
+  color: #4A90D9;
   font-size: 0.98rem;
   line-height: 1.35;
   letter-spacing: 0.01em;
@@ -17771,7 +17771,7 @@ body {
 .page-shell.mode-reference-clone-hotel .hotel-reference-mobile-locale {
   width: 100%;
   margin-top: 10px;
-  color: #173f7b;
+  color: #4A90D9;
   border-color: rgba(132, 102, 60, 0.16);
   background: rgba(255, 255, 255, 0.84);
 }
@@ -18412,7 +18412,7 @@ body {
     border: 1px solid rgba(214, 185, 122, 0.24);
     border-radius: 999px;
     background: rgba(255, 252, 246, 0.94);
-    color: #173f7b;
+    color: #4A90D9;
     font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 0.16em;
@@ -18608,7 +18608,7 @@ body {
 .hotel-room-gallery-card-title-mobile {
   display: none;
   margin: 0;
-  color: #173f7b;
+  color: #4A90D9;
   font-size: clamp(1.4rem, 4vw, 1.82rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -18715,7 +18715,7 @@ body {
   font-size: clamp(1.45rem, 2vw, 2rem);
   line-height: 0.98;
   letter-spacing: -0.035em;
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-room-gallery-details-copy p,
@@ -18774,7 +18774,7 @@ body {
 }
 
 .hotel-room-gallery-price-block strong {
-  color: #173f7b;
+  color: #4A90D9;
   font-size: clamp(1.4rem, 2vw, 1.85rem);
   letter-spacing: -0.04em;
 }
@@ -18796,7 +18796,7 @@ body {
 }
 
 .hotel-room-carousel-head strong {
-  color: #173f7b;
+  color: #4A90D9;
 }
 
 .hotel-room-carousel-head p {
@@ -18819,7 +18819,7 @@ body {
   border-radius: 999px;
   background:
     radial-gradient(circle at top, rgba(255, 255, 255, 0.96), rgba(246, 241, 233, 0.9));
-  color: #173f7b;
+  color: #4A90D9;
   box-shadow:
     0 14px 30px rgba(78, 58, 31, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.84);
@@ -18911,7 +18911,7 @@ body {
 }
 
 .hotel-room-carousel-dots button.is-active {
-  background: #173f7b;
+  background: #4A90D9;
   transform: scale(1.16);
 }
 
@@ -18992,7 +18992,7 @@ body {
 .hotel-experience-carousel-tabs button:focus-visible {
   transform: translateY(-1px);
   border-color: rgba(23, 63, 123, 0.22);
-  background: linear-gradient(180deg, #1d4c8e, #173f7b);
+  background: linear-gradient(180deg, #1d4c8e, #4A90D9);
   color: #fffdf8;
   box-shadow:
     0 12px 24px rgba(23, 63, 123, 0.16),
@@ -19039,7 +19039,7 @@ body {
 }
 
 .hotel-experience-carousel-meta strong {
-  color: #173f7b;
+  color: #4A90D9;
   font-size: 0.82rem;
   letter-spacing: 0.18em;
   line-height: 1.2;
@@ -19070,7 +19070,7 @@ body {
   border: 1px solid rgba(23, 63, 123, 0.12);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.86);
-  color: #173f7b;
+  color: #4A90D9;
   font-size: 1.15rem;
   transition:
     transform 0.22s ease,

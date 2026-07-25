@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ClientProfile, SiteContent } from "@/types/site";
 
-const DEFAULT_SITE_URL = "https://vuelo78hotel.vercel.app";
+const DEFAULT_SITE_URL = "https://hotel-puno-terra.vercel.app";
 
 const NICHE_CATEGORIES: Record<string, string> = {
   restaurante: "Restaurant",

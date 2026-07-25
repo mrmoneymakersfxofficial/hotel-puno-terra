@@ -1,8 +1,8 @@
 {
   "clientCode": "CLIENTE 4",
-  "clientName": "Vuelo 78 Hotel Tarapoto",
-  "businessName": "Vuelo 78 Hotel Tarapoto",
-  "folderName": "CLIENTE 4 - Vuelo 78 Hotel Tarapoto",
+  "clientName": "Hotel Puno Terra",
+  "businessName": "Hotel Puno Terra",
+  "folderName": "Hotel Puno Terra",
   "projectType": "Landing Page",
   "industry": "Hoteleria",
   "createdAt": "2026-03-10",
@@ -13,7 +13,7 @@
     "captureMode": "layout-text-widgets"
   },
   "brandConfig": {
-    "businessDescription": "Vuelo 78 Hotel Tarapoto necesita una web hotelera inspirada en https://www.estelarmiraflores.com/es/habitaciones/suite-estelar/, conservando layout, ritmo visual, widgets y jerarquia premium de secciones. Todo texto, branding, logos e imagenes deben ser nuevos y orientados a reservas directas.",
+    "businessDescription": "Hotel Puno Terra necesita una web hotelera inspirada en https://www.estelarmiraflores.com/es/habitaciones/suite-estelar/, conservando layout, ritmo visual, widgets y jerarquia premium de secciones. Todo texto, branding, logos e imagenes deben ser nuevos y orientados a reservas directas.",
     "offerSummary": "Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium",
     "primaryGoal": "Generar reservas directas y consultas de disponibilidad",
     "specialty": "Hero shell",
@@ -27,8 +27,8 @@
     "visualConcept": "hoteleria campaign page",
     "layoutMood": "conversion-first and premium",
     "visualSignature": "signature-cascade",
-    "accentColor": "#C9A44F",
-    "accentAltColor": "#173F7B",
+    "accentColor": "#173F7B",
+    "accentAltColor": "#4A90D9",
     "textAlign": "left",
     "buttonShape": "rounded",
     "starterKit": "hotel",

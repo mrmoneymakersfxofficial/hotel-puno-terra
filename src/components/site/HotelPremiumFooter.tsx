@@ -15,7 +15,7 @@ export function HotelPremiumFooter({ address, brandName, city, email, phone }: H
   void phone;
 
   const fastPageMessage = encodeURIComponent(
-    "👋 Hola, vi que ustedes desarrollaron la web del Vuelo 78 Hotel.\n\nQuisiera una página similar para mi negocio.",
+    "👋 Hola, vi que ustedes desarrollaron la web del Hotel Puno Terra.\n\nQuisiera una página similar para mi negocio.",
   );
   const fastPageHref = `https://wa.me/51919662011?text=${fastPageMessage}`;
 
@@ -25,11 +25,11 @@ export function HotelPremiumFooter({ address, brandName, city, email, phone }: H
         <HotelBrandLogo className="hotel-deluxe-footer-logo" sizes="(max-width: 860px) 170px, 200px" width={200} />
       </a>
       <div className="hotel-deluxe-footer-copy">
-        <p className="hotel-deluxe-footer-line">{"\u00A9"} 2026 Vuelo 78 Hotel. Todos los derechos reservados.</p>
+        <p className="hotel-deluxe-footer-line">{"\u00A9"} 2026 Hotel Puno Terra. Todos los derechos reservados.</p>
         <p className="hotel-deluxe-footer-line">
-          Diseño y desarrollo web por{" "}
-          <a href={fastPageHref} target="_blank" rel="noopener noreferrer">
-            Fast Page Pro
+          Creado & Desarrollado por{" "}
+          <a href="https://fastpagepro.com" target="_blank" rel="noopener noreferrer">
+            fastpagepro.com
           </a>
           .
         </p>
