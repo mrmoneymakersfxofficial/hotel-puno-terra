@@ -37,7 +37,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           badgeLabels: ["Groups", "New", "Featured", "Top sale", "Recommended", "Hot"],
           detailsLabel: "\uD83D\uDD0E VIEW MORE",
           heading: "Tour Packages",
-          location: "Peru, Tarapoto",
+          location: "Peru, Puno",
           starsLabel: "stars",
           whatsappLabel: "Open WhatsApp",
         }
@@ -45,7 +45,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           badgeLabels: ["Grupos", "Nuevo", "Destacado", "Top venta", "Recomendado", "Popular"],
           detailsLabel: "\uD83D\uDD0E VER M\u00c1S",
           heading: "Paquetes Tur\u00edsticos",
-          location: "Peru, Tarapoto",
+          location: "Peru, Puno",
           starsLabel: "estrellas",
           whatsappLabel: "Abrir WhatsApp",
         };

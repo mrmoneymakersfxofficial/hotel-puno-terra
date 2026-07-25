@@ -39,10 +39,10 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
 
         <div className="hotel-payment-method-body">
           <p>
-            <strong>{copy.rucLabel}:</strong> 20601633966
+            <strong>{copy.rucLabel}:</strong> Consultar
           </p>
           <p>
-            <strong>{copy.legalNameLabel}:</strong> Rio hotels Tarapoto S.A.C
+            <strong>{copy.legalNameLabel}:</strong> Hotel Puno Terra
           </p>
           <div className="hotel-payment-bank-logo-wrap" aria-label="BCP">
             <Image
@@ -56,10 +56,10 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
             />
           </div>
           <p>
-            <strong>{copy.accountLabel}:</strong> 550 - 2377781 - 0 - 43
+            <strong>{copy.accountLabel}:</strong> Consultar al hotel
           </p>
           <p>
-            <strong>{copy.cciLabel}:</strong> 002 - 550 - 002377781043 - 25
+            <strong>{copy.cciLabel}:</strong> Consultar al hotel
           </p>
         </div>
       </article>

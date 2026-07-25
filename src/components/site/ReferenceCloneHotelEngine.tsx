@@ -243,7 +243,7 @@ export function ReferenceCloneHotelEngine({
         <HotelPremiumHeader
           bookingCtaLabel={bookingCtaLabel}
           brandName={displayBrandName}
-          brandTag={localizedContent.brand.heroTag || t(locale, "Hotel en Tarapoto", "Hotel in Tarapoto")}
+          brandTag={localizedContent.brand.heroTag || t(locale, "Hotel en Puno", "Hotel in Puno")}
           locale={locale}
           onLocaleToggle={() => setLocale((current) => toggleHotelLocale(current))}
           pages={pages}
@@ -258,7 +258,7 @@ export function ReferenceCloneHotelEngine({
           contactPhone={contactPhone}
           detailsHref={detailsHref}
           heroHeadline={localizedContent.brand.headline || t(locale, "Bienvenido a Hotel Puno Terra", "Welcome to Hotel Puno Terra")}
-          heroTag={localizedContent.brand.heroTag || t(locale, "Hotel en Tarapoto", "Hotel in Tarapoto")}
+          heroTag={localizedContent.brand.heroTag || t(locale, "Hotel en Puno", "Hotel in Puno")}
           locale={locale}
           reservationHref={heroReservationHref}
           slides={heroSlides}
@@ -326,7 +326,7 @@ export function ReferenceCloneHotelEngine({
         <HotelPaymentMethodsSection locale={locale} />
 
         <HotelPremiumFooter
-          address={localizedContent.location?.address || "Tarapoto, Peru"}
+          address={localizedContent.location?.address || "Puno, Peru"}
           brandName={displayBrandName}
           city={localizedContent.location?.city}
           email={localizedContent.contact.email}
@@ -475,7 +475,7 @@ function buildCuratedHeroSlides(content: SiteContent): HotelHeroSlide[] {
 }
 
 function getDisplayBrandName(value: string) {
-  return value.replace(/\s+Tarapoto$/i, "").trim() || value;
+  return value.replace(/\s+Puno$/i, "").trim() || value;
 }
 
 function normalizeHotelPhone(value?: string) {

@@ -1,23 +1,23 @@
 {
   "brand": {
     "name": "Hotel Puno Terra",
-    "headline": "Hotel 3 estrellas en Tarapoto, lider gracias a nuestros clientes y usuarios.",
-    "description": "Descansa cerca del aeropuerto con habitaciones comodas, piscina y desayuno incluido.",
-    "subheadline": "Habitaciones comodas, piscina y atencion las 24 horas.",
+    "headline": "Hotel 3 estrellas en Puno, a 3 minutos de Plaza de Armas. WiFi gratis, desayuno buffet y recepcion 24 horas.",
+    "description": "Hotel Puno Terra ofrece habitaciones con aire acondicionado, WiFi gratis, baño privado, TV de pantalla plana y caja fuerte. Desayuno buffet o continental disponible. Recepcion 24 horas, servicio de habitaciones y organizacion de tours.",
+    "subheadline": "A 3 min de Plaza de Armas. WiFi gratis, desayuno buffet, recepcion 24 horas.",
     "primaryCtaLabel": "Reservar",
     "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51941714132&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Hotel%20Puno%20Terra*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
     "secondaryCtaLabel": "Ver habitaciones",
     "secondaryCtaHref": "#habitaciones",
     "heroTag": "HOTEL PUNO TERRA",
-    "heroImageSrc": "/assets/hero/hero-main.webp",
+    "heroImageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
     "heroImagePosition": {
       "x": 50,
       "y": 50
     }
   },
   "narrative": {
-    "title": "Reserva directa y descanso sereno",
-    "body": "Habitaciones, servicios y una experiencia clara para reservar con mas confianza.",
+    "title": "Tu estancia en Puno comienza aqui",
+    "body": "A 3 minutos de Plaza de Armas, con desayuno buffet, WiFi gratis y recepcion 24 horas para una experiencia sin preocupaciones.",
     "goal": "Generar reservas directas por WhatsApp y consultas de disponibilidad"
   },
   "theme": {
@@ -37,29 +37,29 @@
     "proofLabel": "Clientes reales",
     "storyChip": "Habitacion principal",
     "storyTitle": "Elige tu habitacion ideal",
-    "testimonialsChip": "Resenas verificadas",
+    "testimonialsChip": "252 reseñas verificadas",
     "testimonialsTitle": "Lo que dicen nuestros huespedes",
     "faqChip": "Preguntas frecuentes",
     "faqTitle": "Antes de reservar"
   },
   "stats": [
     {
-      "label": "Destino",
-      "value": "Tarapoto"
+      "label": "Ubicacion",
+      "value": "Plaza de Armas"
     },
     {
       "label": "Recepcion",
       "value": "24 horas"
     },
     {
-      "label": "Reserva",
-      "value": "Directa"
+      "label": "Puntuacion",
+      "value": "8.0 Muy bien"
     }
   ],
   "services": [
     {
-      "title": "Suite principal con vista natural",
-      "description": "Habitacion amplia con cama comoda, buena iluminacion y un ambiente tranquilo para descansar mejor.",
+      "title": "Habitacion con aire acondicionado y WiFi",
+      "description": "Cada habitacion dispone de aire acondicionado, WiFi gratis, baño privado, TV de pantalla plana con canales por cable, escritorio y caja fuerte.",
       "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
       "imagePosition": {
         "x": 50,
@@ -67,8 +67,8 @@
       }
     },
     {
-      "title": "Habitacion superior doble",
-      "description": "Una opcion comoda para pareja o viaje de trabajo, con espacio funcional y descanso asegurado.",
+      "title": "Desayuno buffet o continental",
+      "description": "Hotel Puno Terra ofrece desayuno buffet o continental cada mañana, con infusiones y bebidas a disposicion de los huespedes durante todo el dia.",
       "imageSrc": "/assets/uploads/hotel-deluxe-pool.jpg",
       "imagePosition": {
         "x": 50,
@@ -76,8 +76,8 @@
       }
     },
     {
-      "title": "Estadia ejecutiva flexible",
-      "description": "Ideal para una estancia corta, una llegada practica o una noche de descanso antes de continuar el viaje.",
+      "title": "Recepcion 24 horas y servicio de habitaciones",
+      "description": "Recepcion disponible las 24 horas con personal amable, servicio de habitaciones, guardaequipaje y organizacion de tours para explorar Puno.",
       "imageSrc": "/assets/uploads/2-bde02c45-853a-4132-a874-d6b663687cde.jfif",
       "imagePosition": {
         "x": 50,
@@ -85,8 +85,8 @@
       }
     },
     {
-      "title": "Galeria y experiencia del hotel",
-      "description": "Espacios del hotel para conocer la piscina, las areas comunes y el ambiente de la estadia.",
+      "title": "Jardin y areas comunes",
+      "description": "El hotel dispone de jardin, areas comunes limpias y espacios tranquilos para descansar. Adaptado para personas de movilidad reducida.",
       "imageSrc": "/assets/uploads/hotel-e958a5dd-c4f1-4619-b0cd-7449eb4b6695.webp",
       "imagePosition": {
         "x": 54,
@@ -94,8 +94,8 @@
       }
     },
     {
-      "title": "Reserva directa y asistencia",
-      "description": "Canal directo para consultar disponibilidad, fechas y tipo de habitacion por WhatsApp.",
+      "title": "Organizacion de tours e informacion turistica",
+      "description": "Servicio de organizacion de tours e informacion turistica sobre Plaza de Armas, Catedral de Puno, Balcon de Conde de Lemos y Iglesia de San Antonio.",
       "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
       "imagePosition": {
         "x": 50,
@@ -104,53 +104,53 @@
     }
   ],
   "highlights": [
-    "Habitaciones limpias y comodas para descanso o viaje corto.",
-    "Recepcion disponible para ayudarte durante la llegada.",
-    "Reserva directa por WhatsApp con respuesta rapida.",
-    "Ubicacion practica cerca del aeropuerto y accesos principales.",
-    "Ambiente tranquilo para descansar con mas confianza."
+    "Ubicacion super centrica: a 3 minutos de Plaza de Armas de Puno.",
+    "WiFi gratis en todo el hotel con puntuacion de 8.5 segun huespedes.",
+    "Desayuno buffet o continental incluido, muy bien valorado.",
+    "Recepcion 24 horas con personal amable (puntuacion 9.3).",
+    "Servicio de organizacion de tours e informacion turistica."
   ],
   "testimonials": [
     {
-      "name": "Daniela Rojas",
-      "role": "Tarapoto, San Martin",
-      "quote": "Gracias a todo el equipo de Hotel Puno Terra por una estadia tan comoda. La llegada fue rapida, la habitacion estuvo impecable y descansamos con total tranquilidad.",
+      "name": "Karla",
+      "role": "Mexico",
+      "quote": "La ubicacion super centrica, la habitacion muy amplia, el personal muy amable. Todo perfecto para nuestra estadia en Puno.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-01.jpg",
       "location": "Escapada de fin de semana",
-      "segment": "Atencion cercana y descanso real",
+      "segment": "Ubicacion centrica y personal amable",
       "rating": 5
     },
     {
-      "name": "Mariana Torres",
-      "role": "Lima Metropolitana",
-      "quote": "Viajamos por trabajo y salimos muy satisfechos. La ubicacion nos ayudo bastante, el personal fue muy amable y la reserva directa por WhatsApp hizo todo mas facil.",
+      "name": "Jeremy",
+      "role": "Peru",
+      "quote": "A mi hermano y a mi nos gusto el hotel, muy buena ubicacion, buen desayuno y el personal muy amable. Recomendado para visitar Puno.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-02.jpg",
-      "location": "Viaje corporativo",
-      "segment": "Reserva clara y servicio agil",
+      "location": "Viaje familiar",
+      "segment": "Buen desayuno y excelente ubicacion",
       "rating": 5
     },
     {
-      "name": "Rocio Pinedo",
-      "role": "Iquitos, Loreto",
-      "quote": "Lo que mas agradecemos fue el ambiente sereno del hotel. La piscina, las areas comunes y la limpieza constante hicieron que nuestra estancia fuera realmente placentera.",
+      "name": "Brigitte",
+      "role": "Francia",
+      "quote": "Buena ubicacion, personal muy amable, muy limpio, bebidas infusiones a disposicion, buen desayuno. Una estadia muy agradable.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-03.jpg",
-      "location": "Viaje de descanso",
-      "segment": "Ambiente tranquilo y muy limpio",
+      "location": "Viaje internacional",
+      "segment": "Limpieza impecable y bebidas disponibles",
       "rating": 5
     },
     {
-      "name": "Camila Saavedra",
-      "role": "Moyobamba, San Martin",
-      "quote": "Nos encanto despertar con buena vista, tomar un cafe con calma y sentirnos bien atendidos desde el primer momento. Gracias por hacernos sentir tan bien recibidos.",
+      "name": "Daniela Rojas",
+      "role": "Puno, Peru",
+      "quote": "Gracias a todo el equipo de Hotel Puno Terra por una estadia tan comoda. La ubicacion centrica nos permitio explorar la Plaza de Armas y la Catedral con facilidad.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-04.jpg",
-      "location": "Estadia romantica",
-      "segment": "Confort, vista y buena atencion",
-      "rating": 4
+      "location": "Escapada romantica",
+      "segment": "Ubicacion centrica y descanso real",
+      "rating": 5
     },
     {
       "name": "Fiorella Vargas",
-      "role": "Pucallpa, Ucayali",
-      "quote": "Elegimos el hotel para una fecha especial y fue una muy buena decision. Las instalaciones se ven cuidadas, el descanso fue excelente y el trato del personal fue impecable.",
+      "role": "Lima, Peru",
+      "quote": "Elegimos el hotel para una fecha especial y fue una muy buena decision. Las instalaciones se ven cuidadas, el desayuno fue excelente y el trato del personal fue impecable.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-05.jpg",
       "location": "Celebracion especial",
       "segment": "Instalaciones cuidadas y servicio amable",
@@ -158,26 +158,38 @@
     },
     {
       "name": "Lucero Delgado",
-      "role": "Chiclayo, Lambayeque",
+      "role": "Cusco, Peru",
       "quote": "Quedamos agradecidos con la experiencia completa. El hotel transmite orden, seguridad y una atencion muy cordial que se nota en cada detalle de la estancia.",
       "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-06.jpg",
-      "location": "Viaje familiar",
+      "location": "Viaje de descanso",
       "segment": "Seguridad, orden y calidez",
       "rating": 5
     }
   ],
   "faqs": [
     {
-      "question": "¿Como puedo reservar una habitacion?",
-      "answer": "Puedes reservar directamente por WhatsApp contactando al equipo de reservas del Hotel Puno Terra, o completando el formulario de reserva en la pagina."
+      "question": "¿Que tipo de desayuno se sirve en Hotel Puno Terra?",
+      "answer": "Hotel Puno Terra ofrece desayuno buffet o continental cada mañana. Las infusiones y bebidas tambien estan a disposicion de los huespedes durante todo el dia."
+    },
+    {
+      "question": "¿Cual es el horario de entrada y salida?",
+      "answer": "El check-in es de 12:00 a 13:00 y el check-out es de 10:00 a 10:30. Recepcion disponible 24 horas para facilitar tu llegada."
+    },
+    {
+      "question": "¿A que distancia esta Hotel Puno Terra del centro de Puno?",
+      "answer": "Hotel Puno Terra esta a solo 3 minutos a pie de Plaza de Armas de Puno y a 400 metros de Casa del Corregidor. El aeropuerto Internacional Inca Manco Capac esta a 45 km."
     },
     {
       "question": "¿Que servicios incluye el hotel?",
-      "answer": "El Hotel Puno Terra ofrece recepcion 24 horas, piscina, desayuno incluido, WiFi gratuito, aire acondicionado y reserva directa sin intermediarios."
+      "answer": "WiFi gratis en todo el hotel, aire acondicionado, baño privado, TV de pantalla plana con cable, caja fuerte, recepcion 24 horas, servicio de habitaciones, organizacion de tours, jardín y habitaciones adaptadas para movilidad reducida."
     },
     {
-      "question": "¿Donde esta ubicado el hotel?",
-      "answer": "El Hotel Puno Terra se encuentra en Jr. Jorge Chavez 1793, Barrio Huayco, Tarapoto, San Martin, Peru - a una cuadra del aeropuerto."
+      "question": "¿Se admiten mascotas?",
+      "answer": "No se admiten mascotas en Hotel Puno Terra."
+    },
+    {
+      "question": "¿Que metodos de pago acepta el hotel?",
+      "answer": "Hotel Puno Terra acepta Visa, Mastercard, Diners Club, Maestro y efectivo. No hay parking disponible en el hotel."
     }
   ],
   "pages": [
@@ -193,17 +205,17 @@
   ],
   "products": [],
   "galleryKeywords": [
-    "Hotel Puno Terra Tarapoto",
+    "Hotel Puno Terra Puno",
     "Hoteleria",
-    "Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium",
-    "Suite principal con vista natural",
-    "Habitacion superior doble",
-    "Estadia ejecutiva flexible"
+    "Hotel en Puno con WiFi gratis, desayuno buffet y recepcion 24 horas",
+    "Habitacion con aire acondicionado y baño privado",
+    "Plaza de Armas de Puno",
+    "Catedral de Puno"
   ],
   "galleryItems": [
     {
-      "title": "Suite principal con vista natural",
-      "subtitle": "Hotel Puno Terra Tarapoto",
+      "title": "Habitacion con aire acondicionado y WiFi",
+      "subtitle": "Hotel Puno Terra Puno",
       "imageSrc": "/assets/uploads/hotel-e958a5dd-c4f1-4619-b0cd-7449eb4b6695.webp",
       "imagePosition": {
         "x": 50,
@@ -211,7 +223,7 @@
       }
     },
     {
-      "title": "Habitacion superior doble",
+      "title": "Desayuno buffet o continental",
       "subtitle": "Reserva directa y estancia premium",
       "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
       "imagePosition": {
@@ -220,8 +232,8 @@
       }
     },
     {
-      "title": "Estadia ejecutiva flexible",
-      "subtitle": "Vistas y calma tropical",
+      "title": "Recepcion 24 horas",
+      "subtitle": "Atencion amable y organizacion de tours",
       "imageSrc": "/assets/uploads/hotel-deluxe-pool.jpg",
       "imagePosition": {
         "x": 50,
@@ -229,7 +241,7 @@
       }
     },
     {
-      "title": "Galeria y experiencia del hotel",
+      "title": "Jardin y areas comunes",
       "subtitle": "Habitaciones y descanso inmediato",
       "imageSrc": "/assets/uploads/2-bde02c45-853a-4132-a874-d6b663687cde.jfif",
       "imagePosition": {
@@ -238,8 +250,8 @@
       }
     },
     {
-      "title": "Reserva directa y asistencia",
-      "subtitle": "Asistencia rapida por WhatsApp",
+      "title": "Organizacion de tours",
+      "subtitle": "Informacion turistica y exploracion de Puno",
       "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
       "imagePosition": {
         "x": 50,
@@ -248,15 +260,15 @@
     }
   ],
   "contact": {
-    "title": "Confirma tu fecha y recibe ayuda para reservar",
-    "description": "Comparte tus fechas, tipo de habitacion y numero de huespedes. El equipo te responde con disponibilidad y tarifa directa por WhatsApp.",
+    "title": "Confirma tu fecha y reserva directamente",
+    "description": "Comparte tus fechas, tipo de habitacion y numero de huespedes. El equipo de Hotel Puno Terra te responde con disponibilidad y tarifa directa por WhatsApp.",
     "whatsappNumber": "+51 941 714 132",
     "email": ""
   },
   "bookingWidget": {
     "preset": "hotel",
     "title": "Reserva directa y asistencia rapida",
-    "description": "Coordina disponibilidad, tipo de habitacion y llegada desde una barra simple pensada para reservar sin pasos innecesarios.",
+    "description": "Coordina disponibilidad, tipo de habitacion y llegada. Check-in de 12:00 a 13:00, check-out de 10:00 a 10:30.",
     "adminLabel": "Equipo de reservas",
     "adminRole": "Reservas y atencion",
     "adminStatus": "En linea para responder rapido",
@@ -276,8 +288,8 @@
     "summaryText": "Opcional",
     "formNameLabel": "Nombre",
     "formNamePlaceholder": "Como te llamas?",
-    "scheduleLabel": "Entrada",
-    "schedulePlaceholder": "Flexible",
+    "scheduleLabel": "Check-in",
+    "schedulePlaceholder": "12:00 - 13:00",
     "scheduleInputType": "date",
     "quantityLabel": "Huespedes",
     "quantityOptions": [
@@ -288,81 +300,63 @@
       "5+"
     ],
     "notesLabel": "Solicitud especial",
-    "notesPlaceholder": "Cama extra, early check-in, desayuno, traslado...",
+    "notesPlaceholder": "Cuna, early check-in, tipo de desayuno, traslado...",
     "selectionTitle": "Habitacion",
     "detailLabel": "Habitacion",
     "priceLabel": "Tarifa",
-    "timelineLabel": "Salida",
+    "timelineLabel": "Check-out",
     "options": [
       {
-        "id": "suite-principal",
-        "label": "Suite principal",
-        "roomType": "Suite principal",
-        "price": "S/ 249",
+        "id": "habitacion-estandar",
+        "label": "Habitacion Estandar",
+        "roomType": "Habitacion Estandar",
+        "price": "S/ 150",
         "rateLabel": "por noche",
         "stayLabel": "1 noche",
-        "summary": "Habitacion amplia, cama comoda y una opcion ideal para descansar con tranquilidad.",
+        "summary": "Habitacion con aire acondicionado, WiFi gratis, baño privado, TV pantalla plana, escritorio y caja fuerte.",
         "perks": [
-          "Desayuno",
-          "WiFi",
+          "Desayuno buffet",
+          "WiFi gratis",
           "Aire acondicionado",
-          "Reserva directa"
+          "Caja fuerte"
         ],
-        "emoji": "🛏️",
-        "badge": "Principal",
-        "highlighted": true
+        "emoji": "",
+        "badge": "Estandar",
+        "highlighted": false
       },
       {
         "id": "habitacion-superior",
-        "label": "Habitacion superior",
-        "roomType": "Habitacion superior",
-        "price": "S/ 289",
+        "label": "Habitacion Superior",
+        "roomType": "Habitacion Superior",
+        "price": "S/ 220",
         "rateLabel": "por noche",
         "stayLabel": "1 noche",
-        "summary": "Pensada para viajes de pareja o trabajo, con comodidad y atencion directa del hotel.",
+        "summary": "Habitacion mas amplia con baño privado completo, bañera o ducha, secador de pelo, zona de estar y escritorio.",
         "perks": [
-          "WiFi",
-          "Bano privado",
-          "Atencion rapida",
-          "Late check-out sujeto"
+          "Desayuno buffet",
+          "WiFi gratis",
+          "Baño con bañera",
+          "Zona de estar"
         ],
-        "emoji": "🛎️",
+        "emoji": "",
         "badge": "Superior",
-        "highlighted": false
+        "highlighted": true
       },
       {
-        "id": "escapada-corta",
-        "label": "Estadia flexible",
-        "roomType": "Estadia flexible",
-        "price": "S/ 179",
-        "rateLabel": "por estadia",
-        "stayLabel": "6 horas",
-        "summary": "Opcion corta para descansar, esperar un vuelo o pasar unas horas con mayor comodidad.",
-        "perks": [
-          "WiFi",
-          "Ingreso agil",
-          "Toallas",
-          "Atencion directa"
-        ],
-        "emoji": "☀️",
-        "badge": "Flexible",
-        "highlighted": false
-      },
-      {
-        "id": "suite-familiar",
-        "label": "Suite familiar",
-        "roomType": "Suite familiar",
-        "price": "S/ 349",
+        "id": "habitacion-familiar",
+        "label": "Habitacion Familiar",
+        "roomType": "Habitacion Familiar",
+        "price": "S/ 280",
         "rateLabel": "por noche",
         "stayLabel": "2 noches",
-        "summary": "Mayor amplitud para familia o grupos pequenos con una reserva directa y facil de coordinar.",
+        "summary": "Habitacion familiar amplia para grupos pequenos, con aire acondicionado, TV cable, baño privado y escritorio.",
         "perks": [
-          "Desayuno",
-          "WiFi",
-          "Late check-out sujeto",
-          "Atencion prioritaria"
+          "Desayuno buffet",
+          "WiFi gratis",
+          "Habitacion familiar",
+          "Servicio de habitaciones"
         ],
-        "emoji": "✨",
+        "emoji": "",
         "badge": "Familiar",
         "highlighted": false
       }
@@ -384,11 +378,11 @@
     "items": []
   },
   "location": {
-    "address": "Jr. Jorge Chavez 1793, Barrio Huayco",
-    "city": "Tarapoto, San Martin, Peru",
-    "hours": "Recepcion 24 horas y a una cuadra del aeropuerto",
-    "mapsEmbedUrl": "https://www.google.com/maps?q=Jiron%20Jorge%20Chavez%201793%2C%20Tarapoto%2C%20Peru&output=embed",
-    "mapsLink": "https://www.google.com/maps?q=Jiron%20Jorge%20Chavez%201793%2C%20Tarapoto%2C%20Peru"
+    "address": "Plaza de Armas, Puno",
+    "city": "Puno, Puno, Peru",
+    "hours": "Recepcion 24 horas. Check-in 12:00-13:00, Check-out 10:00-10:30",
+    "mapsEmbedUrl": "https://www.google.com/maps?q=Hotel%20Puno%20Terra%2C%20Puno%2C%20Peru&output=embed",
+    "mapsLink": "https://www.google.com/maps?q=Hotel%20Puno%20Terra%2C%20Puno%2C%20Peru"
   },
   "visibility": {
     "highlights": [
@@ -417,9 +411,14 @@
       true,
       true,
       true,
+      true,
+      true,
       true
     ],
     "faqs": [
+      true,
+      true,
+      true,
       true,
       true,
       true

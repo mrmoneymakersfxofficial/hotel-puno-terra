@@ -804,7 +804,7 @@ function buildReferenceRaw(profile, siteContent, snapshot) {
   const mainOffer = hospitalityReference
     ? (/(hotel|habitacion|suite|reserva|alojamiento|hospedaje|tarapoto)/i.test(existingOffer)
       ? existingOffer
-      : "Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium")
+      : "Hotel en Puno con habitaciones comodas, reserva directa y experiencia premium")
     : sanitizeText(existingOffer || "Oferta principal por definir");
   const primaryGoal = hospitalityReference
     ? (/(reserva|disponibilidad|habitacion|whatsapp)/i.test(existingGoal)

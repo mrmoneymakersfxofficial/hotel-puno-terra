@@ -295,11 +295,11 @@ export function HotelReferenceSubpage({
         <section className="scene hotel-reference-map-layout" data-animate data-animate-delay="210" data-editor-section="contact">
           <article className="hotel-reference-map-card">
             <span className="scene-chip">{ui.subpage.location}</span>
-            {editorMode ? <InlineTextField as="h2" controls={editorTextControls} displayValue={renderBalancedSectionTitle(content.location?.city || "Tarapoto, Peru")} enabled fieldKey="location.city" label="Ciudad del hotel" section="contact" value={content.location?.city || "Tarapoto, Peru"} /> : <h2>{renderBalancedSectionTitle(content.location?.city || "Tarapoto, Peru")}</h2>}
-            {editorMode ? <InlineTextField as="p" controls={editorTextControls} enabled fieldKey="location.address" label="Direccion del hotel" minRows={3} multiline section="contact" value={`${content.location?.address || "Tarapoto, Peru"}. ${t(locale, "Aqui puedes revisar el mapa, la direccion exacta y una vista de llegada antes de reservar.", "Here you can review the map, the exact address and the arrival view before booking.")}`} /> : <p>{content.location?.address || "Tarapoto, Peru"}. {t(locale, "Aqui puedes revisar el mapa, la direccion exacta y una vista de llegada antes de reservar.", "Here you can review the map, the exact address and the arrival view before booking.")}</p>}
+            {editorMode ? <InlineTextField as="h2" controls={editorTextControls} displayValue={renderBalancedSectionTitle(content.location?.city || "Puno, Peru")} enabled fieldKey="location.city" label="Ciudad del hotel" section="contact" value={content.location?.city || "Puno, Peru"} /> : <h2>{renderBalancedSectionTitle(content.location?.city || "Puno, Peru")}</h2>}
+            {editorMode ? <InlineTextField as="p" controls={editorTextControls} enabled fieldKey="location.address" label="Direccion del hotel" minRows={3} multiline section="contact" value={`${content.location?.address || "Puno, Peru"}. ${t(locale, "Aqui puedes revisar el mapa, la direccion exacta y una vista de llegada antes de reservar.", "Here you can review the map, the exact address and the arrival view before booking.")}`} /> : <p>{content.location?.address || "Puno, Peru"}. {t(locale, "Aqui puedes revisar el mapa, la direccion exacta y una vista de llegada antes de reservar.", "Here you can review the map, the exact address and the arrival view before booking.")}</p>}
             <div className="hotel-reference-facts-grid">
-              <article><span>{ui.subpage.direction}</span><strong>{content.location?.address || "Tarapoto"}</strong></article>
-              <article><span>{ui.subpage.city}</span><strong>{content.location?.city || "Tarapoto, Peru"}</strong></article>
+              <article><span>{ui.subpage.direction}</span><strong>{content.location?.address || "Puno"}</strong></article>
+              <article><span>{ui.subpage.city}</span><strong>{content.location?.city || "Puno, Peru"}</strong></article>
               <article><span>{ui.subpage.reception}</span><strong>{normalizedHours || (locale === "en" ? "24 hours" : "24 horas")}</strong></article>
             </div>
             <div className="hotel-reference-room-actions">
@@ -379,7 +379,7 @@ export function HotelReferenceSubpage({
 }
 
 function getPageData(pageSlug: Exclude<HotelPageSlug, "hotel">, content: SiteContent, services: SiteContent["services"], leadPrice: string, locale: HotelLocale): Data {
-  const city = content.location?.city || "Tarapoto";
+  const city = content.location?.city || "Puno";
   const firstServices = services.slice(0, 3);
   const sharedCards = firstServices.length
     ? firstServices.map((service, index) => ({

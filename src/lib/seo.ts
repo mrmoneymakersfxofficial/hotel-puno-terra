@@ -46,8 +46,8 @@ function resolveShareImage(content: SiteContent) {
 }
 
 function resolvePrimaryLocation(content: SiteContent) {
-  const rawLocation = content.location?.city?.trim() || "Tarapoto";
-  return rawLocation.split(",")[0]?.trim() || "Tarapoto";
+  const rawLocation = content.location?.city?.trim() || "Puno";
+  return rawLocation.split(",")[0]?.trim() || "Puno";
 }
 
 function buildReservationTitle(profile: ClientProfile, content: SiteContent) {
@@ -162,7 +162,7 @@ export function buildSiteMetadata(
           url: shareImage,
           width: 1200,
           height: 630,
-          alt: `${content.brand.name} | Reserva directa en Tarapoto`,
+          alt: `${content.brand.name} | Reserva directa en Puno`,
         },
       ],
     },

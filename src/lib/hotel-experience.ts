@@ -502,9 +502,9 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
       bookingKicker: "Reserva directa",
       bookingDescription: "Consulta disponibilidad y recibe respuesta directa del hotel.",
       benefits: [
-        "Desayuno incluido",
+        "Desayuno buffet",
         "WiFi gratis",
-        "Piscina",
+        "Jardin",
         "Aire acondicionado",
         "Zona de trabajo",
         "Estacionamiento privado",
@@ -678,7 +678,7 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       faqTitle: "Before you book",
     },
     stats: [
-      { label: "Destination", value: "Tarapoto" },
+      { label: "Destination", value: "Puno" },
       { label: "Reception", value: "24 hours" },
       { label: "Booking", value: "Direct" },
     ],
@@ -747,7 +747,7 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       {
         ...withPhone.galleryItems?.[0],
         title: "Main suite with natural view",
-        subtitle: "Hotel Puno Terra Tarapoto",
+        subtitle: "Hotel Puno Terra Puno",
       },
       {
         ...withPhone.galleryItems?.[1],
@@ -855,8 +855,8 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       : withPhone.bookingWidget,
     location: {
       ...withPhone.location,
-      address: withPhone.location?.address || "Tarapoto, Peru",
-      city: "Tarapoto, San Martin, Peru",
+      address: withPhone.location?.address || "Puno, Peru",
+      city: "Puno, San Martin, Peru",
       hours: "24-hour reception and one block from the airport",
     },
   };

@@ -2,10 +2,10 @@ General business data:
 - Business name: Hotel Puno Terra
 - Project type: Landing Page
 - Industry: Hoteleria
-- Main offer: Hotel en Tarapoto con habitaciones comodas, reserva directa y experiencia premium
+- Main offer: Hotel en Puno con habitaciones comodas, reserva directa y experiencia premium
 - Primary goal: Generar reservas directas y consultas de disponibilidad
 - Target audience: Viajeros que buscan descanso, buena ubicacion y una reserva clara desde el primer scroll
-- Location: Tarapoto, Peru
+- Location: Puno, Peru
 - WhatsApp: +51941714132
 - Email: hola@auralis.studio
 - Visual style: premium
