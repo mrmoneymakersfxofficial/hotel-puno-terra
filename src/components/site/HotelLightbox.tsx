@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 type LightboxImage = {
   src: string;
+  fallbackSrc?: string;
   alt?: string;
 };
 
@@ -23,8 +24,9 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
   const [scale, setScale] = useState(1);
   const [translateX, setTranslateX] = useState(0);
   const [translateY, setTranslateY] = useState(0);
+  const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
   const containerRef = useRef<HTMLDivElement>(null);
-  const lastPinchDistance = useRef<number | null>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (open) {
@@ -38,6 +40,29 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
       document.body.style.overflow = "";
     };
   }, [open, initialIndex]);
+
+  // Attach non-passive wheel listener to avoid passive event listener errors
+  useEffect(() => {
+    const wrapper = imageWrapperRef.current;
+    if (!wrapper || !open) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (e.deltaY < 0) {
+        setScale((s) => Math.min(s + 0.3, 5));
+        setIsZoomed(true);
+      } else {
+        setScale((s) => {
+          const newScale = Math.max(s - 0.3, 1);
+          if (newScale <= 1) resetZoom();
+          return newScale;
+        });
+      }
+    };
+
+    wrapper.addEventListener("wheel", handleWheel, { passive: false });
+    return () => wrapper.removeEventListener("wheel", handleWheel);
+  }, [open]);
 
   const resetZoom = useCallback(() => {
     setIsZoomed(false);
@@ -54,7 +79,7 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
       setCurrentIndex(index);
       setTimeout(() => setIsAnimating(false), 300);
     },
-    [images.length, isAnimating, resetZoom]
+    [images.length, isAnimating, resetZoom],
   );
 
   const goNext = useCallback(() => goTo(currentIndex + 1), [currentIndex, goTo]);
@@ -110,25 +135,15 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
     lastTap.current = now;
   };
 
-  // Mouse wheel zoom
-  const handleWheel = (e: React.WheelEvent) => {
-    e.preventDefault();
-    if (e.deltaY < 0) {
-      setScale((s) => Math.min(s + 0.3, 5));
-      setIsZoomed(true);
-    } else {
-      setScale((s) => {
-        const newScale = Math.max(s - 0.3, 1);
-        if (newScale <= 1) resetZoom();
-        return newScale;
-      });
-    }
-  };
-
   if (!open || images.length === 0) return null;
 
   const currentImage = images[currentIndex];
+  if (!currentImage) return null;
+
   const slideOffset = touchDelta * 0.5;
+  const imageSrc = brokenImages[currentImage.src] && currentImage.fallbackSrc
+    ? currentImage.fallbackSrc
+    : currentImage.src;
 
   return (
     <div
@@ -298,16 +313,16 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
       </div>
 
       <div
+        ref={imageWrapperRef}
         className="hotel-lightbox-image-wrapper"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         onClick={handleDoubleTap}
-        onWheel={handleWheel}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={currentImage.src}
+          src={imageSrc}
           alt={currentImage.alt || ""}
           className="hotel-lightbox-image"
           style={{
@@ -315,6 +330,12 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
             transition: touchStart !== null ? "none" : "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
           }}
           draggable={false}
+          onError={() => {
+            // Try fallback if primary fails
+            if (!brokenImages[currentImage.src]) {
+              setBrokenImages((prev) => ({ ...prev, [currentImage.src]: true }));
+            }
+          }}
         />
       </div>
 

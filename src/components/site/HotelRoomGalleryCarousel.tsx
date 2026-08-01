@@ -169,7 +169,7 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
       ) : null}
 
       <HotelLightbox
-        images={slides.map((s) => ({ src: s.jpgSrc, alt: s.alt }))}
+        images={slides.map((s) => ({ src: s.webpSrc, fallbackSrc: s.jpgSrc, alt: s.alt }))}
         initialIndex={lightboxIndex}
         open={lightboxOpen}
         onClose={() => setLightboxOpen(false)}

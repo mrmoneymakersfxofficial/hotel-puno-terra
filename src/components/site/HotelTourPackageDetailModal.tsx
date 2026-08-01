@@ -65,14 +65,16 @@ export function HotelTourPackageDetailModal({ activePackage, hotelName, locale, 
   });
 
   const slides = activePackage.mediaFiles.map((file, index) => {
-    const src = buildTourPackageImagePath(activePackage.mediaFolder, file);
+    const jpgSrc = buildTourPackageImagePath(activePackage.mediaFolder, file);
+    const webpFile = file.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+    const webpSrc = buildTourPackageImagePath(activePackage.mediaFolder, webpFile);
 
     return {
       alt: `${activePackage.title} ${index + 1}`,
       id: `${activePackage.slug}-${index + 1}`,
-      jpgSrc: src,
+      jpgSrc,
       role: "general" as const,
-      webpSrc: src,
+      webpSrc,
     };
   });
 

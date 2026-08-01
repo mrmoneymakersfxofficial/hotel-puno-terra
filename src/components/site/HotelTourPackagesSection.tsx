@@ -51,7 +51,6 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
         };
   const packages = getTourPackages(copy.location, copy.badgeLabels);
   const [activeSlug, setActiveSlug] = useState<string | null>(null);
-  const [brokenCoverImages, setBrokenCoverImages] = useState<Record<string, boolean>>({});
   const activePackage = packages.find((item) => item.slug === activeSlug) || null;
 
   return (
@@ -71,12 +70,15 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
             summary: item.summary,
             duration: item.duration,
           });
-          const coverImageSrc = brokenCoverImages[item.slug]
-            ? buildTourPackageImagePath(item.mediaFolder, item.mediaFiles[0] || "")
-            : item.coverImageSrc || getTourPackageCoverImageSrc(item.slug);
+          const coverImageSrc = item.coverImageSrc || buildTourPackageImagePath(item.mediaFolder, item.mediaFiles[0] || "");
 
           return (
-            <article className="hotel-tour-package-card" key={`${item.title}-${index + 1}`}>
+            <article
+              className="hotel-tour-package-card"
+              key={`${item.title}-${index + 1}`}
+              onClick={() => setActiveSlug(item.slug)}
+              style={{ cursor: "pointer" }}
+            >
               <div className="hotel-tour-package-media">
                 <Image
                   alt={item.title}
@@ -84,16 +86,6 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
                   fill
                   priority={index < 2}
                   sizes="(max-width: 680px) 92vw, (max-width: 1260px) 31vw, 24vw"
-                  onError={() =>
-                    setBrokenCoverImages((current) =>
-                      current[item.slug]
-                        ? current
-                        : {
-                            ...current,
-                            [item.slug]: true,
-                          },
-                    )
-                  }
                   src={coverImageSrc}
                   style={getPackageImageStyle(item.imagePosition)}
                 />
@@ -121,10 +113,24 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
 
                   <div className="hotel-tour-package-footer">
                     <div className="hotel-tour-package-actions">
-                      <a aria-label={copy.whatsappLabel} className="hotel-tour-package-whatsapp" href={whatsappHref} rel="noreferrer" target="_blank">
+                      <a
+                        aria-label={copy.whatsappLabel}
+                        className="hotel-tour-package-whatsapp"
+                        href={whatsappHref}
+                        onClick={(e) => e.stopPropagation()}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
                         <WhatsAppGlyph />
                       </a>
-                      <button className="hotel-tour-package-more" onClick={() => setActiveSlug(item.slug)} type="button">
+                      <button
+                        className="hotel-tour-package-more"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setActiveSlug(item.slug);
+                        }}
+                        type="button"
+                      >
                         {copy.detailsLabel}
                       </button>
                     </div>
@@ -167,6 +173,16 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
 
         .hotel-tour-package-card {
           min-width: 0;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hotel-tour-package-card:hover {
+          transform: translateY(-4px);
+        }
+
+        .hotel-tour-package-card:hover .hotel-tour-package-media {
+          box-shadow: 0 32px 56px rgba(4, 8, 15, 0.3);
         }
 
         .hotel-tour-package-media {
@@ -177,6 +193,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           box-shadow: 0 24px 40px rgba(4, 8, 15, 0.2);
           display: flex;
           align-items: flex-end;
+          transition: box-shadow 0.3s ease;
         }
 
         .hotel-tour-package-image {
@@ -189,6 +206,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           background:
             linear-gradient(180deg, rgba(4, 8, 15, 0.02) 14%, rgba(4, 8, 15, 0.46) 58%, rgba(4, 8, 15, 0.94) 100%),
             linear-gradient(90deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.03));
+          pointer-events: none;
         }
 
         .hotel-tour-package-badge {
@@ -206,6 +224,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           letter-spacing: 0.01em;
           text-align: center;
           text-transform: capitalize;
+          pointer-events: none;
         }
 
         .hotel-tour-package-overlay {
@@ -218,6 +237,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           width: 100%;
           padding: 18px 16px 16px;
           min-height: 100%;
+          pointer-events: none;
         }
 
         .hotel-tour-package-stars {
@@ -277,6 +297,7 @@ export function HotelTourPackagesSection({ locale, hotelName }: HotelTourPackage
           align-items: center;
           gap: 12px;
           min-width: 0;
+          pointer-events: auto;
         }
 
         .hotel-tour-package-whatsapp {
@@ -381,6 +402,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[0],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("Islas Flotantes de los Uros", "tour-uros-01.jpg"),
       mediaFolder: "Islas Flotantes de los Uros",
       mediaFiles: ["tour-uros-01.jpg"],
       imagePosition: { x: 50, y: 45 },
@@ -396,6 +418,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[1],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("Isla Taquile", "tour-taquile-01.jpg"),
       mediaFolder: "Isla Taquile",
       mediaFiles: ["tour-taquile-01.jpg"],
       imagePosition: { x: 50, y: 48 },
@@ -411,6 +434,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[2],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("Isla Amantani", "tour-amantani-01.jpg"),
       mediaFolder: "Isla Amantani",
       mediaFiles: ["tour-amantani-01.jpg"],
       imagePosition: { x: 50, y: 50 },
@@ -426,6 +450,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[3],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("Complejo Arqueologico de Sillustani", "tour-sillustani-01.jpg"),
       mediaFolder: "Complejo Arqueologico de Sillustani",
       mediaFiles: ["tour-sillustani-01.jpg"],
       imagePosition: { x: 50, y: 45 },
@@ -441,6 +466,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[4],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("City Tour Puno", "tour-city-tour-01.jpg"),
       mediaFolder: "City Tour Puno",
       mediaFiles: ["tour-city-tour-01.jpg"],
       imagePosition: { x: 50, y: 48 },
@@ -456,6 +482,7 @@ function getTourPackages(location: string, badgeLabels: string[]): HotelTourPack
       location,
       badge: badgeLabels[5],
       price: "Consultar",
+      coverImageSrc: buildTourPackageImagePath("Ruta Aymara", "tour-ruta-aymara-01.jpg"),
       mediaFolder: "Ruta Aymara",
       mediaFiles: ["tour-ruta-aymara-01.jpg"],
       imagePosition: { x: 50, y: 48 },
@@ -517,19 +544,6 @@ function getPackageImageStyle(position?: { x?: number; y?: number }) {
   return {
     objectPosition: `${x}% ${y}%`,
   };
-}
-
-function getTourPackageCoverImageSrc(slug: string) {
-  const coverImages: Record<string, string> = {
-    "islas-flotantes-de-los-uros": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-    "isla-taquile": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-    "isla-amantani": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-    "complejo-arqueologico-de-sillustani": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-    "city-tour-puno": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-    "ruta-aymara": "https://images.unsplash.com/photo-1580619305218-8423a7ef79b4?auto=format&fit=crop&w=1600&q=80",
-  };
-
-  return coverImages[slug] || coverImages["islas-flotantes-de-los-uros"];
 }
 
 function MapPinGlyph() {

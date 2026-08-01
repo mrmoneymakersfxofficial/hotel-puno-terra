@@ -86,14 +86,6 @@
             "es": "Espacio adicional y ropero de la Habitacion Simple",
             "en": "Additional space and wardrobe in the Simple Room"
           }
-        },
-        {
-          "source": "Copia de IMG_6785.JPG",
-          "role": "alternate",
-          "alt": {
-            "es": "Otra perspectiva de la Habitacion Simple",
-            "en": "Alternate angle of the Simple Room"
-          }
         }
       ]
     },
@@ -171,22 +163,6 @@
           "alt": {
             "es": "Bano y ducha de la Habitacion Matrimonial",
             "en": "Bathroom and shower in the Queen Room"
-          }
-        },
-        {
-          "source": "D.JPG",
-          "role": "detail",
-          "alt": {
-            "es": "Detalle de cama y decoracion de la Habitacion Matrimonial",
-            "en": "Bed styling detail in the Queen Room"
-          }
-        },
-        {
-          "source": "06 - Matrimonial - 02.jpg",
-          "role": "alternate",
-          "alt": {
-            "es": "Otra perspectiva de la Habitacion Matrimonial",
-            "en": "Alternate angle of the Queen Room"
           }
         }
       ]
@@ -277,14 +253,6 @@
             "es": "Espacio adicional con escritorio en la Habitacion Doble",
             "en": "Additional space with desk in the Twin Room"
           }
-        },
-        {
-          "source": "A3.JPG",
-          "role": "alternate",
-          "alt": {
-            "es": "Otra perspectiva de la Habitacion Doble",
-            "en": "Alternate angle of the Twin Room"
-          }
         }
       ]
     },
@@ -374,20 +342,12 @@
             "es": "Detalle lateral de las camas en la Habitacion Triple",
             "en": "Lateral bed detail in the Triple Room"
           }
-        },
-        {
-          "source": "C4.JPG",
-          "role": "alternate",
-          "alt": {
-            "es": "Otra perspectiva de la Habitacion Triple",
-            "en": "Alternate angle of the Triple Room"
-          }
         }
       ]
     },
     {
       "folder": "10 HB SEXTUPLE CANDELARIA",
-      "slug": "habitacion-sextuple-candelaria",
+      "slug": "habitacion-sextuple",
       "title": {
         "es": "Habitacion Sextuple Candelaria",
         "en": "Sextuple Room Candelaria"
