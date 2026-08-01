@@ -18798,9 +18798,7 @@ body {
 /* Instagram-style horizontal scrollable strip with arrows */
 .hotel-room-carousel-strip-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0;
+  overflow: hidden;
 }
 
 .hotel-room-carousel-strip {
@@ -18814,8 +18812,6 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 4px 0;
-  flex: 1;
-  min-width: 0;
 }
 
 .hotel-room-carousel-strip::-webkit-scrollbar {
@@ -18851,11 +18847,11 @@ body {
 }
 
 .hotel-room-carousel-arrow-left {
-  left: -6px;
+  left: 4px;
 }
 
 .hotel-room-carousel-arrow-right {
-  right: -6px;
+  right: 4px;
 }
 
 .hotel-room-carousel-thumb {

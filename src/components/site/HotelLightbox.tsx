@@ -1,5 +1,6 @@
 "use client";
 
+import { createPortal } from "react-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type LightboxImage = {
@@ -29,7 +30,6 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
   const [, forceUpdate] = useState(0);
   const isDragging = useRef(false);
   const touchStartX = useRef<number | null>(null);
-  const lastTap = useRef<number>(0);
 
   // Sync index when lightbox opens
   useEffect(() => {
@@ -127,14 +127,14 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
     forceUpdate((n) => n + 1);
   };
 
-  const handleImageError = (index: number, fallbackSrc?: string) => {
+  const handleImageError = (index: number) => {
     failedRef.current.add(index);
     forceUpdate((n) => n + 1);
   };
 
   if (!open || images.length === 0) return null;
 
-  return (
+  const lightboxDOM = (
     <div
       ref={overlayRef}
       className="hlbx-overlay"
@@ -151,8 +151,9 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           inset: 0;
           z-index: 10000;
           background: rgba(0, 0, 0, 0.96);
-          display: flex;
-          flex-direction: column;
+          display: grid;
+          grid-template-rows: 56px 1fr 50px;
+          grid-template-columns: 1fr;
           animation: hlbx-in 0.2s ease;
           overscroll-behavior: contain;
         }
@@ -161,13 +162,11 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           to { opacity: 1; }
         }
         .hlbx-topbar {
-          position: relative;
-          z-index: 10002;
           display: flex;
           align-items: center;
           justify-content: space-between;
           padding: 12px 16px;
-          flex-shrink: 0;
+          z-index: 10002;
         }
         .hlbx-counter {
           color: rgba(255,255,255,0.85);
@@ -196,7 +195,6 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
         }
         .hlbx-close:hover { background: rgba(255,255,255,0.25); }
         .hlbx-scroller {
-          flex: 1;
           display: flex;
           overflow-x: auto;
           overflow-y: hidden;
@@ -205,16 +203,19 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           -ms-overflow-style: none;
           -webkit-overflow-scrolling: touch;
           scroll-behavior: smooth;
+          min-height: 0;
+          min-width: 0;
         }
         .hlbx-scroller::-webkit-scrollbar { display: none; }
         .hlbx-slide {
           flex: 0 0 100%;
           width: 100%;
-          scroll-snap-align: center;
+          scroll-snap-align: start;
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
+          overflow: hidden;
           min-height: 0;
         }
         .hlbx-img {
@@ -249,14 +250,12 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
         .hlbx-prev { left: 12px; }
         .hlbx-next { right: 12px; }
         .hlbx-bottombar {
-          position: relative;
-          z-index: 10002;
           display: flex;
           align-items: center;
           justify-content: center;
           gap: 6px;
-          padding: 14px 16px 20px;
-          flex-shrink: 0;
+          padding: 10px 16px 16px;
+          z-index: 10002;
         }
         .hlbx-dot {
           width: 7px;
@@ -296,9 +295,8 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           touchStartX.current = e.touches[0].clientX;
           isDragging.current = true;
         }}
-        onTouchMove={(e) => {
+        onTouchMove={() => {
           if (!isDragging.current || touchStartX.current === null || isZoomed) return;
-          // Let native scroll handle the swipe
         }}
         onTouchEnd={() => {
           isDragging.current = false;
@@ -325,7 +323,7 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
                 }}
                 draggable={false}
                 onLoad={() => handleImageLoad(i)}
-                onError={() => handleImageError(i, img.fallbackSrc)}
+                onError={() => handleImageError(i)}
               />
             </div>
           );
@@ -355,4 +353,6 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
       )}
     </div>
   );
+
+  return createPortal(lightboxDOM, document.body);
 }

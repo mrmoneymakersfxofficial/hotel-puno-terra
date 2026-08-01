@@ -19,6 +19,7 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
   const stripRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [hasOverflow, setHasOverflow] = useState(false);
   const slideCount = slides.length;
 
   const counterLabel = locale === "en" ? "photos" : "fotos";
@@ -27,29 +28,51 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
   const checkScroll = useCallback(() => {
     const el = stripRef.current;
     if (!el) return;
+    const overflow = el.scrollWidth > el.clientWidth + 2;
+    setHasOverflow(overflow);
     setCanScrollLeft(el.scrollLeft > 2);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
+    setCanScrollRight(overflow && el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
   }, []);
 
   useEffect(() => {
-    checkScroll();
     const el = stripRef.current;
     if (!el) return;
+    checkScroll();
     el.addEventListener("scroll", checkScroll, { passive: true });
     window.addEventListener("resize", checkScroll);
+
+    // MutationObserver to detect when next/image loads and adds sized elements
+    const mutationObserver = new MutationObserver(() => {
+      checkScroll();
+    });
+    mutationObserver.observe(el, { childList: true, subtree: true, attributes: true });
+
     return () => {
       el.removeEventListener("scroll", checkScroll);
       window.removeEventListener("resize", checkScroll);
+      mutationObserver.disconnect();
     };
+  }, [checkScroll]);
+
+  // Re-check after delays to catch lazy-loaded images
+  useEffect(() => {
+    const timers = [50, 200, 500, 1000, 2000, 4000].map((ms) =>
+      setTimeout(checkScroll, ms)
+    );
+    return () => timers.forEach(clearTimeout);
   }, [checkScroll]);
 
   const scrollByThumb = useCallback((direction: "left" | "right") => {
     const el = stripRef.current;
     if (!el) return;
     const thumbWidth = el.querySelector(".hotel-room-carousel-thumb")?.clientWidth || 200;
-    const scrollAmount = thumbWidth + 8; // 8 = gap
+    const scrollAmount = thumbWidth + 8;
     el.scrollBy({ left: direction === "right" ? scrollAmount : -scrollAmount, behavior: "smooth" });
   }, []);
+
+  // Fallback: always show right arrow if there are more than 3 slides
+  // (they won't all fit in the strip at once)
+  const showRightArrow = hasOverflow ? canScrollRight : slideCount > 3;
 
   return (
     <div className="hotel-room-carousel">
@@ -61,7 +84,7 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
 
       {/* Scrollable strip with arrows */}
       <div className="hotel-room-carousel-strip-wrapper">
-        {canScrollLeft && (
+        {(hasOverflow && canScrollLeft) && (
           <button
             className="hotel-room-carousel-arrow hotel-room-carousel-arrow-left"
             onClick={() => scrollByThumb("left")}
@@ -94,12 +117,13 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
                     current[slide.id] ? current : { ...current, [slide.id]: true }
                   )
                 }
+                onLoad={() => checkScroll()}
               />
             </div>
           ))}
         </div>
 
-        {canScrollRight && (
+        {showRightArrow && (
           <button
             className="hotel-room-carousel-arrow hotel-room-carousel-arrow-right"
             onClick={() => scrollByThumb("right")}
