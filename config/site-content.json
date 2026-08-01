@@ -307,13 +307,13 @@
     "timelineLabel": "Check-out",
     "options": [
       {
-        "id": "habitacion-estandar",
-        "label": "Habitacion Estandar",
-        "roomType": "Habitacion Estandar",
+        "id": "habitacion-simple",
+        "label": "Habitacion Simple",
+        "roomType": "Habitacion Simple",
         "price": "S/ 150",
         "rateLabel": "por noche",
         "stayLabel": "1 noche",
-        "summary": "Habitacion con aire acondicionado, WiFi gratis, baño privado, TV pantalla plana, escritorio y caja fuerte.",
+        "summary": "Habitacion con 1 cama de 2 plazas, aire acondicionado, WiFi gratis, baño privado, TV pantalla plana, escritorio y caja fuerte.",
         "perks": [
           "Desayuno buffet",
           "WiFi gratis",
@@ -321,7 +321,7 @@
           "Caja fuerte"
         ],
         "emoji": "",
-        "badge": "Estandar",
+        "badge": "Simple",
         "highlighted": false
       },
       {

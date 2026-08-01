@@ -1,11 +1,11 @@
 {
   "rooms": [
     {
-      "folder": "1 HB. INDIVIDUAL",
-      "slug": "habitacion-individual",
+      "folder": "1 HB. SIMPLE",
+      "slug": "habitacion-simple",
       "title": {
-        "es": "Habitacion Individual",
-        "en": "Single Room"
+        "es": "Habitacion Simple",
+        "en": "Simple Room"
       },
       "summary": {
         "es": "1 cama de 2 plazas, aire acondicionado y ducha con hidromasajes.",
@@ -59,40 +59,40 @@
           "source": "_MAC0510.JPG",
           "role": "general",
           "alt": {
-            "es": "Vista general de la Habitacion Individual",
-            "en": "Wide view of the Single Room"
+            "es": "Vista general de la Habitacion Simple",
+            "en": "Wide view of the Simple Room"
           }
         },
         {
           "source": "Copia de IMG_6790.JPG",
           "role": "main",
           "alt": {
-            "es": "Cama principal de la Habitacion Individual",
-            "en": "Main bed in the Single Room"
+            "es": "Cama principal de la Habitacion Simple",
+            "en": "Main bed in the Simple Room"
           }
         },
         {
           "source": "04.JPG",
           "role": "bath",
           "alt": {
-            "es": "Bano y ducha de la Habitacion Individual",
-            "en": "Bathroom and shower in the Single Room"
+            "es": "Bano y ducha de la Habitacion Simple",
+            "en": "Bathroom and shower in the Simple Room"
           }
         },
         {
           "source": "06.JPG",
           "role": "detail",
           "alt": {
-            "es": "Espacio adicional y ropero de la Habitacion Individual",
-            "en": "Additional space and wardrobe in the Single Room"
+            "es": "Espacio adicional y ropero de la Habitacion Simple",
+            "en": "Additional space and wardrobe in the Simple Room"
           }
         },
         {
           "source": "Copia de IMG_6785.JPG",
           "role": "alternate",
           "alt": {
-            "es": "Otra perspectiva de la Habitacion Individual",
-            "en": "Alternate angle of the Single Room"
+            "es": "Otra perspectiva de la Habitacion Simple",
+            "en": "Alternate angle of the Simple Room"
           }
         }
       ]
