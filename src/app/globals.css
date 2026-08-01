@@ -18599,9 +18599,12 @@ body {
 
 /* Content below the carousel */
 .hotel-room-gallery-card-content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
   gap: clamp(18px, 2.5vw, 26px);
-  padding: clamp(22px, 3vw, 36px);
+  padding: clamp(22px, 3vw, 36px) clamp(22px, 4vw, 48px);
   background:
     radial-gradient(circle at top right, rgba(211, 173, 97, 0.05), transparent 26%),
     linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
@@ -18628,6 +18631,13 @@ body {
   justify-items: center;
   text-align: center;
   gap: 12px;
+  width: 100%;
+}
+
+/* In card-content mode, CTA desktop is centered below the copy */
+.hotel-room-gallery-card-content .hotel-room-gallery-cta.hotel-room-gallery-cta-desktop {
+  justify-self: center;
+  grid-column: 1;
 }
 
 .hotel-room-gallery-card-copy {
@@ -18705,6 +18715,11 @@ body {
   flex-shrink: 0;
 }
 
+/* In card-content mode, CTA is centered */
+.hotel-room-gallery-card-content .hotel-room-gallery-cta {
+  justify-self: center;
+}
+
 .hotel-room-gallery-card-spacer {
   display: block;
 }
@@ -18724,10 +18739,12 @@ body {
 
 /* Legacy card-body kept for backward compatibility; new layout uses card-content */
 .hotel-room-gallery-card-content {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: center;
   gap: clamp(18px, 2.5vw, 26px);
-  padding: clamp(22px, 3vw, 36px);
+  padding: clamp(22px, 3vw, 36px) clamp(22px, 4vw, 48px);
   background:
     radial-gradient(circle at top right, rgba(211, 173, 97, 0.05), transparent 26%),
     linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
@@ -18761,7 +18778,8 @@ body {
 .hotel-room-gallery-card-content .hotel-room-gallery-details {
   text-align: center;
   justify-items: center;
-  max-width: 680px;
+  max-width: 780px;
+  width: 100%;
   margin-inline: auto;
   border: none;
   border-radius: 0;
@@ -18773,21 +18791,26 @@ body {
 
 .hotel-room-gallery-card-content .hotel-room-gallery-details-copy {
   text-align: center;
+  justify-items: center;
 }
 
 .hotel-room-gallery-card-content .hotel-room-gallery-feature-list {
   text-align: center;
   justify-items: center;
+  justify-content: center;
 }
 
 .hotel-room-gallery-card-content .hotel-room-gallery-footer {
   justify-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .hotel-room-gallery-details-copy {
   display: grid;
   gap: 10px;
+  justify-items: center;
+  text-align: center;
 }
 
 .hotel-room-gallery-details-copy strong,
@@ -18878,6 +18901,9 @@ body {
   gap: 6px;
   padding-top: 4px;
   border-top: 1px solid rgba(136, 108, 69, 0.12);
+  justify-items: center;
+  text-align: center;
+  justify-self: center;
 }
 
 /* In card-content mode, price block is centered inline */
@@ -18886,22 +18912,26 @@ body {
   justify-items: center;
   border-top: none;
   padding-top: 0;
+  justify-self: center;
+  width: auto;
 }
 
 .hotel-room-gallery-footer {
-  display: grid;
-  gap: 14px;
-}
-
-/* In card-content mode, footer is centered */
-.hotel-room-gallery-card-content .hotel-room-gallery-footer {
-  justify-items: center;
-  text-align: center;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 18px;
+}
+
+/* In card-content mode, footer is centered - stacked vertically */
+.hotel-room-gallery-card-content .hotel-room-gallery-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
 .hotel-room-gallery-price-block strong {
@@ -19529,11 +19559,25 @@ body {
     scroll-margin-top: 92px;
   }
 
-  .hotel-room-gallery-section {
+  .page-shell.mode-reference-clone-hotel .hotel-room-gallery-section {
     padding: 18px 0 0;
     border-radius: 0;
     border: none;
     box-shadow: none;
+    margin-inline: -9px;
+    width: calc(100% + 18px);
+    max-width: none;
+  }
+
+  /* Allow room gallery to break out of the shell */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-shell {
+    overflow: visible;
+  }
+
+  /* Hero is full width within the section */
+  .hotel-room-gallery-card-hero {
+    margin-inline: 0;
+    width: 100%;
   }
 
   .hotel-room-gallery-section-heading h2 {
@@ -19552,7 +19596,7 @@ body {
   .hotel-room-gallery-card-head {
     grid-template-columns: minmax(0, 1fr);
     align-items: stretch;
-    padding-inline: 12px;
+    padding-inline: 0;
   }
 
   .hotel-room-gallery-card-copy {
@@ -19594,7 +19638,7 @@ body {
   .hotel-room-gallery-card-content {
     grid-template-columns: minmax(0, 1fr);
     gap: 20px;
-    padding: 18px 16px 24px;
+    padding: 18px 20px 24px;
     border: none;
     border-radius: 0;
     background:
@@ -19642,6 +19686,16 @@ body {
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: end;
     gap: 14px;
+  }
+
+  .hotel-room-gallery-card-content .hotel-room-gallery-footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
   }
 
   .hotel-room-gallery-price-block {
@@ -19712,8 +19766,7 @@ body {
   .page-shell.mode-reference-clone-hotel .hotel-home-location,
   .page-shell.mode-reference-clone-hotel .hotel-home-testimonials,
   .page-shell.mode-reference-clone-hotel .scene-landing-faq,
-  .page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-cta,
-  .hotel-room-gallery-section {
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-cta {
     margin-inline: 0;
   }
 
@@ -19738,12 +19791,25 @@ body {
     font-size: 0.92rem;
   }
 
-  .hotel-room-gallery-section {
+  .page-shell.mode-reference-clone-hotel .hotel-room-gallery-section {
     padding: 18px 0 0;
     border-radius: 0;
     border: none;
-    margin-inline: 0;
+    margin-inline: calc(-1 * var(--hotel-mobile-inline-gutter));
+    width: calc(100% + var(--hotel-mobile-inline-gutter) * 2);
+    max-width: none;
     box-shadow: none;
+  }
+
+  /* Make the shell allow overflow for the room gallery section to be full bleed */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-shell {
+    overflow: visible;
+  }
+
+  /* Hero is full width within the section */
+  .hotel-room-gallery-card-hero {
+    margin-inline: 0;
+    width: 100%;
   }
 
   .hotel-room-gallery-card {
@@ -19755,7 +19821,7 @@ body {
   }
 
   .hotel-room-gallery-card-content {
-    padding: 18px 16px 24px;
+    padding: 18px 20px 24px;
     border-radius: 0;
     border: none;
     background:
@@ -19825,10 +19891,9 @@ body {
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-footer {
-    justify-items: center;
     text-align: center;
-    flex-wrap: wrap;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 12px;
@@ -20324,11 +20389,17 @@ body {
   .page-shell.mode-reference-clone-hotel .hotel-home-location,
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-cta,
   .page-shell.mode-reference-clone-hotel .hotel-social-section,
-  .page-shell.mode-reference-clone-hotel .hotel-deluxe-footer,
-  .hotel-room-gallery-section {
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-footer {
     width: 100%;
     max-width: 100%;
     margin-inline: auto;
+  }
+
+  /* Room gallery section is full bleed - no margin constraint */
+  .page-shell.mode-reference-clone-hotel .hotel-room-gallery-section {
+    width: calc(100% + var(--hotel-mobile-inline-gutter) * 2);
+    max-width: none;
+    margin-inline: calc(-1 * var(--hotel-mobile-inline-gutter));
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-home-testimonials {
