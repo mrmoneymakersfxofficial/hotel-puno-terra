@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { HotelLocale } from "@/lib/hotel-experience";
 import type { HotelRoomGallerySlide } from "@/lib/hotel-room-gallery";
+import { HotelLightbox } from "./HotelLightbox";
 
 type HotelRoomGalleryCarouselProps = {
   locale: HotelLocale;
@@ -14,6 +15,8 @@ type HotelRoomGalleryCarouselProps = {
 export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoomGalleryCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [fallbackSlides, setFallbackSlides] = useState<Record<string, boolean>>({});
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
   const slideCount = slides.length;
@@ -118,7 +121,7 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
         <div className="hotel-room-carousel-track" style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}>
           {slides.map((slide, index) => (
             <figure className="hotel-room-carousel-slide" key={slide.id}>
-              <div className="hotel-room-carousel-media">
+              <div className="hotel-room-carousel-media" style={{ cursor: 'pointer' }} onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}>
                 {visibleIndexes.has(index) ? (
                   <Image
                     alt={slide.alt}
@@ -164,6 +167,13 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
           ))}
         </div>
       ) : null}
+
+      <HotelLightbox
+        images={slides.map((s) => ({ src: s.jpgSrc, alt: s.alt }))}
+        initialIndex={lightboxIndex}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </div>
   );
 }
