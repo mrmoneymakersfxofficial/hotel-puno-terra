@@ -878,6 +878,79 @@
           }
         }
       ]
+    },
+    {
+      "folder": "10 HB SEXTUPLE CANDELARIA",
+      "slug": "habitacion-sextuple-candelaria",
+      "title": {
+        "es": "Habitacion Sextuple Candelaria",
+        "en": "Sextuple Room Candelaria"
+      },
+      "summary": {
+        "es": "6 camas, ideal para la Fiesta de la Candelaria y grupos grandes.",
+        "en": "6 beds, ideal for the Candelaria Festival and large groups."
+      },
+      "signatureWords": [
+        {
+          "es": "Grupal",
+          "en": "Group"
+        },
+        {
+          "es": "Festiva",
+          "en": "Festive"
+        },
+        {
+          "es": "Espaciosa",
+          "en": "Spacious"
+        }
+      ],
+      "details": {
+        "price": {
+          "es": "S/ 350",
+          "en": "S/ 350"
+        },
+        "features": [
+          {
+            "es": "6 camas individuales o configuracion flexible.",
+            "en": "6 single beds or flexible configuration."
+          },
+          {
+            "es": "Aire acondicionado y TV Smart con intercomunicador.",
+            "en": "Air conditioning and Smart TV with intercom."
+          },
+          {
+            "es": "Frigobar, ropero empotrado y WiFi.",
+            "en": "Minibar, built-in wardrobe and Wi-Fi."
+          },
+          {
+            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
+            "en": "Spanish-style hydromassage shower with hot and cold water."
+          },
+          {
+            "es": "Ideal para la Fiesta de la Candelaria y grupos.",
+            "en": "Ideal for the Candelaria Festival and groups."
+          }
+        ]
+      },
+      "descriptiveSource": "habitacion-sextuple-01.jpg",
+      "selected": [
+        {
+          "source": "habitacion-sextuple-01.jpg",
+          "role": "main",
+          "alt": {
+            "es": "Vista principal de la Habitacion Sextuple Candelaria",
+            "en": "Main view of the Sextuple Candelaria Room"
+          }
+        },
+        {
+          "source": "habitacion-sextuple-02.jpg",
+          "role": "general",
+          "alt": {
+            "es": "Otra perspectiva de la Habitacion Sextuple Candelaria",
+            "en": "Alternate view of the Sextuple Candelaria Room"
+          }
+        }
+      ]
     }
   ]
 }

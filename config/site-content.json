@@ -5,11 +5,11 @@
     "description": "Hotel Puno Terra ofrece habitaciones con aire acondicionado, WiFi gratis, baño privado, TV de pantalla plana y caja fuerte. Desayuno buffet o continental disponible. Recepcion 24 horas, servicio de habitaciones y organizacion de tours.",
     "subheadline": "A 3 min de Plaza de Armas. WiFi gratis, desayuno buffet, recepcion 24 horas.",
     "primaryCtaLabel": "Reservar",
-    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51941714132&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Hotel%20Puno%20Terra*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
+    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51951669969&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Hotel%20Puno%20Terra*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
     "secondaryCtaLabel": "Ver habitaciones",
     "secondaryCtaHref": "#habitaciones",
     "heroTag": "HOTEL PUNO TERRA",
-    "heroImageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
+    "heroImageSrc": "/assets/hero/hero-premium-1.webp",
     "heroImagePosition": {
       "x": 50,
       "y": 50
@@ -262,8 +262,8 @@
   "contact": {
     "title": "Confirma tu fecha y reserva directamente",
     "description": "Comparte tus fechas, tipo de habitacion y numero de huespedes. El equipo de Hotel Puno Terra te responde con disponibilidad y tarifa directa por WhatsApp.",
-    "whatsappNumber": "+51 941 714 132",
-    "email": ""
+    "whatsappNumber": "+51 951 669 969",
+    "email": "reservaspunoterra@gmail.com"
   },
   "bookingWidget": {
     "preset": "hotel",
@@ -307,13 +307,31 @@
     "timelineLabel": "Check-out",
     "options": [
       {
-        "id": "habitacion-simple",
-        "label": "Habitacion Simple",
-        "roomType": "Habitacion Simple",
+        "id": "habitacion-individual",
+        "label": "Habitacion Individual",
+        "roomType": "Habitacion Individual",
+        "price": "S/ 129",
+        "rateLabel": "por noche",
+        "stayLabel": "1 noche",
+        "summary": "1 cama de 2 plazas, aire acondicionado y ducha con hidromasajes.",
+        "perks": [
+          "Desayuno buffet",
+          "WiFi gratis",
+          "Aire acondicionado",
+          "Ducha hidromasajes"
+        ],
+        "emoji": "",
+        "badge": "Individual",
+        "highlighted": false
+      },
+      {
+        "id": "habitacion-doble",
+        "label": "Habitacion Doble",
+        "roomType": "Habitacion Doble",
         "price": "S/ 150",
         "rateLabel": "por noche",
         "stayLabel": "1 noche",
-        "summary": "Habitacion con 1 cama de 2 plazas, aire acondicionado, WiFi gratis, baño privado, TV pantalla plana, escritorio y caja fuerte.",
+        "summary": "2 camas de 2 plazas, aire acondicionado y baño completo.",
         "perks": [
           "Desayuno buffet",
           "WiFi gratis",
@@ -321,43 +339,61 @@
           "Caja fuerte"
         ],
         "emoji": "",
-        "badge": "Simple",
+        "badge": "Doble",
         "highlighted": false
       },
       {
-        "id": "habitacion-superior",
-        "label": "Habitacion Superior",
-        "roomType": "Habitacion Superior",
-        "price": "S/ 220",
+        "id": "habitacion-matrimonial",
+        "label": "Habitacion Matrimonial",
+        "roomType": "Habitacion Matrimonial",
+        "price": "S/ 180",
         "rateLabel": "por noche",
         "stayLabel": "1 noche",
-        "summary": "Habitacion mas amplia con baño privado completo, bañera o ducha, secador de pelo, zona de estar y escritorio.",
+        "summary": "1 cama queen con iluminacion amplia y vista exterior.",
         "perks": [
           "Desayuno buffet",
           "WiFi gratis",
-          "Baño con bañera",
-          "Zona de estar"
+          "Cama Queen",
+          "Vista exterior"
         ],
         "emoji": "",
-        "badge": "Superior",
+        "badge": "Matrimonial",
         "highlighted": true
       },
       {
-        "id": "habitacion-familiar",
-        "label": "Habitacion Familiar",
-        "roomType": "Habitacion Familiar",
-        "price": "S/ 280",
+        "id": "habitacion-triple",
+        "label": "Habitacion Triple",
+        "roomType": "Habitacion Triple",
+        "price": "S/ 220",
         "rateLabel": "por noche",
-        "stayLabel": "2 noches",
-        "summary": "Habitacion familiar amplia para grupos pequenos, con aire acondicionado, TV cable, baño privado y escritorio.",
+        "stayLabel": "1 noche",
+        "summary": "3 camas, ideal para grupos pequeños o familias.",
         "perks": [
           "Desayuno buffet",
           "WiFi gratis",
-          "Habitacion familiar",
-          "Servicio de habitaciones"
+          "Aire acondicionado",
+          "Espaciosa"
         ],
         "emoji": "",
-        "badge": "Familiar",
+        "badge": "Triple",
+        "highlighted": false
+      },
+      {
+        "id": "habitacion-sextuple",
+        "label": "Habitacion Sextuple Candelaria",
+        "roomType": "Habitacion Sextuple Candelaria",
+        "price": "S/ 350",
+        "rateLabel": "por noche",
+        "stayLabel": "2 noches",
+        "summary": "6 camas, ideal para la Fiesta de la Candelaria y grupos grandes.",
+        "perks": [
+          "Desayuno buffet",
+          "WiFi gratis",
+          "6 camas",
+          "Ideal para Candelaria"
+        ],
+        "emoji": "",
+        "badge": "Sextuple",
         "highlighted": false
       }
     ]
@@ -378,11 +414,11 @@
     "items": []
   },
   "location": {
-    "address": "Plaza de Armas, Puno",
+    "address": "Jr. Cajamarca 247, Cercado a dos cuadras de la Plaza de Armas de Puno",
     "city": "Puno, Puno, Peru",
     "hours": "Recepcion 24 horas. Check-in 12:00-13:00, Check-out 10:00-10:30",
-    "mapsEmbedUrl": "https://www.google.com/maps?q=Hotel%20Puno%20Terra%2C%20Puno%2C%20Peru&output=embed",
-    "mapsLink": "https://www.google.com/maps?q=Hotel%20Puno%20Terra%2C%20Puno%2C%20Peru"
+    "mapsEmbedUrl": "https://www.google.com/maps?q=Jr.+Cajamarca+247,+Puno,+Peru&output=embed",
+    "mapsLink": "https://www.google.com/maps?q=Jr.+Cajamarca+247,+Puno,+Peru"
   },
   "visibility": {
     "highlights": [

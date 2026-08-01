@@ -3,8 +3,8 @@ import type { SiteContent } from "@/types/site";
 export type HotelLocale = "es" | "en";
 
 export const HOTEL_LOCALE_STORAGE_KEY = "hotelPunoTerra-locale";
-export const HOTEL_WHATSAPP_PHONE_DISPLAY = "+51 941 714 132";
-export const HOTEL_WHATSAPP_PHONE_DIGITS = "51941714132";
+export const HOTEL_WHATSAPP_PHONE_DISPLAY = "+51 951 669 969";
+export const HOTEL_WHATSAPP_PHONE_DIGITS = "51951669969";
 const HOTEL_WHATSAPP_BASE_URL = "https://api.whatsapp.com/send/";
 
 type HotelUiCopy = {
@@ -855,9 +855,9 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       : withPhone.bookingWidget,
     location: {
       ...withPhone.location,
-      address: withPhone.location?.address || "Puno, Peru",
-      city: "Puno, San Martin, Peru",
-      hours: "24-hour reception and one block from the airport",
+      address: withPhone.location?.address || "Jr. Cajamarca 247, Puno, Peru",
+      city: "Puno, Puno, Peru",
+      hours: "Recepcion 24 horas. Check-in 12:00-13:00, Check-out 10:00-10:30",
     },
   };
 }
