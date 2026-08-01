@@ -17,20 +17,21 @@ type HotelLightboxProps = {
 
 export function HotelLightbox({ images, initialIndex = 0, open, onClose }: HotelLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchDelta, setTouchDelta] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [scale, setScale] = useState(1);
   const [panX, setPanX] = useState(0);
   const [panY, setPanY] = useState(0);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
-  const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
   const overlayRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-
-  // Sync index when initialIndex changes (e.g. opening lightbox on a specific image)
   const prevOpen = useRef(false);
+  const loadedRef = useRef<Set<number>>(new Set());
+  const failedRef = useRef<Set<number>>(new Set());
+  const [, forceUpdate] = useState(0);
+  const isDragging = useRef(false);
+  const touchStartX = useRef<number | null>(null);
+  const lastTap = useRef<number>(0);
+
+  // Sync index when lightbox opens
   useEffect(() => {
     if (open && !prevOpen.current) {
       setCurrentIndex(initialIndex);
@@ -45,16 +46,13 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           }
         }
       });
-      // Mark all images as needing load
-      setLoadedImages(new Set());
-      setFailedImages(new Set());
     }
-    if (!open) {
+    if (!open && prevOpen.current) {
       document.body.style.overflow = "";
     }
     prevOpen.current = open;
     return () => {
-      if (!open) document.body.style.overflow = "";
+      document.body.style.overflow = "";
     };
   }, [open, initialIndex]);
 
@@ -124,51 +122,14 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
     }
   }, [currentIndex, images.length, isZoomed]);
 
-  // Touch handlers for swipe (when not zoomed)
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (isZoomed) return;
-    setTouchStart(e.touches[0].clientX);
-    setTouchDelta(0);
-    isDragging.current = true;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStart === null || isZoomed || !isDragging.current) return;
-    const delta = e.touches[0].clientX - touchStart;
-    setTouchDelta(delta);
-  };
-
-  const handleTouchEnd = () => {
-    if (touchStart === null || isZoomed || !isDragging.current) return;
-    isDragging.current = false;
-    const threshold = 80;
-    if (touchDelta < -threshold) goTo(currentIndex + 1);
-    else if (touchDelta > threshold) goTo(currentIndex - 1);
-    setTouchStart(null);
-    setTouchDelta(0);
-  };
-
-  // Double-tap zoom
-  const lastTap = useRef<number>(0);
-  const handleDoubleTap = () => {
-    const now = Date.now();
-    if (now - lastTap.current < 300) {
-      if (isZoomed) {
-        resetZoom();
-      } else {
-        setIsZoomed(true);
-        setScale(2.5);
-      }
-    }
-    lastTap.current = now;
-  };
-
   const handleImageLoad = (index: number) => {
-    setLoadedImages((prev) => new Set(prev).add(index));
+    loadedRef.current.add(index);
+    forceUpdate((n) => n + 1);
   };
 
-  const handleImageError = (index: number) => {
-    setFailedImages((prev) => new Set(prev).add(index));
+  const handleImageError = (index: number, fallbackSrc?: string) => {
+    failedRef.current.add(index);
+    forceUpdate((n) => n + 1);
   };
 
   if (!open || images.length === 0) return null;
@@ -263,11 +224,6 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           user-select: none;
           -webkit-user-drag: none;
           border-radius: 6px;
-          opacity: 1;
-          transition: opacity 0.15s ease;
-        }
-        .hlbx-img.loading {
-          opacity: 0.3;
         }
         .hlbx-nav {
           position: absolute;
@@ -335,31 +291,41 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
         ref={scrollerRef}
         className="hlbx-scroller"
         onScroll={handleScroll}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-        onClick={handleDoubleTap}
+        onTouchStart={(e) => {
+          if (isZoomed) return;
+          touchStartX.current = e.touches[0].clientX;
+          isDragging.current = true;
+        }}
+        onTouchMove={(e) => {
+          if (!isDragging.current || touchStartX.current === null || isZoomed) return;
+          // Let native scroll handle the swipe
+        }}
+        onTouchEnd={() => {
+          isDragging.current = false;
+          touchStartX.current = null;
+        }}
       >
         {images.map((img, i) => {
-          const useFallback = failedImages.has(i) && img.fallbackSrc;
+          const useFallback = failedRef.current.has(i) && img.fallbackSrc;
           const src = useFallback ? img.fallbackSrc! : img.src;
-          const isLoaded = loadedImages.has(i);
+          const isLoaded = loadedRef.current.has(i);
           return (
-            <div className="hlbx-slide" key={`${i}-${img.src}`}>
+            <div className="hlbx-slide" key={`lb-${i}-${img.src}`}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={src}
                 alt={img.alt || ""}
-                className={`hlbx-img${isLoaded ? "" : " loading"}`}
+                className="hlbx-img"
                 style={{
+                  opacity: isLoaded ? 1 : 0.6,
                   transform: i === currentIndex && isZoomed
                     ? `scale(${scale}) translate(${panX}px, ${panY}px)`
                     : undefined,
-                  transition: isZoomed ? "transform 0.15s ease" : undefined,
+                  transition: isZoomed ? "transform 0.15s ease" : "opacity 0.2s ease",
                 }}
                 draggable={false}
                 onLoad={() => handleImageLoad(i)}
-                onError={() => handleImageError(i)}
+                onError={() => handleImageError(i, img.fallbackSrc)}
               />
             </div>
           );
