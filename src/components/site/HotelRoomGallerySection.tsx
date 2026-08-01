@@ -96,31 +96,37 @@ export function HotelRoomGallerySection({
       <div className="hotel-room-gallery-list">
         {rooms.map((room) => (
           <article className="hotel-room-gallery-card" id={room.slug} key={room.slug}>
-            <div className="hotel-room-gallery-card-head">
-              <div className="hotel-room-gallery-card-copy">
-                <h3 className="hotel-room-gallery-card-title-mobile">{room.title}</h3>
-                <div className="hotel-room-gallery-word-mark" aria-label={`${room.title}: signature words`}>
-                  {room.signatureWords.slice(0, 3).map((word, index) => (
-                    <span key={`${room.slug}-${word}`}>
-                      {index > 0 ? <i aria-hidden="true">|</i> : null}
-                      <b>{word}</b>
-                    </span>
-                  ))}
-                </div>
-              </div>
-              {onReserveRoom ? (
-                <button className="primary-button hotel-room-gallery-cta hotel-room-gallery-cta-desktop" onClick={() => onReserveRoom(room)} type="button">
-                  {copy.cta}
-                </button>
-              ) : (
-                <a className="primary-button hotel-room-gallery-cta hotel-room-gallery-cta-desktop" href={room.reservationHref}>
-                  {copy.cta}
-                </a>
-              )}
-              <span aria-hidden="true" className="hotel-room-gallery-card-spacer" />
+            {/* Hero carousel on top for both mobile and PC */}
+            <div className="hotel-room-gallery-card-hero">
+              <HotelRoomGalleryCarousel locale={locale} roomTitle={room.title} slides={room.slides} />
             </div>
 
-            <div className="hotel-room-gallery-card-body">
+            {/* Content below the carousel */}
+            <div className="hotel-room-gallery-card-content">
+              <div className="hotel-room-gallery-card-head">
+                <div className="hotel-room-gallery-card-copy">
+                  <h3 className="hotel-room-gallery-card-title-mobile">{room.title}</h3>
+                  <div className="hotel-room-gallery-word-mark" aria-label={`${room.title}: signature words`}>
+                    {room.signatureWords.slice(0, 3).map((word, index) => (
+                      <span key={`${room.slug}-${word}`}>
+                        {index > 0 ? <i aria-hidden="true">|</i> : null}
+                        <b>{word}</b>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {onReserveRoom ? (
+                  <button className="primary-button hotel-room-gallery-cta hotel-room-gallery-cta-desktop" onClick={() => onReserveRoom(room)} type="button">
+                    {copy.cta}
+                  </button>
+                ) : (
+                  <a className="primary-button hotel-room-gallery-cta hotel-room-gallery-cta-desktop" href={room.reservationHref}>
+                    {copy.cta}
+                  </a>
+                )}
+                <span aria-hidden="true" className="hotel-room-gallery-card-spacer" />
+              </div>
+
               <aside className="hotel-room-gallery-details">
                 <div className="hotel-room-gallery-details-copy">
                   <strong>{copy.details}</strong>
@@ -153,8 +159,6 @@ export function HotelRoomGallerySection({
                   )}
                 </div>
               </aside>
-
-              <HotelRoomGalleryCarousel locale={locale} roomTitle={room.title} slides={room.slides} />
             </div>
           </article>
         ))}

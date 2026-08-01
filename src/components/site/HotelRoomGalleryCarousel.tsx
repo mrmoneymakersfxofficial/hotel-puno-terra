@@ -20,11 +20,12 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const [hasOverflow, setHasOverflow] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
   const slideCount = slides.length;
 
   const counterLabel = locale === "en" ? "photos" : "fotos";
 
-  // Check scroll position for arrow visibility
+  // Check scroll position for arrow visibility & active dot
   const checkScroll = useCallback(() => {
     const el = stripRef.current;
     if (!el) return;
@@ -32,7 +33,12 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
     setHasOverflow(overflow);
     setCanScrollLeft(el.scrollLeft > 2);
     setCanScrollRight(overflow && el.scrollLeft < el.scrollWidth - el.clientWidth - 2);
-  }, []);
+
+    // Calculate active slide index based on scroll position
+    const thumbWidth = el.querySelector(".hotel-room-carousel-thumb")?.clientWidth || 200;
+    const index = Math.round(el.scrollLeft / (thumbWidth + 8));
+    setActiveSlide(Math.min(index, slideCount - 1));
+  }, [slideCount]);
 
   useEffect(() => {
     const el = stripRef.current;
@@ -70,9 +76,17 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
     el.scrollBy({ left: direction === "right" ? scrollAmount : -scrollAmount, behavior: "smooth" });
   }, []);
 
+  const scrollToSlide = useCallback((index: number) => {
+    const el = stripRef.current;
+    if (!el) return;
+    const thumbWidth = el.querySelector(".hotel-room-carousel-thumb")?.clientWidth || 200;
+    el.scrollTo({ left: index * (thumbWidth + 8), behavior: "smooth" });
+  }, []);
+
   // Fallback: always show right arrow if there are more than 3 slides
   // (they won't all fit in the strip at once)
-  const showRightArrow = hasOverflow ? canScrollRight : slideCount > 3;
+  const showRightArrow = hasOverflow ? canScrollRight : slideCount > 1;
+  const showLeftArrow = hasOverflow ? canScrollLeft : false;
 
   return (
     <div className="hotel-room-carousel">
@@ -110,7 +124,7 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
                 className="hotel-room-carousel-thumb-image"
                 draggable={false}
                 fill
-                sizes="(max-width: 640px) 45vw, (max-width: 860px) 30vw, 22vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 860px) 100vw, 80vw"
                 src={fallbackSlides[slide.id] ? slide.jpgSrc : slide.webpSrc}
                 onError={() =>
                   setFallbackSlides((current) =>
@@ -133,6 +147,20 @@ export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoo
           </button>
         )}
       </div>
+
+      {/* Dot indicators for hero mode */}
+      {slideCount > 1 && (
+        <div className="hotel-room-carousel-dots" aria-label="Slide indicators">
+          {slides.map((_, index) => (
+            <button
+              key={`dot-${index}`}
+              className={`hotel-room-carousel-dot${index === activeSlide ? " is-active" : ""}`}
+              onClick={() => scrollToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
 
       <HotelLightbox
         images={slides.map((s) => ({ src: s.webpSrc, fallbackSrc: s.jpgSrc, alt: s.alt }))}
