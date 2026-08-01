@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { HotelLocale } from "@/lib/hotel-experience";
 import type { HotelRoomGallerySlide } from "@/lib/hotel-room-gallery";
 import { HotelLightbox } from "./HotelLightbox";
@@ -13,160 +13,49 @@ type HotelRoomGalleryCarouselProps = {
 };
 
 export function HotelRoomGalleryCarousel({ locale, roomTitle, slides }: HotelRoomGalleryCarouselProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [fallbackSlides, setFallbackSlides] = useState<Record<string, boolean>>({});
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
-  const [touchCurrentX, setTouchCurrentX] = useState<number | null>(null);
+  const [fallbackSlides, setFallbackSlides] = useState<Record<string, boolean>>({});
   const slideCount = slides.length;
 
-  const labels = useMemo(
-    () => ({
-      counter: locale === "en" ? "photos" : "fotos",
-      next: locale === "en" ? "Next image" : "Imagen siguiente",
-      previous: locale === "en" ? "Previous image" : "Imagen anterior",
-      roles: {
-        alternate: locale === "en" ? "Alternate angle" : "Otra perspectiva",
-        bath: locale === "en" ? "Bathroom" : "Baño",
-        detail: locale === "en" ? "Detail" : "Detalle",
-        general: locale === "en" ? "Wide view" : "Vista general",
-        main: locale === "en" ? "Main bed" : "Area principal",
-      },
-    }),
-    [locale],
-  );
-
-  const visibleIndexes = useMemo(() => {
-    const indexes = new Set<number>();
-    indexes.add(activeIndex);
-
-    if (slideCount > 1) {
-      indexes.add((activeIndex + 1) % slideCount);
-      indexes.add((activeIndex - 1 + slideCount) % slideCount);
-    }
-
-    return indexes;
-  }, [activeIndex, slideCount]);
-
-  const goTo = (index: number) => {
-    setActiveIndex((index + slideCount) % slideCount);
-  };
-
-  const goNext = () => goTo(activeIndex + 1);
-  const goPrevious = () => goTo(activeIndex - 1);
-
-  const handleTouchEnd = () => {
-    if (touchStartX === null || touchCurrentX === null) {
-      setTouchStartX(null);
-      setTouchCurrentX(null);
-      return;
-    }
-
-    const delta = touchCurrentX - touchStartX;
-    if (Math.abs(delta) > 42) {
-      if (delta < 0) {
-        goNext();
-      } else {
-        goPrevious();
-      }
-    }
-
-    setTouchStartX(null);
-    setTouchCurrentX(null);
-  };
+  const counterLabel = locale === "en" ? "photos" : "fotos";
 
   return (
     <div className="hotel-room-carousel">
       <div className="hotel-room-carousel-head">
         <p>
-          <strong>{slideCount}</strong> {labels.counter}
+          <strong>{slideCount}</strong> {counterLabel}
         </p>
-        {slideCount > 1 ? (
-          <div className="hotel-room-carousel-controls">
-            <button
-              aria-label={`${labels.previous}: ${roomTitle}`}
-              className="hotel-room-carousel-button"
-              onClick={goPrevious}
-              type="button"
-            >
-              <svg aria-hidden="true" fill="none" height="16" viewBox="0 0 16 16" width="16">
-                <path d="M9.75 3.5 5.25 8l4.5 4.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" />
-              </svg>
-            </button>
-            <button
-              aria-label={`${labels.next}: ${roomTitle}`}
-              className="hotel-room-carousel-button"
-              onClick={goNext}
-              type="button"
-            >
-              <svg aria-hidden="true" fill="none" height="16" viewBox="0 0 16 16" width="16">
-                <path d="M6.25 3.5 10.75 8l-4.5 4.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.6" />
-              </svg>
-            </button>
-          </div>
-        ) : null}
       </div>
 
-      <div
-        className="hotel-room-carousel-viewport"
-        onTouchEnd={handleTouchEnd}
-        onTouchMove={(event) => setTouchCurrentX(event.changedTouches[0]?.clientX ?? null)}
-        onTouchStart={(event) => {
-          const clientX = event.changedTouches[0]?.clientX ?? null;
-          setTouchStartX(clientX);
-          setTouchCurrentX(clientX);
-        }}
-      >
-        <div className="hotel-room-carousel-track" style={{ transform: `translate3d(-${activeIndex * 100}%, 0, 0)` }}>
-          {slides.map((slide, index) => (
-            <figure className="hotel-room-carousel-slide" key={slide.id}>
-              <div className="hotel-room-carousel-media" style={{ cursor: 'pointer' }} onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}>
-                {visibleIndexes.has(index) ? (
-                  <Image
-                    alt={slide.alt}
-                    className="hotel-room-carousel-image"
-                    draggable={false}
-                    fill
-                    loading={index === 0 ? "eager" : "lazy"}
-                    onError={() =>
-                      setFallbackSlides((current) =>
-                        current[slide.id]
-                          ? current
-                          : {
-                              ...current,
-                              [slide.id]: true,
-                            },
-                      )
-                    }
-                    sizes="(max-width: 640px) 96vw, (max-width: 860px) 94vw, 72vw"
-                    src={fallbackSlides[slide.id] ? slide.jpgSrc : slide.webpSrc}
-                  />
-                ) : (
-                  <div aria-hidden="true" className="hotel-room-carousel-skeleton" />
-                )}
-              </div>
-              <figcaption>{labels.roles[slide.role]}</figcaption>
-            </figure>
-          ))}
-        </div>
-      </div>
-
-      {slideCount > 1 ? (
-        <div aria-label={roomTitle} className="hotel-room-carousel-dots" role="tablist">
-          {slides.map((slide, index) => (
-            <button
-              aria-label={`${roomTitle}: ${index + 1}`}
-              aria-selected={index === activeIndex}
-              className={index === activeIndex ? "is-active" : undefined}
-              key={slide.id}
-              onClick={() => goTo(index)}
-              role="tab"
-              type="button"
+      {/* Instagram-style horizontal scrollable strip */}
+      <div className="hotel-room-carousel-strip">
+        {slides.map((slide, index) => (
+          <div
+            className="hotel-room-carousel-thumb"
+            key={slide.id}
+            onClick={() => { setLightboxIndex(index); setLightboxOpen(true); }}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === "Enter") { setLightboxIndex(index); setLightboxOpen(true); } }}
+            aria-label={`${roomTitle} - ${index + 1}`}
+          >
+            <Image
+              alt={slide.alt}
+              className="hotel-room-carousel-thumb-image"
+              draggable={false}
+              fill
+              sizes="(max-width: 640px) 45vw, (max-width: 860px) 30vw, 22vw"
+              src={fallbackSlides[slide.id] ? slide.jpgSrc : slide.webpSrc}
+              onError={() =>
+                setFallbackSlides((current) =>
+                  current[slide.id] ? current : { ...current, [slide.id]: true }
+                )
+              }
             />
-          ))}
-        </div>
-      ) : null}
+          </div>
+        ))}
+      </div>
 
       <HotelLightbox
         images={slides.map((s) => ({ src: s.webpSrc, fallbackSrc: s.jpgSrc, alt: s.alt }))}

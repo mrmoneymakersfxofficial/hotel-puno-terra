@@ -17,35 +17,72 @@ type HotelLightboxProps = {
 
 export function HotelLightbox({ images, initialIndex = 0, open, onClose }: HotelLightboxProps) {
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [isAnimating, setIsAnimating] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchDelta, setTouchDelta] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
   const [scale, setScale] = useState(1);
-  const [translateX, setTranslateX] = useState(0);
-  const [translateY, setTranslateY] = useState(0);
-  const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
-  const containerRef = useRef<HTMLDivElement>(null);
-  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const [panX, setPanX] = useState(0);
+  const [panY, setPanY] = useState(0);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const [failedImages, setFailedImages] = useState<Set<number>>(new Set());
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const isDragging = useRef(false);
 
+  // Sync index when initialIndex changes (e.g. opening lightbox on a specific image)
+  const prevOpen = useRef(false);
   useEffect(() => {
-    if (open) {
+    if (open && !prevOpen.current) {
       setCurrentIndex(initialIndex);
       resetZoom();
       document.body.style.overflow = "hidden";
-    } else {
+      // Scroll to the initial image after mount
+      requestAnimationFrame(() => {
+        if (scrollerRef.current) {
+          const child = scrollerRef.current.children[initialIndex] as HTMLElement;
+          if (child) {
+            scrollerRef.current.scrollTo({ left: child.offsetLeft, behavior: "instant" as ScrollBehavior });
+          }
+        }
+      });
+      // Mark all images as needing load
+      setLoadedImages(new Set());
+      setFailedImages(new Set());
+    }
+    if (!open) {
       document.body.style.overflow = "";
     }
+    prevOpen.current = open;
     return () => {
-      document.body.style.overflow = "";
+      if (!open) document.body.style.overflow = "";
     };
   }, [open, initialIndex]);
 
-  // Attach non-passive wheel listener to avoid passive event listener errors
-  useEffect(() => {
-    const wrapper = imageWrapperRef.current;
-    if (!wrapper || !open) return;
+  const resetZoom = useCallback(() => {
+    setIsZoomed(false);
+    setScale(1);
+    setPanX(0);
+    setPanY(0);
+  }, []);
 
+  // Keyboard navigation
+  useEffect(() => {
+    if (!open) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { onClose(); return; }
+      if (e.key === "0") { resetZoom(); return; }
+      if (isZoomed) return;
+      if (e.key === "ArrowRight") goTo(currentIndex + 1);
+      if (e.key === "ArrowLeft") goTo(currentIndex - 1);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [open, currentIndex, isZoomed, onClose, resetZoom]);
+
+  // Non-passive wheel listener for zoom
+  useEffect(() => {
+    const el = overlayRef.current;
+    if (!el || !open) return;
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault();
       if (e.deltaY < 0) {
@@ -53,76 +90,67 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
         setIsZoomed(true);
       } else {
         setScale((s) => {
-          const newScale = Math.max(s - 0.3, 1);
-          if (newScale <= 1) resetZoom();
-          return newScale;
+          const ns = Math.max(s - 0.3, 1);
+          if (ns <= 1) resetZoom();
+          return ns;
         });
       }
     };
+    el.addEventListener("wheel", handleWheel, { passive: false });
+    return () => el.removeEventListener("wheel", handleWheel);
+  }, [open, resetZoom]);
 
-    wrapper.addEventListener("wheel", handleWheel, { passive: false });
-    return () => wrapper.removeEventListener("wheel", handleWheel);
-  }, [open]);
+  const goTo = useCallback((index: number) => {
+    if (index < 0 || index >= images.length) return;
+    resetZoom();
+    setCurrentIndex(index);
+    if (scrollerRef.current) {
+      const child = scrollerRef.current.children[index] as HTMLElement;
+      if (child) {
+        scrollerRef.current.scrollTo({ left: child.offsetLeft, behavior: "smooth" });
+      }
+    }
+  }, [images.length, resetZoom]);
 
-  const resetZoom = useCallback(() => {
-    setIsZoomed(false);
-    setScale(1);
-    setTranslateX(0);
-    setTranslateY(0);
-  }, []);
+  // Scroll observer to sync currentIndex
+  const handleScroll = useCallback(() => {
+    if (!scrollerRef.current || isZoomed) return;
+    const scroller = scrollerRef.current;
+    const scrollLeft = scroller.scrollLeft;
+    const width = scroller.clientWidth;
+    const newIndex = Math.round(scrollLeft / width);
+    if (newIndex !== currentIndex && newIndex >= 0 && newIndex < images.length) {
+      setCurrentIndex(newIndex);
+    }
+  }, [currentIndex, images.length, isZoomed]);
 
-  const goTo = useCallback(
-    (index: number) => {
-      if (index < 0 || index >= images.length || isAnimating) return;
-      setIsAnimating(true);
-      resetZoom();
-      setCurrentIndex(index);
-      setTimeout(() => setIsAnimating(false), 300);
-    },
-    [images.length, isAnimating, resetZoom],
-  );
-
-  const goNext = useCallback(() => goTo(currentIndex + 1), [currentIndex, goTo]);
-  const goPrev = useCallback(() => goTo(currentIndex - 1), [currentIndex, goTo]);
-
-  // Keyboard navigation
-  useEffect(() => {
-    if (!open) return;
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
-      if (e.key === "0") resetZoom();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [open, goNext, goPrev, onClose, resetZoom]);
-
-  // Touch handlers for swipe
+  // Touch handlers for swipe (when not zoomed)
   const handleTouchStart = (e: React.TouchEvent) => {
     if (isZoomed) return;
     setTouchStart(e.touches[0].clientX);
     setTouchDelta(0);
+    isDragging.current = true;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStart === null || isZoomed) return;
+    if (touchStart === null || isZoomed || !isDragging.current) return;
     const delta = e.touches[0].clientX - touchStart;
     setTouchDelta(delta);
   };
 
   const handleTouchEnd = () => {
-    if (touchStart === null || isZoomed) return;
+    if (touchStart === null || isZoomed || !isDragging.current) return;
+    isDragging.current = false;
     const threshold = 80;
-    if (touchDelta < -threshold) goNext();
-    else if (touchDelta > threshold) goPrev();
+    if (touchDelta < -threshold) goTo(currentIndex + 1);
+    else if (touchDelta > threshold) goTo(currentIndex - 1);
     setTouchStart(null);
     setTouchDelta(0);
   };
 
   // Double-tap zoom
   const lastTap = useRef<number>(0);
-  const handleDoubleTap = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleDoubleTap = () => {
     const now = Date.now();
     if (now - lastTap.current < 300) {
       if (isZoomed) {
@@ -135,20 +163,20 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
     lastTap.current = now;
   };
 
+  const handleImageLoad = (index: number) => {
+    setLoadedImages((prev) => new Set(prev).add(index));
+  };
+
+  const handleImageError = (index: number) => {
+    setFailedImages((prev) => new Set(prev).add(index));
+  };
+
   if (!open || images.length === 0) return null;
-
-  const currentImage = images[currentIndex];
-  if (!currentImage) return null;
-
-  const slideOffset = touchDelta * 0.5;
-  const imageSrc = brokenImages[currentImage.src] && currentImage.fallbackSrc
-    ? currentImage.fallbackSrc
-    : currentImage.src;
 
   return (
     <div
-      ref={containerRef}
-      className="hotel-lightbox-overlay"
+      ref={overlayRef}
+      className="hlbx-overlay"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -157,33 +185,47 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
       aria-label="Visor de imagenes"
     >
       <style>{`
-        .hotel-lightbox-overlay {
+        .hlbx-overlay {
           position: fixed;
           inset: 0;
           z-index: 10000;
-          background: rgba(0, 0, 0, 0.95);
+          background: rgba(0, 0, 0, 0.96);
           display: flex;
-          align-items: center;
-          justify-content: center;
-          animation: lightbox-fade-in 0.25s ease;
-          touch-action: pan-y;
+          flex-direction: column;
+          animation: hlbx-in 0.2s ease;
+          overscroll-behavior: contain;
         }
-        @keyframes lightbox-fade-in {
+        @keyframes hlbx-in {
           from { opacity: 0; }
           to { opacity: 1; }
         }
-        .hotel-lightbox-close {
-          position: absolute;
-          top: 16px;
-          right: 16px;
-          z-index: 10001;
-          background: rgba(255,255,255,0.15);
+        .hlbx-topbar {
+          position: relative;
+          z-index: 10002;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 12px 16px;
+          flex-shrink: 0;
+        }
+        .hlbx-counter {
+          color: rgba(255,255,255,0.85);
+          font-size: 14px;
+          font-weight: 600;
+          font-family: 'Manrope', sans-serif;
+          background: rgba(255,255,255,0.1);
+          padding: 5px 14px;
+          border-radius: 20px;
+          backdrop-filter: blur(8px);
+        }
+        .hlbx-close {
+          background: rgba(255,255,255,0.12);
           border: none;
           color: white;
-          width: 44px;
-          height: 44px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
-          font-size: 24px;
+          font-size: 20px;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -191,189 +233,158 @@ export function HotelLightbox({ images, initialIndex = 0, open, onClose }: Hotel
           transition: background 0.2s;
           backdrop-filter: blur(8px);
         }
-        .hotel-lightbox-close:hover {
-          background: rgba(255,255,255,0.3);
+        .hlbx-close:hover { background: rgba(255,255,255,0.25); }
+        .hlbx-scroller {
+          flex: 1;
+          display: flex;
+          overflow-x: auto;
+          overflow-y: hidden;
+          scroll-snap-type: x mandatory;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          -webkit-overflow-scrolling: touch;
+          scroll-behavior: smooth;
         }
-        .hotel-lightbox-counter {
-          position: absolute;
-          top: 20px;
-          left: 50%;
-          transform: translateX(-50%);
-          color: rgba(255,255,255,0.8);
-          font-size: 14px;
-          font-family: 'Manrope', sans-serif;
-          z-index: 10001;
-          background: rgba(0,0,0,0.4);
-          padding: 6px 16px;
-          border-radius: 20px;
-          backdrop-filter: blur(8px);
-        }
-        .hotel-lightbox-image-wrapper {
-          position: relative;
+        .hlbx-scroller::-webkit-scrollbar { display: none; }
+        .hlbx-slide {
+          flex: 0 0 100%;
           width: 100%;
-          height: 100%;
+          scroll-snap-align: center;
           display: flex;
           align-items: center;
           justify-content: center;
-          overflow: hidden;
+          position: relative;
+          min-height: 0;
         }
-        .hotel-lightbox-image {
-          max-width: 90vw;
-          max-height: 85vh;
+        .hlbx-img {
+          max-width: 92vw;
+          max-height: 80vh;
           object-fit: contain;
-          border-radius: 4px;
-          transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           user-select: none;
           -webkit-user-drag: none;
+          border-radius: 6px;
+          opacity: 1;
+          transition: opacity 0.15s ease;
         }
-        .hotel-lightbox-nav {
+        .hlbx-img.loading {
+          opacity: 0.3;
+        }
+        .hlbx-nav {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          z-index: 10001;
-          background: rgba(255,255,255,0.12);
+          z-index: 10002;
+          background: rgba(255,255,255,0.1);
           border: none;
           color: white;
-          width: 48px;
-          height: 48px;
+          width: 44px;
+          height: 44px;
           border-radius: 50%;
-          font-size: 22px;
+          font-size: 20px;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.2s;
+          transition: background 0.2s;
           backdrop-filter: blur(8px);
         }
-        .hotel-lightbox-nav:hover {
-          background: rgba(255,255,255,0.25);
-          transform: translateY(-50%) scale(1.1);
-        }
-        .hotel-lightbox-nav:disabled {
-          opacity: 0.3;
-          cursor: not-allowed;
-        }
-        .hotel-lightbox-prev { left: 16px; }
-        .hotel-lightbox-next { right: 16px; }
-        .hotel-lightbox-dots {
-          position: absolute;
-          bottom: 24px;
-          left: 50%;
-          transform: translateX(-50%);
+        .hlbx-nav:hover { background: rgba(255,255,255,0.22); }
+        .hlbx-nav:disabled { opacity: 0.2; cursor: default; }
+        .hlbx-prev { left: 12px; }
+        .hlbx-next { right: 12px; }
+        .hlbx-bottombar {
+          position: relative;
+          z-index: 10002;
           display: flex;
-          gap: 8px;
-          z-index: 10001;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          padding: 14px 16px 20px;
+          flex-shrink: 0;
         }
-        .hotel-lightbox-dot {
-          width: 8px;
-          height: 8px;
+        .hlbx-dot {
+          width: 7px;
+          height: 7px;
           border-radius: 50%;
-          background: rgba(255,255,255,0.4);
+          background: rgba(255,255,255,0.35);
           border: none;
           cursor: pointer;
           padding: 0;
-          transition: all 0.3s;
+          transition: all 0.25s ease;
         }
-        .hotel-lightbox-dot.active {
+        .hlbx-dot.active {
           background: white;
-          width: 24px;
+          width: 20px;
           border-radius: 4px;
         }
-        .hotel-lightbox-zoom-hint {
-          position: absolute;
-          bottom: 60px;
-          left: 50%;
-          transform: translateX(-50%);
-          color: rgba(255,255,255,0.5);
-          font-size: 12px;
-          font-family: 'Manrope', sans-serif;
-          z-index: 10001;
-        }
         @media (max-width: 768px) {
-          .hotel-lightbox-nav {
-            width: 40px;
-            height: 40px;
-            font-size: 18px;
-          }
-          .hotel-lightbox-prev { left: 8px; }
-          .hotel-lightbox-next { right: 8px; }
+          .hlbx-nav { width: 36px; height: 36px; font-size: 16px; }
+          .hlbx-prev { left: 6px; }
+          .hlbx-next { right: 6px; }
         }
       `}</style>
 
-      <button
-        className="hotel-lightbox-close"
-        onClick={onClose}
-        aria-label="Cerrar visor"
-      >
-        ✕
-      </button>
-
-      <div className="hotel-lightbox-counter">
-        {currentIndex + 1} / {images.length}
+      {/* Top bar */}
+      <div className="hlbx-topbar">
+        <span className="hlbx-counter">{currentIndex + 1} / {images.length}</span>
+        <button className="hlbx-close" onClick={onClose} aria-label="Cerrar">✕</button>
       </div>
 
+      {/* Instagram-style horizontal scroller */}
       <div
-        ref={imageWrapperRef}
-        className="hotel-lightbox-image-wrapper"
+        ref={scrollerRef}
+        className="hlbx-scroller"
+        onScroll={handleScroll}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
         onClick={handleDoubleTap}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={imageSrc}
-          alt={currentImage.alt || ""}
-          className="hotel-lightbox-image"
-          style={{
-            transform: `translateX(${slideOffset}px) scale(${scale}) translate(${translateX}px, ${translateY}px)`,
-            transition: touchStart !== null ? "none" : "transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-          }}
-          draggable={false}
-          onError={() => {
-            // Try fallback if primary fails
-            if (!brokenImages[currentImage.src]) {
-              setBrokenImages((prev) => ({ ...prev, [currentImage.src]: true }));
-            }
-          }}
-        />
+        {images.map((img, i) => {
+          const useFallback = failedImages.has(i) && img.fallbackSrc;
+          const src = useFallback ? img.fallbackSrc! : img.src;
+          const isLoaded = loadedImages.has(i);
+          return (
+            <div className="hlbx-slide" key={`${i}-${img.src}`}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={src}
+                alt={img.alt || ""}
+                className={`hlbx-img${isLoaded ? "" : " loading"}`}
+                style={{
+                  transform: i === currentIndex && isZoomed
+                    ? `scale(${scale}) translate(${panX}px, ${panY}px)`
+                    : undefined,
+                  transition: isZoomed ? "transform 0.15s ease" : undefined,
+                }}
+                draggable={false}
+                onLoad={() => handleImageLoad(i)}
+                onError={() => handleImageError(i)}
+              />
+            </div>
+          );
+        })}
       </div>
 
+      {/* Nav buttons */}
       {images.length > 1 && (
         <>
-          <button
-            className="hotel-lightbox-nav hotel-lightbox-prev"
-            onClick={goPrev}
-            disabled={currentIndex === 0}
-            aria-label="Imagen anterior"
-          >
-            ‹
-          </button>
-          <button
-            className="hotel-lightbox-nav hotel-lightbox-next"
-            onClick={goNext}
-            disabled={currentIndex === images.length - 1}
-            aria-label="Imagen siguiente"
-          >
-            ›
-          </button>
-
-          <div className="hotel-lightbox-dots">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                className={`hotel-lightbox-dot ${i === currentIndex ? "active" : ""}`}
-                onClick={() => goTo(i)}
-                aria-label={`Ir a imagen ${i + 1}`}
-              />
-            ))}
-          </div>
+          <button className="hlbx-nav hlbx-prev" onClick={() => goTo(currentIndex - 1)} disabled={currentIndex === 0} aria-label="Anterior">‹</button>
+          <button className="hlbx-nav hlbx-next" onClick={() => goTo(currentIndex + 1)} disabled={currentIndex === images.length - 1} aria-label="Siguiente">›</button>
         </>
       )}
 
-      {isZoomed && (
-        <div className="hotel-lightbox-zoom-hint">
-          Doble toque o scroll para zoom · Tecla 0 para reset
+      {/* Bottom dots */}
+      {images.length > 1 && (
+        <div className="hlbx-bottombar">
+          {images.map((_, i) => (
+            <button
+              key={i}
+              className={`hlbx-dot${i === currentIndex ? " active" : ""}`}
+              onClick={() => goTo(i)}
+              aria-label={`Ir a imagen ${i + 1}`}
+            />
+          ))}
         </div>
       )}
     </div>
