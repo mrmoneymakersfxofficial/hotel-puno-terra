@@ -19867,26 +19867,26 @@ body {
     background:
       linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
     box-shadow: none;
-    text-align: center;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-card-head {
-    justify-items: center;
-    text-align: center;
+    justify-items: start;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-card-copy {
-    justify-items: center;
-    text-align: center;
+    justify-items: start;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-word-mark {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-details {
-    text-align: center;
-    justify-items: center;
+    text-align: left;
+    justify-items: start;
     border: none;
     border-radius: 0;
     background: transparent;
@@ -19896,13 +19896,13 @@ body {
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-details-copy {
-    text-align: center;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-feature-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 6px 10px;
   }
 
@@ -19931,17 +19931,17 @@ body {
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-footer {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 12px;
   }
 
   .hotel-room-gallery-card-content .hotel-room-gallery-price-block {
-    text-align: center;
-    justify-items: center;
+    text-align: left;
+    justify-items: start;
     border-top: none;
     padding-top: 0;
   }
@@ -19978,7 +19978,7 @@ body {
   }
 
   .hotel-room-gallery-card-copy {
-    justify-items: center;
+    justify-items: start;
   }
 
   .hotel-room-gallery-word-mark {
@@ -19987,7 +19987,7 @@ body {
 
   .hotel-room-gallery-card-title-mobile {
     font-size: clamp(1.34rem, 5.8vw, 1.72rem);
-    text-align: center;
+    text-align: left;
   }
 
   .hotel-room-gallery-word-mark i {
