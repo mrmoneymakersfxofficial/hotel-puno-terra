@@ -19643,7 +19643,7 @@ body {
 
   .hotel-room-gallery-card-title-mobile {
     display: block;
-    text-align: center;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-spacer {
@@ -19652,7 +19652,7 @@ body {
 
   .hotel-room-gallery-word-mark {
     width: auto;
-    justify-content: center;
+    justify-content: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: none;
@@ -19682,6 +19682,8 @@ body {
     background:
       linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
     box-shadow: none;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .hotel-room-gallery-card-hero .hotel-room-carousel-strip-wrapper {
@@ -19712,7 +19714,7 @@ body {
 
   .hotel-room-gallery-cta-mobile {
     display: inline-flex;
-    align-self: end;
+    align-self: start;
     justify-content: center;
     min-height: 46px;
     padding-inline: 18px;
@@ -19728,11 +19730,11 @@ body {
 
   .hotel-room-gallery-card-content .hotel-room-gallery-footer {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     gap: 12px;
   }
 
