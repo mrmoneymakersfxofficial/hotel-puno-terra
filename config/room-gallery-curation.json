@@ -4,12 +4,12 @@
       "folder": "1 HB. SIMPLE",
       "slug": "habitacion-simple",
       "title": {
-        "es": "Habitacion Simple",
-        "en": "Simple Room"
+        "es": "Habitacion Individual",
+        "en": "Single Room"
       },
       "summary": {
-        "es": "1 cama de 2 plazas, aire acondicionado y ducha con hidromasajes.",
-        "en": "1 double bed, air conditioning and a hydromassage shower."
+        "es": "01 cama de 2 plazas, calefaccion, bano privado, agua caliente. Incluye desayuno buffet.",
+        "en": "01 double bed, heating, private bathroom, hot water. Breakfast buffet included."
       },
       "signatureWords": [
         {
@@ -27,142 +27,56 @@
       ],
       "details": {
         "price": {
-          "es": "S/ 129",
-          "en": "S/ 129"
+          "es": "S/ 100",
+          "en": "S/ 100"
         },
         "features": [
           {
-            "es": "1 cama de 2 plazas.",
-            "en": "1 double bed."
+            "es": "01 cama de 2 plazas, calefaccion, bano privado, agua caliente.",
+            "en": "01 double bed, heating, private bathroom, hot water."
           },
           {
-            "es": "Aire acondicionado y TV Smart con intercomunicador.",
-            "en": "Air conditioning and Smart TV with intercom."
+            "es": "TV de pantalla plana Smart TV BOX ANDROID.",
+            "en": "Flat-screen Smart TV with Android BOX."
           },
           {
-            "es": "Frigobar y ropero empotrado.",
-            "en": "Minibar and built-in wardrobe."
+            "es": "Espacio de trabajo con mesa y silla.",
+            "en": "Workspace with desk and chair."
           },
           {
-            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
-            "en": "Spanish-style hydromassage shower with hot and cold water."
+            "es": "WiFi gratis, habitacion sin humo, caja fuerte y secadora de pelo.",
+            "en": "Free WiFi, non-smoking room, safe and hair dryer."
           },
           {
-            "es": "Espacio de trabajo con mesa, silla y WiFi.",
-            "en": "Work area with desk, chair and Wi-Fi."
+            "es": "Incluye desayuno buffet.",
+            "en": "Breakfast buffet included."
           }
         ]
       },
-      "descriptiveSource": "165.JPG",
+      "descriptiveSource": "habitacion-simple-01.jpg",
       "selected": [
         {
-          "source": "_MAC0510.JPG",
+          "source": "habitacion-simple-01.jpg",
           "role": "general",
           "alt": {
-            "es": "Vista general de la Habitacion Simple",
-            "en": "Wide view of the Simple Room"
+            "es": "Vista general de la Habitacion Individual",
+            "en": "Wide view of the Single Room"
           }
         },
         {
-          "source": "Copia de IMG_6790.JPG",
+          "source": "habitacion-simple-02.jpg",
           "role": "main",
           "alt": {
-            "es": "Cama principal de la Habitacion Simple",
-            "en": "Main bed in the Simple Room"
+            "es": "Cama y area de descanso de la Habitacion Individual",
+            "en": "Bed and rest area in the Single Room"
           }
         },
         {
-          "source": "04.JPG",
-          "role": "bath",
-          "alt": {
-            "es": "Bano y ducha de la Habitacion Simple",
-            "en": "Bathroom and shower in the Simple Room"
-          }
-        },
-        {
-          "source": "06.JPG",
+          "source": "habitacion-simple-03.jpg",
           "role": "detail",
           "alt": {
-            "es": "Espacio adicional y ropero de la Habitacion Simple",
-            "en": "Additional space and wardrobe in the Simple Room"
-          }
-        }
-      ]
-    },
-    {
-      "folder": "2 HB. MATRIMONIAL",
-      "slug": "habitacion-matrimonial",
-      "title": {
-        "es": "Habitacion Matrimonial",
-        "en": "Queen Room"
-      },
-      "summary": {
-        "es": "1 cama queen con iluminacion amplia y vista exterior.",
-        "en": "1 queen bed with generous light and exterior view."
-      },
-      "signatureWords": [
-        {
-          "es": "Luminosa",
-          "en": "Bright"
-        },
-        {
-          "es": "Romantica",
-          "en": "Romantic"
-        },
-        {
-          "es": "Acogedora",
-          "en": "Welcoming"
-        }
-      ],
-      "details": {
-        "price": null,
-        "features": [
-          {
-            "es": "1 cama Queen.",
-            "en": "1 queen bed."
-          },
-          {
-            "es": "Aire acondicionado y TV Smart con intercomunicador.",
-            "en": "Air conditioning and Smart TV with intercom."
-          },
-          {
-            "es": "Frigobar y ropero empotrado.",
-            "en": "Minibar and built-in wardrobe."
-          },
-          {
-            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
-            "en": "Spanish-style hydromassage shower with hot and cold water."
-          },
-          {
-            "es": "Espacio de trabajo con mesa, silla y WiFi.",
-            "en": "Work area with desk, chair and Wi-Fi."
-          }
-        ]
-      },
-      "descriptiveSource": "E.JPG",
-      "selected": [
-        {
-          "source": "Copia de Habitación 07.jpg",
-          "role": "general",
-          "alt": {
-            "es": "Vista general de la Habitacion Matrimonial",
-            "en": "Wide view of the Queen Room"
-          }
-        },
-        {
-          "source": "05 - Matrimonial - 01.jpg",
-          "role": "main",
-          "alt": {
-            "es": "Cama principal de la Habitacion Matrimonial",
-            "en": "Main bed in the Queen Room"
-          }
-        },
-        {
-          "source": "B.JPG",
-          "role": "bath",
-          "alt": {
-            "es": "Bano y ducha de la Habitacion Matrimonial",
-            "en": "Bathroom and shower in the Queen Room"
+            "es": "Detalle del bano y equipamiento de la Habitacion Individual",
+            "en": "Bathroom detail and amenities of the Single Room"
           }
         }
       ]
@@ -172,11 +86,11 @@
       "slug": "habitacion-doble",
       "title": {
         "es": "Habitacion Doble",
-        "en": "Twin Room"
+        "en": "Double Room"
       },
       "summary": {
-        "es": "2 camas de plaza y media, escritorio y bano privado.",
-        "en": "2 twin beds, desk area and private bathroom."
+        "es": "02 camas de 2 plazas, calefaccion, bano privado, agua caliente. Incluye desayuno buffet.",
+        "en": "02 double beds, heating, private bathroom, hot water. Breakfast buffet included."
       },
       "signatureWords": [
         {
@@ -194,64 +108,137 @@
       ],
       "details": {
         "price": {
-          "es": "S/ 179",
-          "en": "S/ 179"
+          "es": "S/ 130",
+          "en": "S/ 130"
         },
         "features": [
           {
-            "es": "2 camas de plaza y media de 1.5 m.",
-            "en": "2 twin beds at 1.5 m."
+            "es": "02 camas de 2 plazas, calefaccion, bano privado, agua caliente.",
+            "en": "02 double beds, heating, private bathroom, hot water."
           },
           {
-            "es": "Aire acondicionado y TV Smart con intercomunicador.",
-            "en": "Air conditioning and Smart TV with intercom."
+            "es": "TV de pantalla plana Smart TV BOX ANDROID.",
+            "en": "Flat-screen Smart TV with Android BOX."
           },
           {
-            "es": "Frigobar y ropero empotrado.",
-            "en": "Minibar and built-in wardrobe."
+            "es": "Espacio de trabajo con mesa y silla.",
+            "en": "Workspace with desk and chair."
           },
           {
-            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
-            "en": "Spanish-style hydromassage shower with hot and cold water."
+            "es": "WiFi gratis, habitacion sin humo, caja fuerte y secadora de pelo.",
+            "en": "Free WiFi, non-smoking room, safe and hair dryer."
           },
           {
-            "es": "Espacio de trabajo con mesa, silla y WiFi.",
-            "en": "Work area with desk, chair and Wi-Fi."
+            "es": "Incluye desayuno buffet.",
+            "en": "Breakfast buffet included."
           }
         ]
       },
-      "descriptiveSource": "A5.JPG",
+      "descriptiveSource": "habitacion-doble-01.jpg",
       "selected": [
         {
-          "source": "DESAYUNO.jpg",
+          "source": "habitacion-doble-01.jpg",
           "role": "general",
           "alt": {
             "es": "Vista general de la Habitacion Doble",
-            "en": "Wide view of the Twin Room"
+            "en": "Wide view of the Double Room"
           }
         },
         {
-          "source": "HABITACIÓN DOBLE STANDAR.JPG",
+          "source": "habitacion-doble-02.jpg",
           "role": "main",
           "alt": {
-            "es": "Area principal de camas en la Habitacion Doble",
-            "en": "Main sleeping area in the Twin Room"
+            "es": "Camas y area de descanso de la Habitacion Doble",
+            "en": "Beds and rest area in the Double Room"
           }
         },
         {
-          "source": "A2.JPG",
-          "role": "bath",
-          "alt": {
-            "es": "Bano y ducha de la Habitacion Doble",
-            "en": "Bathroom and shower in the Twin Room"
-          }
-        },
-        {
-          "source": "A4.JPG",
+          "source": "habitacion-doble-03.jpg",
           "role": "detail",
           "alt": {
-            "es": "Espacio adicional con escritorio en la Habitacion Doble",
-            "en": "Additional space with desk in the Twin Room"
+            "es": "Detalle del bano y equipamiento de la Habitacion Doble",
+            "en": "Bathroom detail and amenities of the Double Room"
+          }
+        }
+      ]
+    },
+    {
+      "folder": "2 HB. MATRIMONIAL",
+      "slug": "habitacion-matrimonial",
+      "title": {
+        "es": "Habitacion Matrimonial",
+        "en": "Queen Room"
+      },
+      "summary": {
+        "es": "01 cama Queen, calefaccion, bano privado, agua caliente. Incluye desayuno buffet.",
+        "en": "01 Queen bed, heating, private bathroom, hot water. Breakfast buffet included."
+      },
+      "signatureWords": [
+        {
+          "es": "Luminosa",
+          "en": "Bright"
+        },
+        {
+          "es": "Romantica",
+          "en": "Romantic"
+        },
+        {
+          "es": "Acogedora",
+          "en": "Welcoming"
+        }
+      ],
+      "details": {
+        "price": {
+          "es": "S/ 130",
+          "en": "S/ 130"
+        },
+        "features": [
+          {
+            "es": "01 cama Queen, calefaccion, bano privado, agua caliente.",
+            "en": "01 Queen bed, heating, private bathroom, hot water."
+          },
+          {
+            "es": "TV de pantalla plana Smart TV BOX ANDROID.",
+            "en": "Flat-screen Smart TV with Android BOX."
+          },
+          {
+            "es": "Espacio de trabajo con mesa y silla.",
+            "en": "Workspace with desk and chair."
+          },
+          {
+            "es": "WiFi gratis, habitacion sin humo, caja fuerte y secadora de pelo.",
+            "en": "Free WiFi, non-smoking room, safe and hair dryer."
+          },
+          {
+            "es": "Incluye desayuno buffet.",
+            "en": "Breakfast buffet included."
+          }
+        ]
+      },
+      "descriptiveSource": "habitacion-matrimonial-01.jpg",
+      "selected": [
+        {
+          "source": "habitacion-matrimonial-01.jpg",
+          "role": "general",
+          "alt": {
+            "es": "Vista general de la Habitacion Matrimonial",
+            "en": "Wide view of the Queen Room"
+          }
+        },
+        {
+          "source": "habitacion-matrimonial-02.jpg",
+          "role": "main",
+          "alt": {
+            "es": "Cama Queen de la Habitacion Matrimonial",
+            "en": "Queen bed in the Queen Room"
+          }
+        },
+        {
+          "source": "habitacion-matrimonial-03.jpg",
+          "role": "detail",
+          "alt": {
+            "es": "Detalle del bano y equipamiento de la Habitacion Matrimonial",
+            "en": "Bathroom detail and amenities of the Queen Room"
           }
         }
       ]
@@ -264,8 +251,8 @@
         "en": "Triple Room"
       },
       "summary": {
-        "es": "3 camas, buena iluminacion y distribucion amplia.",
-        "en": "3 beds, bright lighting and a spacious layout."
+        "es": "03 camas de plaza y media, calefaccion, bano privado, agua caliente. Incluye desayuno buffet.",
+        "en": "03 single-and-a-half beds, heating, private bathroom, hot water. Breakfast buffet included."
       },
       "signatureWords": [
         {
@@ -278,41 +265,41 @@
         },
         {
           "es": "Grupal",
-          "en": "Group-ready"
+          "en": "Group"
         }
       ],
       "details": {
         "price": {
-          "es": "S/ 239",
-          "en": "S/ 239"
+          "es": "S/ 170",
+          "en": "S/ 170"
         },
         "features": [
           {
-            "es": "3 camas de 1.05 m.",
-            "en": "3 beds at 1.05 m."
+            "es": "03 camas de plaza y media, calefaccion, bano privado, agua caliente.",
+            "en": "03 single-and-a-half beds, heating, private bathroom, hot water."
           },
           {
-            "es": "Aire acondicionado y TV Smart con intercomunicador.",
-            "en": "Air conditioning and Smart TV with intercom."
+            "es": "TV de pantalla plana Smart TV BOX ANDROID.",
+            "en": "Flat-screen Smart TV with Android BOX."
           },
           {
-            "es": "Frigobar y ropero empotrado.",
-            "en": "Minibar and built-in wardrobe."
+            "es": "Espacio de trabajo con mesa y silla.",
+            "en": "Workspace with desk and chair."
           },
           {
-            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
-            "en": "Spanish-style hydromassage shower with hot and cold water."
+            "es": "WiFi gratis, habitacion sin humo, caja fuerte y secadora de pelo.",
+            "en": "Free WiFi, non-smoking room, safe and hair dryer."
           },
           {
-            "es": "Espacio de trabajo con mesa, silla y WiFi.",
-            "en": "Work area with desk, chair and Wi-Fi."
+            "es": "Incluye desayuno buffet.",
+            "en": "Breakfast buffet included."
           }
         ]
       },
-      "descriptiveSource": "C6.JPG",
+      "descriptiveSource": "habitacion-triple-01.jpg",
       "selected": [
         {
-          "source": "_MAC0501-Pano.JPG",
+          "source": "habitacion-triple-01.jpg",
           "role": "general",
           "alt": {
             "es": "Vista general de la Habitacion Triple",
@@ -320,27 +307,19 @@
           }
         },
         {
-          "source": "C1.JPG",
+          "source": "habitacion-triple-02.jpg",
           "role": "main",
           "alt": {
-            "es": "Area principal de camas en la Habitacion Triple",
-            "en": "Main sleeping area in the Triple Room"
+            "es": "Camas y distribucion de la Habitacion Triple",
+            "en": "Beds and layout in the Triple Room"
           }
         },
         {
-          "source": "C2.JPG",
-          "role": "bath",
-          "alt": {
-            "es": "Bano y ducha de la Habitacion Triple",
-            "en": "Bathroom and shower in the Triple Room"
-          }
-        },
-        {
-          "source": "C5.JPG",
+          "source": "habitacion-triple-03.jpg",
           "role": "detail",
           "alt": {
-            "es": "Detalle lateral de las camas en la Habitacion Triple",
-            "en": "Lateral bed detail in the Triple Room"
+            "es": "Detalle del bano y equipamiento de la Habitacion Triple",
+            "en": "Bathroom detail and amenities of the Triple Room"
           }
         }
       ]
@@ -349,52 +328,52 @@
       "folder": "10 HB SEXTUPLE CANDELARIA",
       "slug": "habitacion-sextuple",
       "title": {
-        "es": "Habitacion Sextuple Candelaria",
-        "en": "Sextuple Room Candelaria"
+        "es": "Habitacion Sextuple (Solo Candelaria)",
+        "en": "Six-bed Room (Candelaria only)"
       },
       "summary": {
-        "es": "6 camas, ideal para la Fiesta de la Candelaria y grupos grandes.",
-        "en": "6 beds, ideal for the Candelaria Festival and large groups."
+        "es": "06 camas de plaza y media. Disponible solo para la Fiesta de la Candelaria en febrero. Incluye desayuno buffet.",
+        "en": "06 single-and-a-half beds. Available only for the Candelaria Festival in February. Breakfast buffet included."
       },
       "signatureWords": [
         {
-          "es": "Grupal",
-          "en": "Group"
-        },
-        {
-          "es": "Festiva",
-          "en": "Festive"
+          "es": "Familiar",
+          "en": "Family"
         },
         {
           "es": "Espaciosa",
           "en": "Spacious"
+        },
+        {
+          "es": "Grupal",
+          "en": "Group"
         }
       ],
       "details": {
         "price": {
-          "es": "S/ 350",
-          "en": "S/ 350"
+          "es": "Consultar (Candelaria)",
+          "en": "On request (Candelaria)"
         },
         "features": [
           {
-            "es": "6 camas individuales o configuracion flexible.",
-            "en": "6 single beds or flexible configuration."
+            "es": "06 camas de plaza y media, calefaccion, bano privado, agua caliente.",
+            "en": "06 single-and-a-half beds, heating, private bathroom, hot water."
           },
           {
-            "es": "Aire acondicionado y TV Smart con intercomunicador.",
-            "en": "Air conditioning and Smart TV with intercom."
+            "es": "TV de pantalla plana Smart TV BOX ANDROID.",
+            "en": "Flat-screen Smart TV with Android BOX."
           },
           {
-            "es": "Frigobar, ropero empotrado y WiFi.",
-            "en": "Minibar, built-in wardrobe and Wi-Fi."
+            "es": "Espacio de trabajo con mesa y silla.",
+            "en": "Workspace with desk and chair."
           },
           {
-            "es": "Ducha espanola con hidromasajes y agua fria/caliente.",
-            "en": "Spanish-style hydromassage shower with hot and cold water."
+            "es": "WiFi gratis, habitacion sin humo, caja fuerte y secadora de pelo.",
+            "en": "Free WiFi, non-smoking room, safe and hair dryer."
           },
           {
-            "es": "Ideal para la Fiesta de la Candelaria y grupos.",
-            "en": "Ideal for the Candelaria Festival and groups."
+            "es": "Disponible solo en febrero para la Fiesta de la Candelaria.",
+            "en": "Available only in February for the Candelaria Festival."
           }
         ]
       },
@@ -404,16 +383,16 @@
           "source": "habitacion-sextuple-01.jpg",
           "role": "main",
           "alt": {
-            "es": "Vista principal de la Habitacion Sextuple Candelaria",
-            "en": "Main view of the Sextuple Candelaria Room"
+            "es": "Vista principal de la Habitacion Sextuple",
+            "en": "Main view of the Six-bed Room"
           }
         },
         {
           "source": "habitacion-sextuple-02.jpg",
           "role": "general",
           "alt": {
-            "es": "Otra perspectiva de la Habitacion Sextuple Candelaria",
-            "en": "Alternate view of the Sextuple Candelaria Room"
+            "es": "Vista general de la Habitacion Sextuple",
+            "en": "Wide view of the Six-bed Room"
           }
         }
       ]

@@ -1,14 +1,14 @@
 {
   "brand": {
     "name": "Hotel Puno Terra",
-    "headline": "Hotel 3 estrellas en Puno, a 3 minutos de Plaza de Armas. WiFi gratis, desayuno buffet y recepcion 24 horas.",
-    "description": "Hotel Puno Terra ofrece habitaciones con aire acondicionado, WiFi gratis, baño privado, TV de pantalla plana y caja fuerte. Desayuno buffet o continental disponible. Recepcion 24 horas, servicio de habitaciones y organizacion de tours.",
-    "subheadline": "A 3 min de Plaza de Armas. WiFi gratis, desayuno buffet, recepcion 24 horas.",
-    "primaryCtaLabel": "Reservar",
-    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51951669969&text=Hola%20%F0%9F%91%8B%0A%0ADeseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20*Hotel%20Puno%20Terra*.%0A%E2%9C%A8%20Agradecer%C3%A9%20informaci%C3%B3n%20sobre%20disponibilidad%2C%20tarifas%20y%20detalles%20del%20hotel.%0A%0AMuchas%20gracias.%20Quedo%20atento(a)%20a%20su%20respuesta.&type=phone_number&app_absent=0",
+    "headline": "Bienvenido a Hotel Puno Terra",
+    "description": "Disfruta una experiencia única de comodidad, descanso y hospitalidad en la ciudad de Puno, capital folclórica del Perú. Hotel céntrico a 2 cuadras de la Plaza de Armas con WiFi gratis, desayuno buffet, calefacción, baño privado con agua caliente 24h y recepción 24 horas.",
+    "subheadline": "Reserva directamente con nosotros y obtén un 20% menos que Booking.com, Expedia, Despegar.com y cualquier otra plataforma.",
+    "primaryCtaLabel": "Reserva WhatsApp",
+    "primaryCtaHref": "https://api.whatsapp.com/send/?phone=51951669969",
     "secondaryCtaLabel": "Ver habitaciones",
     "secondaryCtaHref": "#habitaciones",
-    "heroTag": "HOTEL PUNO TERRA",
+    "heroTag": "HOTEL EN LA CIUDAD DE PUNO",
     "heroImageSrc": "/assets/hero/hero-premium-1.webp",
     "heroImagePosition": {
       "x": 50,
@@ -58,112 +58,125 @@
   ],
   "services": [
     {
-      "title": "Habitacion con aire acondicionado y WiFi",
-      "description": "Cada habitacion dispone de aire acondicionado, WiFi gratis, baño privado, TV de pantalla plana con canales por cable, escritorio y caja fuerte.",
-      "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
+      "title": "Desayuno Buffet Incluido",
+      "description": "Desayuno buffet incluido en todas las tarifas. Cafetería disponible con bebidas e infusiones a disposición durante la estancia.",
+      "imageSrc": "/assets/gallery/desayuno/desayuno-1.webp",
       "imagePosition": {
         "x": 50,
-        "y": 44
+        "y": 50
       }
     },
     {
-      "title": "Desayuno buffet o continental",
-      "description": "Hotel Puno Terra ofrece desayuno buffet o continental cada mañana, con infusiones y bebidas a disposicion de los huespedes durante todo el dia.",
-      "imageSrc": "/assets/uploads/hotel-deluxe-pool.jpg",
+      "title": "Recepción 24 horas",
+      "description": "Recepción 24 horas con personal muy amable. Servicio de habitaciones y organización de tours durante toda la estancia.",
+      "imageSrc": "/assets/gallery/areas/areas-1.webp",
       "imagePosition": {
         "x": 50,
-        "y": 60
+        "y": 50
       }
     },
     {
-      "title": "Recepcion 24 horas y servicio de habitaciones",
-      "description": "Recepcion disponible las 24 horas con personal amable, servicio de habitaciones, guardaequipaje y organizacion de tours para explorar Puno.",
-      "imageSrc": "/assets/uploads/2-bde02c45-853a-4132-a874-d6b663687cde.jfif",
+      "title": "Cochera Privada 24 horas (de pago)",
+      "description": "Cochera privada disponible 24 horas, con cargo adicional. Estacionamiento seguro para huéspedes con vehículo propio.",
+      "imageSrc": "",
       "imagePosition": {
         "x": 50,
-        "y": 48
+        "y": 50
       }
     },
     {
-      "title": "Jardin y areas comunes",
-      "description": "El hotel dispone de jardin, areas comunes limpias y espacios tranquilos para descansar. Adaptado para personas de movilidad reducida.",
-      "imageSrc": "/assets/uploads/hotel-e958a5dd-c4f1-4619-b0cd-7449eb4b6695.webp",
+      "title": "Sala de Conferencias",
+      "description": "Sala de conferencias con capacidad para 40 personas. Totalmente equipada: proyector, parlante, micrófono, TV plana, conectividad WiFi de alta velocidad, pizarra acrílica con plumones, baño privado. Se coordina alimentación si se requiere. Precio por hora.",
+      "imageSrc": "/assets/gallery/conferencias/conferencias-01.webp",
       "imagePosition": {
-        "x": 54,
-        "y": 40
+        "x": 50,
+        "y": 50
       }
     },
     {
-      "title": "Organizacion de tours e informacion turistica",
-      "description": "Servicio de organizacion de tours e informacion turistica sobre Plaza de Armas, Catedral de Puno, Balcon de Conde de Lemos y Iglesia de San Antonio.",
-      "imageSrc": "/assets/uploads/hotel-deluxe-wide.jpg",
+      "title": "Zona de Trabajo",
+      "description": "Zona de trabajo con mesa y silla en cada habitación, ideal para viajeros de negocios. WiFi gratis en todo el hotel.",
+      "imageSrc": "",
       "imagePosition": {
         "x": 50,
-        "y": 56
+        "y": 50
+      }
+    },
+    {
+      "title": "Jardín con caídas de agua",
+      "description": "Jardín al aire libre con caídas de agua. Áreas comunes pensadas para descansar y desconectar.",
+      "imageSrc": "/assets/gallery/areas/areas-2.webp",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Comedor",
+      "description": "Comedor amplio para desayuno buffet y alimentos. Disponible coordinación de alimentación para grupos y eventos.",
+      "imageSrc": "/assets/gallery/desayuno/desayuno-2.webp",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Calefacción",
+      "description": "Calefacción en todas las habitaciones. Camas cómodas, ducha con abundante agua caliente 24 horas.",
+      "imageSrc": "",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
       }
     }
   ],
   "highlights": [
-    "Ubicacion super centrica: a 3 minutos de Plaza de Armas de Puno.",
-    "WiFi gratis en todo el hotel con puntuacion de 8.5 segun huespedes.",
-    "Desayuno buffet o continental incluido, muy bien valorado.",
-    "Recepcion 24 horas con personal amable (puntuacion 9.3).",
-    "Servicio de organizacion de tours e informacion turistica."
+    "Desayuno Buffet",
+    "WiFi Gratis",
+    "Jardín",
+    "Estacionamiento de pago",
+    "Calefacción",
+    "Habitaciones sin humo",
+    "Secadora de pelo",
+    "Cafetería",
+    "Baño privado H₂O caliente 24h"
   ],
   "testimonials": [
     {
       "name": "Karla",
-      "role": "Mexico",
-      "quote": "La ubicacion super centrica, la habitacion muy amplia, el personal muy amable. Todo perfecto para nuestra estadia en Puno.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-01.jpg",
+      "role": "Mexico - Booking.com (feb 2026) - Puntuacion 9.0 Fantastico",
+      "quote": "La ubicacion super centrica, la habitacion muy amplia, el personal muy amable.",
       "location": "Escapada de fin de semana",
       "segment": "Ubicacion centrica y personal amable",
-      "rating": 5
+      "rating": 5,
+      "avatarSrc": ""
     },
     {
       "name": "Jeremy",
-      "role": "Peru",
-      "quote": "A mi hermano y a mi nos gusto el hotel, muy buena ubicacion, buen desayuno y el personal muy amable. Recomendado para visitar Puno.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-02.jpg",
+      "role": "Peru - Booking.com (feb 2026) - Puntuacion 10 Excepcional",
+      "quote": "A mi hermano y a mi nos gusto el hotel, muy buena ubicacion, buen desayuno y el personal muy amable.",
       "location": "Viaje familiar",
       "segment": "Buen desayuno y excelente ubicacion",
-      "rating": 5
+      "rating": 5,
+      "avatarSrc": ""
     },
     {
       "name": "Brigitte",
-      "role": "Francia",
-      "quote": "Buena ubicacion, personal muy amable, muy limpio, bebidas infusiones a disposicion, buen desayuno. Una estadia muy agradable.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-03.jpg",
+      "role": "Francia - Booking.com (ene 2026) - Puntuacion 10 Excepcional",
+      "quote": "Buena ubicacion, personal muy amable, muy limpio, bebidas e infusiones a disposicion y buen desayuno.",
       "location": "Viaje internacional",
       "segment": "Limpieza impecable y bebidas disponibles",
-      "rating": 5
+      "rating": 5,
+      "avatarSrc": ""
     },
     {
-      "name": "Daniela Rojas",
-      "role": "Puno, Peru",
-      "quote": "Gracias a todo el equipo de Hotel Puno Terra por una estadia tan comoda. La ubicacion centrica nos permitio explorar la Plaza de Armas y la Catedral con facilidad.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-04.jpg",
-      "location": "Escapada romantica",
-      "segment": "Ubicacion centrica y descanso real",
-      "rating": 5
-    },
-    {
-      "name": "Fiorella Vargas",
-      "role": "Lima, Peru",
-      "quote": "Elegimos el hotel para una fecha especial y fue una muy buena decision. Las instalaciones se ven cuidadas, el desayuno fue excelente y el trato del personal fue impecable.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-05.jpg",
-      "location": "Celebracion especial",
-      "segment": "Instalaciones cuidadas y servicio amable",
-      "rating": 5
-    },
-    {
-      "name": "Lucero Delgado",
-      "role": "Cusco, Peru",
-      "quote": "Quedamos agradecidos con la experiencia completa. El hotel transmite orden, seguridad y una atencion muy cordial que se nota en cada detalle de la estancia.",
-      "avatarSrc": "/assets/gallery/Opiniones reales/opinion-real-06.jpg",
-      "location": "Viaje de descanso",
-      "segment": "Seguridad, orden y calidez",
-      "rating": 5
+      "name": "Vicente",
+      "role": "Espana - Booking.com (sep 2025) - Puntuacion 8.0 Hotel bien ubicado",
+      "quote": "Amabilidad del personal, camas comodas, ducha con abundante agua caliente y calefaccion.",
+      "location": "Viaje internacional",
+      "segment": "Camas comodas y agua caliente",
+      "rating": 4,
+      "avatarSrc": ""
     }
   ],
   "faqs": [
@@ -260,9 +273,9 @@
     }
   ],
   "contact": {
-    "title": "Confirma tu fecha y reserva directamente",
-    "description": "Comparte tus fechas, tipo de habitacion y numero de huespedes. El equipo de Hotel Puno Terra te responde con disponibilidad y tarifa directa por WhatsApp.",
-    "whatsappNumber": "+51 951 669 969",
+    "title": "Confirma disponibilidad y reserva con claridad",
+    "description": "Comparte fechas, tipo de habitación y objetivo del viaje. La página queda preparada para mostrar habitaciones, beneficios y una reserva directa sin fricción.",
+    "whatsappNumber": "+51951669969",
     "email": "reservaspunoterra@gmail.com"
   },
   "bookingWidget": {
@@ -414,11 +427,18 @@
     "items": []
   },
   "location": {
-    "address": "Jr. Cajamarca 247, Cercado a dos cuadras de la Plaza de Armas de Puno",
+    "address": "Jr. Cajamarca 247, Cercado - a dos cuadras de la Plaza de Armas de Puno",
     "city": "Puno, Puno, Peru",
     "hours": "Recepcion 24 horas. Check-in 12:00-13:00, Check-out 10:00-10:30",
     "mapsEmbedUrl": "https://www.google.com/maps?q=Jr.+Cajamarca+247,+Puno,+Peru&output=embed",
-    "mapsLink": "https://www.google.com/maps?q=Jr.+Cajamarca+247,+Puno,+Peru"
+    "mapsLink": "https://www.google.com/maps?q=Jr.+Cajamarca+247,+Puno,+Peru",
+    "title": "Ubicación y llegada",
+    "cardTitle": "Ubicación",
+    "mapTitle": "Mapa de ubicación",
+    "phone": "+51 951 669 969",
+    "email": "reservaspunoterra@gmail.com",
+    "reserveWhatsapp": "Reservar por WhatsApp",
+    "googleMaps": "Ver ruta en Google Maps"
   },
   "visibility": {
     "highlights": [
@@ -459,5 +479,87 @@
       true,
       true
     ]
-  }
+  },
+  "heroSlides": [
+    {
+      "title": "Bienvenido a Hotel Puno Terra",
+      "subtitle": "Hotel céntrico a 2 cuadras de Plaza de Armas de Puno",
+      "imageSrc": "/assets/hero/hero-premium-1.webp",
+      "fallbackSrc": "/assets/hero/hero-premium-1.jpg",
+      "mobileImageSrc": "/assets/hero/hero-premium-1-mobile.webp",
+      "mobileFallbackSrc": "/assets/hero/hero-premium-1-mobile.jpg",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      },
+      "mobileImagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Experiencia del hotel",
+      "subtitle": "Espacios pensados para descansar - Áreas comunes, desayuno buffet y jardín",
+      "imageSrc": "/assets/hero/hero-premium-2.webp",
+      "fallbackSrc": "/assets/hero/hero-premium-2.jpg",
+      "mobileImageSrc": "/assets/hero/hero-premium-2-mobile.webp",
+      "mobileFallbackSrc": "/assets/hero/hero-premium-2-mobile.jpg",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      },
+      "mobileImagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Nuestras habitaciones",
+      "subtitle": "Habitaciones modernas, cómodas, tranquilas y pensadas para una estancia placentera",
+      "imageSrc": "/assets/hero/hero-premium-3.webp",
+      "fallbackSrc": "/assets/hero/hero-premium-3.jpg",
+      "mobileImageSrc": "/assets/hero/hero-premium-3-mobile.webp",
+      "mobileFallbackSrc": "/assets/hero/hero-premium-3-mobile.jpg",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      },
+      "mobileImagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Reserva de Tours",
+      "subtitle": "Tours por el Lago Titicaca, Islas Flotantes de los Uros, Taquile, Amantani, Luquina, Ruta Quechua, Ruta Aymara y Kayak",
+      "imageSrc": "/assets/hero/hero-premium-4.webp",
+      "fallbackSrc": "/assets/hero/hero-premium-4.jpg",
+      "mobileImageSrc": "/assets/hero/hero-premium-4-mobile.webp",
+      "mobileFallbackSrc": "/assets/hero/hero-premium-4-mobile.jpg",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      },
+      "mobileImagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    },
+    {
+      "title": "Sala de Conferencias",
+      "subtitle": "Capacidad 40 personas - Proyector, parlante, micrófono, TV plana, WiFi alta velocidad",
+      "imageSrc": "/assets/hero/hero-premium-5.webp",
+      "fallbackSrc": "/assets/hero/hero-premium-5.jpg",
+      "mobileImageSrc": "/assets/hero/hero-premium-5-mobile.webp",
+      "mobileFallbackSrc": "/assets/hero/hero-premium-5-mobile.jpg",
+      "imagePosition": {
+        "x": 50,
+        "y": 50
+      },
+      "mobileImagePosition": {
+        "x": 50,
+        "y": 50
+      }
+    }
+  ]
 }

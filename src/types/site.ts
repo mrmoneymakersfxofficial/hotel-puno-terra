@@ -394,4 +394,14 @@ export type SiteContent = {
     items: TimelineItem[];
   };
   location?: LocationInfo;
+  heroSlides?: Array<{
+    title?: string;
+    subtitle?: string;
+    imageSrc: string;
+    fallbackSrc?: string;
+    mobileImageSrc?: string;
+    mobileFallbackSrc?: string;
+    imagePosition?: ImagePosition;
+    mobileImagePosition?: ImagePosition;
+  }>;
 };

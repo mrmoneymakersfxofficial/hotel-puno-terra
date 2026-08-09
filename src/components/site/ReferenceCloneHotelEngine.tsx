@@ -428,48 +428,71 @@ function buildHeroSlides(
 }
 
 function buildCuratedHeroSlides(content: SiteContent): HotelHeroSlide[] {
-  const fallbackDescription = content.brand.description;
+  // If site-content provides explicit heroSlides, use them
+  if (content.heroSlides && content.heroSlides.length > 0) {
+    return content.heroSlides.map((slide) => ({
+      title: slide.title || content.brand.name || "Hotel Puno Terra",
+      subtitle: slide.subtitle || content.brand.description || "",
+      imageSrc: slide.imageSrc || "/assets/hero/hero-premium-1.webp",
+      fallbackSrc: slide.fallbackSrc || "/assets/hero/hero-premium-1.jpg",
+      mobileImageSrc: slide.mobileImageSrc || slide.imageSrc || "/assets/hero/hero-premium-1-mobile.webp",
+      mobileFallbackSrc: slide.mobileFallbackSrc || slide.fallbackSrc || "/assets/hero/hero-premium-1-mobile.jpg",
+      imagePosition: slide.imagePosition || { x: 50, y: 50 },
+      mobileImagePosition: slide.mobileImagePosition || slide.imagePosition || { x: 50, y: 50 },
+    }));
+  }
 
+  // Fallback to 5 curated hero slides using the new Hotel Puno Terra images
   return [
     {
-      title: "Lobby principal",
-      subtitle: "Llegada serena con una lectura limpia del hotel",
+      title: "Bienvenido a Hotel Puno Terra",
+      subtitle: "Hotel centrico a 2 cuadras de Plaza de Armas de Puno",
       imageSrc: "/assets/hero/hero-premium-1.webp",
       fallbackSrc: "/assets/hero/hero-premium-1.jpg",
       mobileImageSrc: "/assets/hero/hero-premium-1-mobile.webp",
       mobileFallbackSrc: "/assets/hero/hero-premium-1-mobile.jpg",
-      imagePosition: { x: 52, y: 50 },
-      mobileImagePosition: { x: 56, y: 44 },
+      imagePosition: { x: 50, y: 50 },
+      mobileImagePosition: { x: 50, y: 50 },
     },
     {
-      title: "Habitacion principal",
-      subtitle: "Descanso comodo con una lectura clara del espacio",
+      title: "Experiencia del hotel",
+      subtitle: "Espacios pensados para descansar - Areas comunes, desayuno buffet y jardin",
       imageSrc: "/assets/hero/hero-premium-2.webp",
       fallbackSrc: "/assets/hero/hero-premium-2.jpg",
       mobileImageSrc: "/assets/hero/hero-premium-2-mobile.webp",
       mobileFallbackSrc: "/assets/hero/hero-premium-2-mobile.jpg",
-      imagePosition: { x: 56, y: 48 },
-      mobileImagePosition: { x: 68, y: 48 },
+      imagePosition: { x: 50, y: 50 },
+      mobileImagePosition: { x: 50, y: 50 },
     },
     {
-      title: "Piscina",
-      subtitle: "Un momento de pausa con color y frescura",
+      title: "Nuestras habitaciones",
+      subtitle: "Habitaciones modernas, comodas, tranquilas y pensadas para una estancia placentera",
       imageSrc: "/assets/hero/hero-premium-3.webp",
       fallbackSrc: "/assets/hero/hero-premium-3.jpg",
       mobileImageSrc: "/assets/hero/hero-premium-3-mobile.webp",
       mobileFallbackSrc: "/assets/hero/hero-premium-3-mobile.jpg",
-      imagePosition: { x: 38, y: 42 },
-      mobileImagePosition: { x: 50, y: 42 },
+      imagePosition: { x: 50, y: 50 },
+      mobileImagePosition: { x: 50, y: 50 },
     },
     {
-      title: content.brand.name,
-      subtitle: fallbackDescription,
+      title: "Reserva de Tours",
+      subtitle: "Tours por el Lago Titicaca: Uros, Taquile, Amantani, Luquina, Ruta Quechua, Ruta Aymara y Kayak",
       imageSrc: "/assets/hero/hero-premium-4.webp",
       fallbackSrc: "/assets/hero/hero-premium-4.jpg",
       mobileImageSrc: "/assets/hero/hero-premium-4-mobile.webp",
       mobileFallbackSrc: "/assets/hero/hero-premium-4-mobile.jpg",
-      imagePosition: { x: 56, y: 44 },
-      mobileImagePosition: { x: 68, y: 42 },
+      imagePosition: { x: 50, y: 50 },
+      mobileImagePosition: { x: 50, y: 50 },
+    },
+    {
+      title: "Sala de Conferencias",
+      subtitle: "Capacidad 40 personas - Proyector, parlante, microfono, TV plana, WiFi alta velocidad",
+      imageSrc: "/assets/hero/hero-premium-5.webp",
+      fallbackSrc: "/assets/hero/hero-premium-5.jpg",
+      mobileImageSrc: "/assets/hero/hero-premium-5-mobile.webp",
+      mobileFallbackSrc: "/assets/hero/hero-premium-5-mobile.jpg",
+      imagePosition: { x: 50, y: 50 },
+      mobileImagePosition: { x: 50, y: 50 },
     },
   ];
 }

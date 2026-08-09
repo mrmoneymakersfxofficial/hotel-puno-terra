@@ -10,17 +10,17 @@ type HotelSocialLinksSectionProps = {
 
 const SOCIAL_LINKS = [
   {
-    href: "https://www.facebook.com/hotelPunoTerra",
+    href: "https://www.facebook.com/reservaspunoterrahotel",
     iconSrc: "/assets/social/facebook.svg",
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/hotelpunoterra/",
+    href: "https://www.instagram.com/reservaspunoterra/",
     iconSrc: "/assets/social/instagram.svg",
     label: "Instagram",
   },
   {
-    href: "https://www.tiktok.com/@hotelPunoTerra",
+    href: "https://www.tiktok.com/@reservaspunoterra",
     iconSrc: "/assets/social/tiktok.svg",
     label: "TikTok",
   },

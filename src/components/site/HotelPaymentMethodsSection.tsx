@@ -16,6 +16,11 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
           cciLabel: "CCI",
           legalNameLabel: "Legal name",
           rucLabel: "RUC",
+          acceptedMethodsLabel: "Accepted payment methods",
+          creditCardLabel: "Credit card",
+          yapeLabel: "Yape",
+          plinLabel: "Plin",
+          bankTransferLabel: "Bank transfer (BCP)",
         }
       : {
           heading: "M\u00e9todos de Pago",
@@ -23,6 +28,11 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
           cciLabel: "CCI",
           legalNameLabel: "RAZ\u00d3N SOCIAL",
           rucLabel: "RUC",
+          acceptedMethodsLabel: "M\u00e9todos de pago aceptados",
+          creditCardLabel: "Tarjeta de cr\u00e9dito",
+          yapeLabel: "Yape",
+          plinLabel: "Plin",
+          bankTransferLabel: "Transferencia bancaria (BCP)",
         };
 
   return (
@@ -63,6 +73,16 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
           </p>
         </div>
       </article>
+
+      <div className="hotel-payment-accepted-methods" aria-label={copy.acceptedMethodsLabel}>
+        <span className="hotel-payment-accepted-label">{copy.acceptedMethodsLabel}:</span>
+        <ul className="hotel-payment-accepted-list" role="list">
+          <li>{copy.creditCardLabel}</li>
+          <li>{copy.yapeLabel}</li>
+          <li>{copy.plinLabel}</li>
+          <li>{copy.bankTransferLabel}</li>
+        </ul>
+      </div>
 
       <style jsx global>{`
         .hotel-payment-methods-section {
@@ -125,6 +145,47 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
           width: clamp(120px, 18vw, 180px);
           height: auto;
           max-width: 100%;
+        }
+
+        .hotel-payment-accepted-methods {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          gap: 8px 12px;
+          margin: clamp(16px, 2.4vw, 24px) auto 0;
+          padding: clamp(14px, 2vw, 20px) clamp(16px, 2.4vw, 24px);
+          border-radius: 18px;
+          background: rgba(255, 255, 255, 0.6);
+          border: 1px solid rgba(15, 23, 42, 0.06);
+          max-width: 720px;
+        }
+
+        .hotel-payment-accepted-label {
+          font-weight: 700;
+          color: #111827;
+          font-size: clamp(0.9rem, 1.2vw, 1rem);
+        }
+
+        .hotel-payment-accepted-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px 10px;
+          padding: 0;
+          margin: 0;
+          list-style: none;
+        }
+
+        .hotel-payment-accepted-list li {
+          display: inline-flex;
+          align-items: center;
+          padding: 6px 14px;
+          border-radius: 999px;
+          background: #1f2937;
+          color: #ffffff;
+          font-size: clamp(0.82rem, 1.05vw, 0.92rem);
+          font-weight: 600;
+          letter-spacing: 0.01em;
         }
       `}</style>
     </section>
