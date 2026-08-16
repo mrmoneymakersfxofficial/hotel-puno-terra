@@ -18780,7 +18780,7 @@ body {
   padding: clamp(22px, 3vw, 36px) clamp(22px, 4vw, 48px);
   background:
     radial-gradient(circle at top right, rgba(211, 173, 97, 0.05), transparent 26%),
-    linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
+    transparent;
   border: 1px solid rgba(136, 108, 69, 0.06);
   border-left: none;
   border-radius: 0 30px 30px 0;
@@ -19676,7 +19676,7 @@ body {
     border: none;
     border-radius: 0;
     background:
-      linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
+      transparent;
     box-shadow: none;
     align-items: flex-start;
     text-align: left;
@@ -19861,7 +19861,7 @@ body {
     border-radius: 0;
     border: none;
     background:
-      linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
+      transparent;
     box-shadow: none;
     text-align: left;
   }
