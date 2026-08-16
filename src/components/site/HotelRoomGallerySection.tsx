@@ -96,12 +96,7 @@ export function HotelRoomGallerySection({
       <div className="hotel-room-gallery-list">
         {rooms.map((room) => (
           <article className="hotel-room-gallery-card" id={room.slug} key={room.slug}>
-            {/* Hero carousel on top for both mobile and PC */}
-            <div className="hotel-room-gallery-card-hero">
-              <HotelRoomGalleryCarousel locale={locale} roomTitle={room.title} slides={room.slides} />
-            </div>
-
-            {/* Content below the carousel */}
+            {/* Content FIRST - Text on left side */}
             <div className="hotel-room-gallery-card-content">
               <div className="hotel-room-gallery-card-head">
                 <div className="hotel-room-gallery-card-copy">
@@ -159,6 +154,11 @@ export function HotelRoomGallerySection({
                   )}
                 </div>
               </aside>
+            </div>
+
+            {/* Hero carousel SECOND - Image on right side */}
+            <div className="hotel-room-gallery-card-hero">
+              <HotelRoomGalleryCarousel locale={locale} roomTitle={room.title} slides={room.slides} />
             </div>
           </article>
         ))}

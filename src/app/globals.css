@@ -18593,12 +18593,12 @@ body {
 
 @media (min-width: 861px) {
   .hotel-room-gallery-card {
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
     align-items: stretch;
   }
 }
 
-/* Hero carousel wrapper - side-by-side on PC, full-width on top of mobile */
+/* Hero carousel wrapper - side-by-side on PC (RIGHT side), full-width on top of mobile */
 .hotel-room-gallery-card-hero {
   position: relative;
   width: 100%;
@@ -18607,15 +18607,15 @@ body {
 
 @media (min-width: 861px) {
   .hotel-room-gallery-card-hero {
-    border-radius: 30px 0 0 30px;
+    border-radius: 0 30px 30px 0;
   }
 
   .hotel-room-gallery-card-hero .hotel-room-carousel-strip-wrapper {
-    border-radius: 30px 0 0 30px;
+    border-radius: 0 30px 30px 0;
   }
 }
 
-/* Content next to the carousel - left-aligned text on both PC and mobile */
+/* Content next to the carousel - left-aligned text on both PC and mobile (LEFT side now) */
 .hotel-room-gallery-card-content {
   display: flex;
   flex-direction: column;
@@ -18624,11 +18624,11 @@ body {
   gap: clamp(18px, 2.5vw, 26px);
   padding: clamp(22px, 3vw, 36px) clamp(22px, 4vw, 48px);
   background:
-    radial-gradient(circle at top right, rgba(211, 173, 97, 0.05), transparent 26%),
+    radial-gradient(circle at top left, rgba(211, 173, 97, 0.05), transparent 26%),
     linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
   border: 1px solid rgba(136, 108, 69, 0.06);
-  border-left: none;
-  border-radius: 0 30px 30px 0;
+  border-right: none;
+  border-radius: 30px 0 0 30px;
   box-shadow:
     0 12px 28px rgba(78, 58, 31, 0.04),
     inset 0 1px 0 rgba(255, 255, 255, 0.48);
