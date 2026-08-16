@@ -15013,15 +15013,16 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-card {
+  // ELIMINADO FONDO BEIGE
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); // Texto izquierda (menor) - Imagen derecha (mayor)
   // MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige
   border-color: rgba(128, 99, 57, 0.1);
-  background: linear-gradient(180deg, rgba(255, 253, 249, 0.84), rgba(247, 240, 230, 0.96));
+  background: transparent; // Eliminado
   box-shadow: 0 24px 50px rgba(95, 73, 39, 0.08);
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-body {
-  background: linear-gradient(180deg, rgba(255, 253, 249, 0.92), rgba(248, 242, 234, 0.98));
+  background: transparent; // Eliminado
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-testimonial-card {
@@ -17068,6 +17069,7 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-card {
+  // ELIMINADO FONDO BEIGE
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); // Texto izquierda (menor) - Imagen derecha (mayor)
   // MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige
   border-radius: 26px;
