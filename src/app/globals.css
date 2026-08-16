@@ -18593,7 +18593,7 @@ body {
 
 @media (min-width: 861px) {
   .hotel-room-gallery-card {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr);
     align-items: stretch;
   }
 }
@@ -18615,30 +18615,26 @@ body {
   }
 }
 
-/* Content next to the carousel - left-aligned text on both PC and mobile (LEFT side now) */
+/* Content next to the carousel - left-aligned text on both PC and mobile (LEFT side now) - SIN BORDE BLANCO */
 .hotel-room-gallery-card-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   gap: clamp(18px, 2.5vw, 26px);
-  padding: clamp(22px, 3vw, 36px) clamp(22px, 4vw, 48px);
-  background:
-    radial-gradient(circle at top left, rgba(211, 173, 97, 0.05), transparent 26%),
-    linear-gradient(180deg, rgba(251, 246, 238, 0.66), rgba(244, 237, 227, 0.5));
-  border: 1px solid rgba(136, 108, 69, 0.06);
-  border-right: none;
+  padding: clamp(28px, 3.5vw, 42px) clamp(28px, 4.5vw, 52px);
+  background: transparent;
+  border: none;
   border-radius: 30px 0 0 30px;
-  box-shadow:
-    0 12px 28px rgba(78, 58, 31, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.48);
+  box-shadow: none;
 }
 
 @media (max-width: 860px) {
   .hotel-room-gallery-card-content {
-    border-left: 1px solid rgba(136, 108, 69, 0.06);
+    border: none;
     border-radius: 0 0 30px 30px;
-    padding: clamp(22px, 4vw, 30px) clamp(20px, 5vw, 28px);
+    padding: clamp(24px, 4.5vw, 32px) clamp(22px, 5.5vw, 30px);
+    background: transparent;
   }
 }
 
