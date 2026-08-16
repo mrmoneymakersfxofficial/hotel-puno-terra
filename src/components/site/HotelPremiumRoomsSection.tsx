@@ -35,10 +35,7 @@ export function HotelPremiumRoomsSection({ eyebrow, locale, rooms, subtitle, tit
       <div className="hotel-deluxe-room-grid">
         {rooms.map((room) => (
           <article className="hotel-deluxe-room-card" key={room.title}>
-            <div
-              className={`hotel-deluxe-room-media${room.imageSrc ? " has-media-image" : " media-fallback-hotel"}`}
-              style={getRoomMediaStyle(room.imageSrc, room.imagePosition)}
-            />
+            {/* TEXTO PRIMERO (IZQUIERDA) */}
             <div className="hotel-deluxe-room-body">
               <div className="hotel-deluxe-room-copy">
                 <strong>{room.title}</strong>
@@ -56,11 +53,17 @@ export function HotelPremiumRoomsSection({ eyebrow, locale, rooms, subtitle, tit
                   <b>{room.price}</b>
                   <span>{room.rateLabel || ui.rooms.perNight}</span>
                 </div>
-                <a className="primary-button hotel-deluxe-room-cta" href={room.reservationHref}>
+                <a className="primary-button hotel-deluxe-cta" href={room.reservationHref}>
                   {ui.rooms.reserveNow}
                 </a>
               </div>
             </div>
+
+            {/* IMAGEN DESPUÉS (DERECHA) - MÁS GRANDE */}
+            <div
+              className={`hotel-deluxe-room-media${room.imageSrc ? " has-media-image" : " media-fallback-hotel"}`}
+              style={getRoomMediaStyle(room.imageSrc, room.imagePosition)}
+            />
           </article>
         ))}
       </div>
