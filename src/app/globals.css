@@ -719,10 +719,12 @@
     line-height: 1.05;
   }
 
-  .hotel-deluxe-hero-description {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    letter-spacing: 0.01em;
+  .hotel-deluxe-hero-description,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-description-premium {
+    font-size: 1.1rem !important;
+    line-height: 1.7 !important;
+    letter-spacing: 0.01em !important;
+    max-width: 100% !important;
   }
 
   .hotel-deluxe-hero-actions {
@@ -12931,13 +12933,15 @@ button {
     padding-top: 104px;
   }
 
-  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium span {
-    font-size: clamp(2.2rem, 9vw, 3.2rem);
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium span,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title span {
+    font-size: clamp(2.4rem, 9vw, 3.4rem) !important;
   }
 
-  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium strong {
-    font-size: clamp(3rem, 12.5vw, 4.5rem);
-    line-height: 1.05;
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium strong,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title strong {
+    font-size: clamp(3.2rem, 12vw, 4.6rem) !important;
+    line-height: 1.08 !important;
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-signals {
@@ -14481,8 +14485,9 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: rgba(248, 244, 234, 0.88);
-  font-size: 1rem;
+  color: rgba(248, 244, 234, 0.95) !important;
+  font-size: 1.05rem !important;
+  letter-spacing: 0.08em !important;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
@@ -14898,8 +14903,10 @@ button {
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
-    font-size: 0.76rem;
-    letter-spacing: 0.15em;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.06em !important;
+    line-height: 1.5 !important;
+    color: rgba(248, 244, 234, 0.95) !important;
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title span {
@@ -16868,8 +16875,9 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
-  color: rgba(241, 225, 195, 0.76);
-  letter-spacing: 0.22em;
+  color: rgba(248, 244, 234, 0.92) !important;
+  letter-spacing: 0.1em !important;
+  font-size: 1.05rem !important;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-hero-brand {
@@ -20825,9 +20833,10 @@ body {
    Improved UX for iPad and medium tablets
    ============================================ */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .hotel-deluxe-hero-kicker {
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
+  .hotel-deluxe-hero-kicker,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
+    font-size: 1rem !important;
+    letter-spacing: 0.08em !important;
   }
   
   .hotel-deluxe-hero-description,
@@ -20869,9 +20878,10 @@ body {
    For iPhone SE and very small screens
    ============================================ */
 @media (max-width: 375px) {
-  .hotel-deluxe-hero-kicker {
-    font-size: 0.82rem;
-    letter-spacing: 0.05em;
+  .hotel-deluxe-hero-kicker,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
+    font-size: 0.88rem !important;
+    letter-spacing: 0.04em !important;
   }
   
   .hotel-deluxe-hero-description {
@@ -20913,8 +20923,9 @@ body {
    For standard phones in portrait
    ============================================ */
 @media (min-width: 376px) and (max-width: 480px) {
-  .hotel-deluxe-hero-kicker {
-    font-size: 0.9rem;
+  .hotel-deluxe-hero-kicker,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
+    font-size: 0.96rem !important;
   }
   
   .hotel-deluxe-hero-description {
