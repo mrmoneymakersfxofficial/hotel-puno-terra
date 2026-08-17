@@ -343,7 +343,7 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
         mobileMenuAria: "Open menu",
       },
       hero: {
-        directKicker: "Direct booking with no middlemen",
+        directKicker: "Book directly with us and get 20% less than Booking.com, Expedia, Despegar.com and any other platform",
         subtitlePrefix: "Your retreat in",
         primaryCta: "Book via WhatsApp",
         secondaryCta: "View rooms",
