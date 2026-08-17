@@ -1706,7 +1706,7 @@ button {
 
 .page-shell.engine-landing.niche-inmobiliaria .note-card {
   padding: 14px;
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
 }
 
 .page-shell.engine-landing.niche-inmobiliaria .media-panel-mini {
@@ -3506,7 +3506,7 @@ button {
   gap: 8px;
   padding: 18px;
   border-radius: 22px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background: rgba(255, 255, 255, 0.72);
 }
 
@@ -9130,7 +9130,7 @@ button {
   width: min(1180px, calc(100% - 48px));
   margin-inline: auto;
   padding: clamp(24px, 3vw, 38px);
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   border: 1px solid rgba(16, 59, 112, 0.08);
   background: #ffffff;
   box-shadow: 0 24px 58px rgba(81, 65, 46, 0.08);
@@ -11712,7 +11712,7 @@ button {
 .hotel-reference-tab-panels {
   position: relative;
   min-height: 100%;
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   border: 1px solid rgba(16, 59, 112, 0.08);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(249, 247, 243, 0.94)),
@@ -12456,7 +12456,7 @@ button {
   align-self: end;
   width: min(420px, 100%);
   padding: 20px;
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-head-premium {
@@ -12695,7 +12695,7 @@ button {
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-location-info,
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-location-map {
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   border: 1px solid rgba(128, 99, 57, 0.12);
   background:
     linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(246, 239, 230, 0.98)),
@@ -13282,7 +13282,7 @@ button {
   margin-top: -78px;
   padding: 28px;
   border-radius: 34px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 243, 236, 0.96)),
     rgba(255, 255, 255, 0.96);
@@ -13317,14 +13317,14 @@ button {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: none;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
 }
 
 .hotel-deluxe-booking-shell .hotel-reference-booking-summary {
   width: 100%;
   margin: 0;
   border-radius: 24px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background: rgba(255, 255, 255, 0.72);
   box-shadow: none;
 }
@@ -13341,7 +13341,7 @@ button {
   min-height: 118px;
   padding: 18px;
   border-radius: 24px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background: #fcfbf8;
 }
 
@@ -13407,10 +13407,10 @@ button {
   display: grid;
   min-height: 320px;
   overflow: hidden;
-  border-radius: 0; // Eliminado border-radius
-  border: none; // Eliminado borde
+  border-radius: 0; /* Eliminado border-radius */
+  border: none; /* Eliminado borde */
   background: #ddcfb3;
-  box-shadow: none; // Eliminado sombra
+  box-shadow: none; /* Eliminado sombra */
 }
 
 .hotel-deluxe-experience-card.card-1 {
@@ -13466,14 +13466,14 @@ button {
 }
 
 .hotel-deluxe-room-card {
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); // Texto izquierda (menor) - Imagen derecha (mayor)
-  // MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); /* Texto izquierda (menor) - Imagen derecha (mayor) */
+  /* MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige */
   display: grid;
   overflow: hidden;
-  border-radius: 0; // Eliminado border-radius
-  border: none; // Eliminado borde
-  background: transparent; // Eliminado fondo beige
-  box-shadow: none; // Eliminado sombra
+  border-radius: 0; /* Eliminado border-radius */
+  border: none; /* Eliminado borde */
+  background: transparent; /* Eliminado fondo beige */
+  box-shadow: none; /* Eliminado sombra */
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -13483,7 +13483,7 @@ button {
 }
 
 .hotel-deluxe-room-media {
-  min-height: 400px; // Imagen más grande
+  min-height: 400px; /* Imagen más grande */
   background-color: #d9c7a7;
   background-size: cover;
   background-repeat: no-repeat;
@@ -13579,7 +13579,7 @@ button {
   gap: 16px;
   padding: 24px;
   border-radius: 28px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background: linear-gradient(180deg, #ffffff, #faf7f2);
   box-shadow: 0 22px 48px rgba(24, 39, 67, 0.08);
 }
@@ -13661,7 +13661,7 @@ button {
   gap: 14px;
   padding: 22px 18px;
   border-radius: 26px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background: #fcfbf8;
   box-shadow: 0 20px 42px rgba(24, 39, 67, 0.06);
 }
@@ -13692,9 +13692,9 @@ button {
 .hotel-deluxe-shell .scene-location {
   padding: clamp(28px, 3vw, 38px);
   border-radius: 34px;
-  border: none; // Eliminado borde
-  background: transparent; // Eliminado fondo beige
-  box-shadow: none; // Eliminado sombra
+  border: none; /* Eliminado borde */
+  background: transparent; /* Eliminado fondo beige */
+  box-shadow: none; /* Eliminado sombra */
 }
 
 .hotel-deluxe-shell .location-heading h2 {
@@ -13728,7 +13728,7 @@ button {
   justify-items: center;
   padding: clamp(34px, 5vw, 54px);
   border-radius: 36px;
-  border: none; // Eliminado borde
+  border: none; /* Eliminado borde */
   background:
     radial-gradient(circle at top left, rgba(201, 164, 79, 0.16), transparent 22%),
     linear-gradient(135deg, rgba(24, 61, 121, 0.98), rgba(13, 33, 68, 0.98));
@@ -14026,7 +14026,7 @@ button {
 
   .hotel-deluxe-hero-stage {
     min-height: 520px;
-    border-radius: 0; // Eliminado border-radius
+    border-radius: 0; /* Eliminado border-radius */
   }
 
   .hotel-deluxe-hero-stage .hotel-reference-hero-thumbs {
@@ -15013,16 +15013,16 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-card {
-  // ELIMINADO FONDO BEIGE
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); // Texto izquierda (menor) - Imagen derecha (mayor)
-  // MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige
+  /* ELIMINADO FONDO BEIGE */
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); /* Texto izquierda (menor) - Imagen derecha (mayor) */
+  /* MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige */
   border-color: rgba(128, 99, 57, 0.1);
-  background: transparent; // Eliminado
+  background: transparent; /* Eliminado */
   box-shadow: 0 24px 50px rgba(95, 73, 39, 0.08);
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-body {
-  background: transparent; // Eliminado
+  background: transparent; /* Eliminado */
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-testimonial-card {
@@ -15170,7 +15170,7 @@ body {
 .page-shell.mode-reference-clone-hotel .location-map {
   min-height: 360px;
   border-color: rgba(128, 99, 57, 0.12);
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0)),
     rgba(255, 250, 243, 0.82);
@@ -15628,7 +15628,7 @@ body {
 
 .page-shell.mode-reference-clone-hotel .hotel-home-location .hotel-deluxe-location-info,
 .page-shell.mode-reference-clone-hotel .hotel-home-location .hotel-deluxe-location-map {
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   border: 1px solid rgba(128, 99, 57, 0.12);
   background:
     linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(246, 239, 230, 0.98)),
@@ -15887,7 +15887,7 @@ body {
   align-self: end;
   width: min(400px, 100%);
   padding: 22px;
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   background:
     linear-gradient(180deg, rgba(18, 23, 34, 0.8), rgba(9, 12, 18, 0.72)),
     rgba(8, 10, 14, 0.48);
@@ -16566,7 +16566,7 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-location-map-shell {
-  min-height: 400px; // Imagen más grande
+  min-height: 400px; /* Imagen más grande */
   border-right: 1px solid rgba(129, 100, 60, 0.12);
 }
 
@@ -17069,9 +17069,9 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-card {
-  // ELIMINADO FONDO BEIGE
-  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); // Texto izquierda (menor) - Imagen derecha (mayor)
-  // MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige
+  /* ELIMINADO FONDO BEIGE */
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.45fr); /* Texto izquierda (menor) - Imagen derecha (mayor) */
+  /* MODIFICADO: Layout texto-izquierda imagen-derecha sin fondo beige */
   border-radius: 26px;
   border: 1px solid rgba(136, 108, 69, 0.1);
   background:
@@ -17083,7 +17083,7 @@ body {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-media {
-  min-height: 400px; // Imagen más grande
+  min-height: 400px; /* Imagen más grande */
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-room-price b {
@@ -17202,7 +17202,7 @@ body {
 
 .page-shell.mode-reference-clone-hotel .hotel-home-testimonial-carousel-viewport {
   overflow: hidden;
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-home-testimonial-carousel-track {
@@ -17218,7 +17218,7 @@ body {
   min-width: 0;
   min-height: 540px;
   border: 1px solid rgba(136, 108, 69, 0.08);
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   overflow: hidden;
   background:
     linear-gradient(180deg, rgba(255, 252, 246, 0.98), rgba(247, 241, 232, 0.96)),
@@ -17969,7 +17969,7 @@ body {
 @media (max-width: 860px) {
   .page-shell.mode-reference-clone-hotel .hotel-home-hero-stage {
     min-height: 880px;
-    border-radius: 0; // Eliminado border-radius
+    border-radius: 0; /* Eliminado border-radius */
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-home-hero-layout-centered {
@@ -18150,7 +18150,7 @@ body {
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-home-location-map-shell {
-    min-height: 400px; // Imagen más grande
+    min-height: 400px; /* Imagen más grande */
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-home-location-button,
@@ -19499,7 +19499,7 @@ body {
   margin: 0;
   overflow: hidden;
   border: 1px solid rgba(136, 108, 69, 0.1);
-  border-radius: 0; // Eliminado border-radius
+  border-radius: 0; /* Eliminado border-radius */
   background: #eadfcb;
   box-shadow:
     0 24px 46px rgba(78, 58, 31, 0.1),
