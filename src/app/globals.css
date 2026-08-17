@@ -288,9 +288,9 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: rgba(248, 244, 234, 0.76);
-  font-size: 0.92rem;
-  letter-spacing: 0.2em;
+  color: rgba(248, 244, 234, 0.88);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -699,27 +699,30 @@
   }
 
   .hotel-deluxe-hero-inner {
-    width: calc(100% - 16px);
-    padding-top: 94px;
-    padding-bottom: 18px;
+    width: calc(100% - 20px);
+    padding-top: 98px;
+    padding-bottom: 24px;
   }
 
   .hotel-deluxe-hero-kicker {
-    font-size: 0.76rem;
-    letter-spacing: 0.15em;
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
   }
 
   .hotel-deluxe-hero-title span {
-    font-size: clamp(2.2rem, 9vw, 3rem);
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
   }
 
   .hotel-deluxe-hero-title strong {
-    font-size: clamp(3.3rem, 15vw, 4.6rem);
+    font-size: clamp(3.5rem, 14vw, 4.8rem);
+    line-height: 1.05;
   }
 
   .hotel-deluxe-hero-description {
-    font-size: 0.98rem;
-    line-height: 1.65;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
   }
 
   .hotel-deluxe-hero-actions {
@@ -731,19 +734,38 @@
   .hotel-deluxe-ghost-button {
     width: 100%;
     justify-content: center;
+    min-height: 54px;
+    padding: 16px 28px;
+    font-size: 1.02rem;
   }
 
   .hotel-deluxe-booking-shell {
-    padding: 14px;
+    padding: 18px;
+    border-radius: 22px;
   }
 
   .hotel-deluxe-booking-shell .hotel-reference-booking-field {
-    padding: 16px;
+    padding: 18px 16px;
     border-radius: 20px;
+    font-size: 0.96rem;
   }
 
   .hotel-deluxe-benefits {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .hotel-deluxe-benefit-item {
+    padding: 14px;
+  }
+  
+  .hotel-home-benefit-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .hotel-home-benefit-item strong {
+    font-size: 0.88rem;
   }
 }
 
@@ -12393,8 +12415,9 @@ button {
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-description-premium {
-  max-width: 50ch;
-  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  max-width: 52ch;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.7;
 }
 
 .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-actions-premium {
@@ -12909,11 +12932,12 @@ button {
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium span {
-    font-size: clamp(2rem, 9vw, 3rem);
+    font-size: clamp(2.2rem, 9vw, 3.2rem);
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium strong {
-    font-size: clamp(2.8rem, 13vw, 4.3rem);
+    font-size: clamp(3rem, 12.5vw, 4.5rem);
+    line-height: 1.05;
   }
 
   .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-signals {
@@ -14079,6 +14103,20 @@ button {
   .hotel-deluxe-amenity-grid,
   .hotel-deluxe-benefits {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .hotel-deluxe-benefit-item {
+    padding: 14px;
+  }
+  
+  .hotel-home-benefit-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .hotel-home-benefit-item strong {
+    font-size: 0.88rem;
   }
 
   .hotel-deluxe-experience-card,
@@ -14443,8 +14481,8 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: rgba(248, 244, 234, 0.76);
-  font-size: 0.92rem;
+  color: rgba(248, 244, 234, 0.88);
+  font-size: 1rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
