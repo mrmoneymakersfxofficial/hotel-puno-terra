@@ -495,7 +495,7 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
       mobileMenuAria: "Abrir menú",
     },
     hero: {
-      directKicker: "Reserva directa sin intermediarios",
+      directKicker: "RESERVA DIRECTAMENTE CON NOSOTROS Y OBTEN UN 20% MENOS QUE BOOKING.COM, EXPEDIA, DESPEGAR.COM Y CUALQUIER OTRA PLATAFORMA",
       subtitlePrefix: "Tu refugio en",
       primaryCta: "Reservar por WhatsApp",
       secondaryCta: "Ver habitaciones",
