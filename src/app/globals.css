@@ -20820,3 +20820,167 @@ body {
 }
 
 
+/* ============================================
+   TABLET OPTIMIZATIONS (768px - 1024px)
+   Improved UX for iPad and medium tablets
+   ============================================ */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hotel-deluxe-hero-kicker {
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .hotel-deluxe-hero-description,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-description-premium {
+    font-size: clamp(1.1rem, 1.8vw, 1.32rem);
+  }
+  
+  .hotel-deluxe-hero-title span,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium span {
+    font-size: clamp(2.6rem, 5vw, 3.6rem);
+  }
+  
+  .hotel-deluxe-hero-title strong,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title-premium strong {
+    font-size: clamp(3.8rem, 7vw, 5.5rem);
+  }
+  
+  .hotel-deluxe-whatsapp-button,
+  .hotel-deluxe-ghost-button {
+    min-height: 52px;
+    padding: 14px 28px;
+  }
+  
+  .hotel-deluxe-booking-shell {
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .hotel-deluxe-benefits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ============================================
+   SMALL PHONE OPTIMIZATIONS (max-width: 375px)
+   For iPhone SE and very small screens
+   ============================================ */
+@media (max-width: 375px) {
+  .hotel-deluxe-hero-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+  }
+  
+  .hotel-deluxe-hero-description {
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+  
+  .hotel-deluxe-hero-title span {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+  
+  .hotel-deluxe-hero-title strong {
+    font-size: clamp(2.8rem, 15vw, 4rem);
+  }
+  
+  .hotel-deluxe-whatsapp-button,
+  .hotel-deluxe-ghost-button {
+    min-height: 50px;
+    padding: 14px 20px;
+    font-size: 0.96rem;
+  }
+  
+  .hotel-deluxe-booking-shell {
+    padding: 14px;
+    border-radius: 18px;
+  }
+  
+  .hotel-home-benefit-item {
+    padding: 10px 12px;
+  }
+  
+  .hotel-home-benefit-item strong {
+    font-size: 0.82rem;
+  }
+}
+
+/* ============================================
+   LARGE MOBILE OPTIMIZATIONS (376px - 480px)  
+   For standard phones in portrait
+   ============================================ */
+@media (min-width: 376px) and (max-width: 480px) {
+  .hotel-deluxe-hero-kicker {
+    font-size: 0.9rem;
+  }
+  
+  .hotel-deluxe-hero-description {
+    font-size: 1.02rem;
+  }
+  
+  .hotel-deluxe-hero-inner {
+    width: calc(100% - 24px);
+  }
+  
+  .hotel-deluxe-booking-shell {
+    max-width: 420px;
+  }
+}
+
+
+/* Mobile Room Card Optimizations */
+@media (max-width: 768px) {
+  .hotel-deluxe-room-card {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+  
+  .hotel-deluxe-room-body {
+    order: 1;
+    padding: 18px;
+  }
+  
+  .hotel-deluxe-room-media {
+    order: 2;
+    min-height: 220px;
+  }
+  
+  .hotel-deluxe-room-body strong {
+    font-size: 1.25rem !important;
+  }
+  
+  .hotel-deluxe-room-body p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .hotel-deluxe-room-benefits li {
+    font-size: 0.88rem !important;
+    padding: 8px 0 !important;
+  }
+}
+
+/* Mobile Footer Optimizations */  
+@media (max-width: 768px) {
+  .hotel-deluxe-footer {
+    padding: 40px 20px 30px;
+  }
+  
+  .hotel-deluxe-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  
+  .hotel-deluxe-footer-section h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .hotel-deluxe-footer-links a {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+}
