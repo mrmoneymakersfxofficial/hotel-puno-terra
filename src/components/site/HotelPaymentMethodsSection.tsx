@@ -49,10 +49,10 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
 
         <div className="hotel-payment-method-body">
           <p>
-            <strong>{copy.rucLabel}:</strong> Consultar
+            <strong>{copy.rucLabel}:</strong> 20406501729
           </p>
           <p>
-            <strong>{copy.legalNameLabel}:</strong> Hotel Puno Terra
+            <strong>{copy.legalNameLabel}:</strong> Puno Terra E.I.R.L
           </p>
           <div className="hotel-payment-bank-logo-wrap" aria-label="BCP">
             <Image
@@ -66,10 +66,10 @@ export function HotelPaymentMethodsSection({ locale }: HotelPaymentMethodsSectio
             />
           </div>
           <p>
-            <strong>{copy.accountLabel}:</strong> Consultar al hotel
+            <strong>{copy.accountLabel}:</strong> 19176553462027
           </p>
           <p>
-            <strong>{copy.cciLabel}:</strong> Consultar al hotel
+            <strong>{copy.cciLabel}:</strong> 00219117655346202750
           </p>
         </div>
       </article>
