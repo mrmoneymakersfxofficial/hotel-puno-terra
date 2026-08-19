@@ -20995,3 +20995,332 @@ body {
     padding: 6px 0;
   }
 }
+
+
+
+/* =============================================
+   [SECCION: HERO_UX_OPTIMIZATION]
+   Optimización UX/UI Hero y Widget de Reservas
+   Fecha: 2026-01-19
+   ============================================= */
+
+/* ====== 1. ART DIRECTION RESPONSIVE - IMAGEN HERO ====== */
+
+/* Desktop: Mantener imagen horizontal con cover completo */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-stage .hotel-reference-hero-slide-media {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Mobile: Ajustar foco a rostros/personas (parte superior-central) */
+@media (max-width: 768px) {
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-stage .hotel-reference-hero-slide-media {
+    /* Enfocar la parte superior donde están las personas */
+    object-position: 35% 20%;
+    /* Escala ligeramente mayor para evitar espacios vacíos */
+    object-fit: cover;
+  }
+  
+  /* Alternativa: si la imagen se ve muy recortada, usar scale */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-stage .hotel-reference-hero-slide {
+    transform: scale(1.08);
+  }
+  
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-stage .hotel-reference-hero-slide.is-active {
+    transform: scale(1.02);
+  }
+}
+
+/* ====== 2. OVERLAY MEJORADO PARA CONTRASTE EN MOBILE ====== */
+
+@media (max-width: 768px) {
+  /* Overlay más oscuro para garantizar legibilidad del texto blanco */
+  .page-shell.mode-reference-clone-hotel .hotel-home-hero-overlay {
+    background:
+      linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.75) 0%, 
+        rgba(0, 0, 0, 0.45) 25%, 
+        rgba(0, 0, 0, 0.30) 50%,
+        rgba(0, 0, 0, 0.65) 85%,
+        rgba(0, 0, 0, 0.82) 100%
+      ),
+      linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.50) 0%, 
+        rgba(0, 0, 0, 0.15) 40%,
+        rgba(0, 0, 0, 0.15) 60%,
+        rgba(0, 0, 0, 0.50) 100%
+      ) !important;
+  }
+  
+  /* Pseudo-elemento ::before del stage más oscuro */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-stage::before {
+    background:
+      linear-gradient(180deg, 
+        rgba(4, 6, 7, 0.80) 0%, 
+        rgba(8, 10, 10, 0.35) 22%, 
+        rgba(11, 13, 13, 0.50) 56%, 
+        rgba(10, 10, 9, 0.88) 100%
+      ) !important;
+  }
+}
+
+/* ====== 3. DENSIDAD DE TEXTO - OCULTAR PÁRRAFO LARGO EN MOBILE ====== */
+
+@media (max-width: 768px) {
+  /* Ocultar descripción larga en mobile - solo mostrar kicker de alto impacto */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-description,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-description-premium {
+    display: none !important;
+  }
+  
+  /* Kicker más prominente y legible */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-kicker {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    color: #ffffff !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Título ligeramente más pequeño pero legible */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-hero-title strong {
+    font-size: clamp(2.8rem, 10vw, 4rem);
+    text-shadow: 0 14px 38px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* ====== 4. JERARQUÍA DE BOTONES CTA ====== */
+
+/* Botón PRINCIPAL: Sólido y prominente */
+.page-shell.mode-reference-clone-hotel .hotel-home-hero-primary {
+  background: linear-gradient(135deg, #1f7a4c 0%, #165c38 100%) !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow:
+    0 18px 36px rgba(31, 122, 76, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.28s ease !important;
+}
+
+.page-shell.mode-reference-clone-hotel .hotel-home-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 22px 44px rgba(31, 122, 76, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 8px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Botón SECUNDARIO: Ghost/Outline - no compite con principal */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-ghost-button,
+.page-shell.mode-reference-clone-hotel .hotel-home-hero-actions .secondary-button {
+  background: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  font-weight: 500 !important;
+  backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 0 0 0 transparent,
+    0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.28s ease !important;
+}
+
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-ghost-button:hover,
+.page-shell.mode-reference-clone-hotel .hotel-home-hero-actions .secondary-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  transform: translateY(-1px);
+}
+
+/* Mobile: Botones apilados verticalmente con touch targets de 44px+ */
+@media (max-width: 768px) {
+  .page-shell.mode-reference-clone-hotel .hotel-home-hero-actions {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+  
+  .page-shell.mode-reference-clone-hotel .hotel-home-hero-primary,
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-ghost-button,
+  .page-shell.mode-reference-clone-hotel .hotel-home-hero-actions .secondary-button {
+    min-height: 54px !important; /* Touch target size > 44px */
+    font-size: 1rem !important;
+  }
+}
+
+/* ====== 5. WIDGET DE RESERVAS GLASSMORPHISM OPTIMIZADO ====== */
+
+/* Contenedor del widget - Glassmorphism mejorado */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-shell,
+.page-shell.mode-reference-clone-hotel .hotel-home-reservation-card-inline {
+  background: 
+    linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.12) 0%, 
+      rgba(255, 255, 255, 0.06) 100%
+    ) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Títulos del widget - Mejor contraste AAA */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-kicker,
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-head span {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-head p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5;
+}
+
+/* Labels de campos - Contraste mejorado */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-label-row span,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field span,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field label {
+  color: rgba(255, 255, 255, 0.92) !important;
+  font-weight: 600 !important;
+  font-size: 0.88rem !important;
+}
+
+/* Inputs y selects - Fondo translúcido con buen contraste */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input input,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input select {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input input::placeholder,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input small {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 500 !important;
+}
+
+/* Iconos de campos */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-field-icon {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Campos interactivos - Hover/Focus states */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field.is-interactive:hover,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field.is-interactive:focus-within {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Botón de submit del widget */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-button {
+  background: linear-gradient(135deg, #1f7a4c 0%, #165c38 100%) !important;
+  font-weight: 700 !important;
+  min-height: 52px !important;
+  box-shadow: 0 8px 24px rgba(31, 122, 76, 0.3) !important;
+}
+
+/* ====== 6. WIDGET VERTICAL EN MOBILE CON TOUCH TARGETS ====== */
+
+@media (max-width: 768px) {
+  /* Layout vertical para campos */
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-bar {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  /* Cada campo ocupa todo el ancho */
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-field {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    min-height: 54px !important; /* Touch target > 44px */
+    padding: 14px 16px !important;
+  }
+  
+  /* Botón de submit también full width */
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-button {
+    width: 100% !important;
+    min-height: 56px !important;
+    margin-top: 8px !important;
+  }
+  
+  /* Padding extra inferior para no ser tapado por botón flotante WhatsApp */
+  .page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-shell,
+  .page-shell.mode-reference-clone-hotel .hotel-home-reservation-card-inline {
+    padding-bottom: 90px !important; /* Espacio para botón flotante */
+    margin-bottom: 24px !important;
+  }
+  
+  /* Contenedor hero con padding extra inferior */
+  .page-shell.mode-reference-clone-hotel .hotel-home-hero-layout-centered {
+    padding-bottom: clamp(140px, 18svh, 180px) !important;
+  }
+}
+
+/* ====== 7. NAVEGACIÓN DESKTOP - MEJORA DE LEGIBILIDAD ====== */
+
+/* Header/navegación con oscurecimiento sutil */
+@media (min-width: 769px) {
+  /* Oscurecimiento detrás del header */
+  .page-shell.mode-reference-clone-hotel .hotel-premium-header,
+  .page-shell.mode-reference-clone-hotel header[role="banner"] {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.15) 70%,
+      transparent 100%
+    ) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+  
+  /* Text shadow en enlaces de navegación para mejor legibilidad */
+  .page-shell.mode-reference-clone-hotel nav a,
+  .page-shell.mode-reference-clone-hotel .hotel-premium-header nav a,
+  .page-shell.mode-reference-clone-hotel header nav a {
+    text-shadow: 
+      0 2px 8px rgba(0, 0, 0, 0.4),
+      0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    font-weight: 600 !important;
+  }
+  
+  /* Estado hover de navegación */
+  .page-shell.mode-reference-clone-hotel nav a:hover {
+    text-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.5),
+      0 1px 3px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+/* ====== 8. BENEFITS STRIP - MEJORAS MOBILE ====== */
+
+@media (max-width: 768px) {
+  .page-shell.mode-reference-clone-hotel .hotel-home-benefits-strip {
+    gap: 16px !important;
+    padding: 20px 16px !important;
+  }
+  
+  .page-shell.mode-reference-clone-hotel .hotel-home-benefit-item {
+    gap: 8px !important;
+    font-size: 0.82rem !important;
+  }
+  
+  .page-shell.mode-reference-clone-hotel .hotel-home-benefit-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* =============================================
+   [FIN_SECCION: HERO_UX_OPTIMIZATION]
+   ============================================= */
+
