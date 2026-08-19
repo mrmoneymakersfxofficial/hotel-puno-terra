@@ -512,7 +512,7 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
     experience: {
       chip: "Experiencia del hotel",
       title: "Espacios pensados para descansar",
-      description: "Piscina, habitaciones y ambientes serenos presentados con una lectura más limpia.",
+      description: "Areas comunes y ambientes acogedores presentados con una lectura más limpia.",
     },
     rooms: {
       eyebrow: "Nuestras habitaciones",
