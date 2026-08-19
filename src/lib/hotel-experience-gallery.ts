@@ -24,38 +24,48 @@ export type HotelExperienceGalleryItem = {
 };
 
 const EXPERIENCE_GALLERY_ITEMS: ExperienceGalleryDefinition[] = [
+  /* [SECCION: AREAS_COMUNES_CARRUSEL] - Imagenes actualizadas */
   {
     id: "areas-01",
     areaKey: "areas",
     areaLabel: { es: "Areas comunes", en: "Common areas" },
-    title: { es: "Lobby listo para llegar sin apuro", en: "Lobby ready for a calm arrival" },
-    alt: { es: "Lobby del hotel con recepcion y sofa", en: "Hotel lobby with reception and sofa" },
-    src: "/assets/gallery/experiencia-curada/02-areas-lobby.jpg",
+    title: { es: "Recepción moderna con estilo Puno Terra", en: "Modern reception with Puno Terra style" },
+    alt: { es: "Recepción del hotel con logo y sofas azules", en: "Hotel reception with logo and blue sofas" },
+    src: "/assets/gallery/experiencia-curada/01-areas-recepcion.webp",
   },
   {
     id: "areas-02",
     areaKey: "areas",
     areaLabel: { es: "Areas comunes", en: "Common areas" },
-    title: { es: "Recepcion con atencion directa", en: "Reception with direct assistance" },
-    alt: { es: "Recepcion principal del hotel", en: "Main hotel reception" },
-    src: "/assets/gallery/experiencia-curada/01-areas-recepcion.jpg",
+    title: { es: "Patio con cultura viva", en: "Patio with living culture" },
+    alt: { es: "Patio interior con huéspedes en traje típico", en: "Inner patio with guests in traditional dress" },
+    src: "/assets/gallery/experiencia-curada/02-areas-patio.webp",
   },
   {
     id: "areas-03",
     areaKey: "areas",
     areaLabel: { es: "Areas comunes", en: "Common areas" },
-    title: { es: "Sala de espera tranquila", en: "Quiet waiting lounge" },
-    alt: { es: "Sala de espera del hotel", en: "Hotel waiting lounge" },
-    src: "/assets/gallery/experiencia-curada/03-areas-sala.jpg",
+    title: { es: "Jardín con cascada natural", en: "Garden with natural waterfall" },
+    alt: { es: "Jardín interior con cascada y mesas blancas", en: "Inner garden with waterfall and white tables" },
+    src: "/assets/gallery/experiencia-curada/03-areas-jardin.webp",
   },
   {
     id: "areas-04",
     areaKey: "areas",
     areaLabel: { es: "Areas comunes", en: "Common areas" },
-    title: { es: "Ambientes comunes para una pausa breve", en: "Shared spaces for a short pause" },
-    alt: { es: "Area comun interior del hotel", en: "Indoor common hotel area" },
-    src: "/assets/gallery/experiencia-curada/04-areas-comunes.jpg",
+    title: { es: "Buffet de desayuno con frutas frescas", en: "Breakfast buffet with fresh fruits" },
+    alt: { es: "Buffet de desayuno variado con frutas tropicales", en: "Varied breakfast buffet with tropical fruits" },
+    src: "/assets/gallery/experiencia-curada/04-areas-desayuno.webp",
   },
+  {
+    id: "areas-05",
+    areaKey: "areas",
+    areaLabel: { es: "Areas comunes", en: "Common areas" },
+    title: { es: "Comedor servido para un desayuno completo", en: "Dining room served for complete breakfast" },
+    alt: { es: "Comedor del hotel con desayuno servido", en: "Hotel dining room with breakfast served" },
+    src: "/assets/gallery/experiencia-curada/05-areas-comedor.webp",
+  },
+  /* [FIN_SECCION: AREAS_COMUNES_CARRUSEL] */
   {
     id: "piscina-01",
     areaKey: "piscina",
