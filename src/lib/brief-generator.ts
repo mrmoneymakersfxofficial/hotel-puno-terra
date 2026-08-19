@@ -246,15 +246,17 @@ export function buildSiteContentFromBrief(brief: BriefData): SiteContent {
       imagePosition: { x: 50, y: 50 },
     })),
     highlights: brief.benefits,
+    /* [SECCION: TESTIMONIOS_GENERATOR] */
     testimonials: brief.testimonials.map((item) => ({
       name: item.name,
       role: item.role,
       quote: item.quote,
-      avatarSrc: "",
+      imageSrc: (item as any).imageSrc || "",  /* Usar imagen del YAML si existe */
       location: brief.location,
       segment: brief.mainOffer,
       rating: 5,
     })),
+    /* [FIN_SECCION: TESTIMONIOS_GENERATOR] */
     faqs: brief.faq.map((item) => ({
       question: item.question,
       answer: item.answer,
