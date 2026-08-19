@@ -54,19 +54,13 @@ faq:
     answer: 'Si. Deben replicarse las tabs con labels nuevas y contenido real del nuevo cliente.'
   - question: '¿El popup o modal debe mantenerse?'
     answer: 'Si, pero con nuevo copy, nuevos triggers y sin copiar ningun asset del sitio original.'
+/* [SECCION: TESTIMONIOS] - Solo un testimonio activo */
 testimonials:
   - name: 'Karla'
-    role: 'Mexico - Booking.com (feb 2026) - Puntuacion 9.0 Fantastico'
-    quote: 'La ubicacion super centrica, la habitacion muy amplia, el personal muy amable.'
-  - name: 'Jeremy'
-    role: 'Peru - Booking.com (feb 2026) - Puntuacion 10 Excepcional'
-    quote: 'A mi hermano y a mi nos gusto el hotel, muy buena ubicacion, buen desayuno y el personal muy amable.'
-  - name: 'Brigitte'
-    role: 'Francia - Booking.com (ene 2026) - Puntuacion 10 Excepcional'
-    quote: 'Buena ubicacion, personal muy amable, muy limpio, bebidas e infusiones a disposicion y buen desayuno.'
-  - name: 'Vicente'
-    role: 'Espana - Booking.com (sep 2025) - Puntuacion 8.0 Hotel bien ubicado'
-    quote: 'Amabilidad del personal, camas comodas, ducha con abundante agua caliente, calefaccion. (Nota: opacidad limitada de las ventanas).'
+    role: 'México - Booking.com (Feb 2026) - Puntuación 9.0 Fantástico'
+    quote: 'La ubicación súper céntrica, la habitación muy amplia, el personal muy amable.'
+    imageSrc: '/assets/gallery/testimonios/testimonio-nuevo.webp'
+/* [FIN_SECCION: TESTIMONIOS] */
 cta:
   primaryLabel: 'Reservar'
   secondaryLabel: 'Ver habitaciones'
