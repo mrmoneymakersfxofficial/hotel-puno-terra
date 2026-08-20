@@ -152,10 +152,20 @@ export function HotelBookingBar({
     }
 
     window.setTimeout(() => {
-      event.currentTarget.blur();
-
-      if (document.activeElement instanceof HTMLElement && document.activeElement !== document.body) {
-        document.activeElement.blur();
+      try {
+        if (event.currentTarget && typeof event.currentTarget.blur === "function") {
+          event.currentTarget.blur();
+        }
+      } catch (e) {
+        // Ignore blur errors
+      }
+      
+      try {
+        if (document.activeElement instanceof HTMLElement && document.activeElement !== document.body && document.activeElement.blur) {
+          document.activeElement.blur();
+        }
+      } catch (e) {
+        // Ignore activeElement blur errors  
       }
     }, 0);
   }
