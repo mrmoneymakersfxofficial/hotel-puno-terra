@@ -15,7 +15,7 @@ const SOCIAL_LINKS = [
     label: "Facebook",
   },
   {
-    href: "https://www.instagram.com/reservaspunoterra/",
+    href: "https://www.instagram.com/puno.terra?igsh=MTZ4YjdmeDVuZzAydA==&igsi=MTZ4YjdmeDVuZzAydA==",
     iconSrc: "/assets/social/instagram.svg",
     label: "Instagram",
   },
