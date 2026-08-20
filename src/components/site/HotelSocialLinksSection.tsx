@@ -10,7 +10,7 @@ type HotelSocialLinksSectionProps = {
 
 const SOCIAL_LINKS = [
   {
-    href: "https://www.facebook.com/reservaspunoterrahotel",
+    href: "https://www.facebook.com/share/19pyur75FK/",
     iconSrc: "/assets/social/facebook.svg",
     label: "Facebook",
   },
