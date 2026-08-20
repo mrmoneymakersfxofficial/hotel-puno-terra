@@ -519,7 +519,7 @@ function buildHospitalityBookingWidget(brief: BriefData): NonNullable<SiteConten
           rateLabel: "por noche",
           stayLabel: "24 horas",
           summary: "Ideal para pareja o descanso ejecutivo con desayuno incluido.",
-          perks: ["Desayuno incluido", "WiFi", "Aire acondicionado", "Atencion rapida"],
+          perks: ["Desayuno incluido", "WiFi", "Calefacción", "Atencion rapida"],
           emoji: "🌿",
           badge: "Mas elegida",
           highlighted: true,
