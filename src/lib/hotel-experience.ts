@@ -839,7 +839,7 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
                     : "More space for family or small groups with an easy direct booking process.",
             perks:
               option.id === "suite-principal"
-                ? ["Breakfast", "WiFi", "Air conditioning", "Direct booking"]
+                ? ["Breakfast", "WiFi", "Heating", "Direct booking"]
                 : option.id === "habitacion-superior"
                   ? ["WiFi", "Private bathroom", "Fast assistance", "Late check-out subject to availability"]
                   : option.id === "escapada-corta"
