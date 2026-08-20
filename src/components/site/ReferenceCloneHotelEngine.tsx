@@ -354,12 +354,10 @@ function buildAmenities(content: SiteContent) {
   const baseItems = [
     { title: "Desayuno incluido", icon: "breakfast", description: "Empieza la manana con mas comodidad antes de salir por la ciudad." },
     { title: "WiFi gratis", icon: "wifi", description: "Conexion estable para descansar, trabajar o coordinar tu viaje." },
-    { title: "Piscina", icon: "pool", description: "Un espacio de descanso que acompana la experiencia del hotel." },
-    { title: "Aire acondicionado", icon: "air", description: "Confort termico para descansar mejor en cualquier horario." },
+    { title: "Calefacción", icon: "air", description: "Confort termico para descansar mejor en cualquier horario." },
     { title: "Zona de trabajo", icon: "workspace", description: "Un punto comodo para revisar pendientes o planificar el dia." },
     { title: "Estacionamiento privado", icon: "parking", description: "Acceso seguro para dejar tu vehiculo durante toda tu estancia." },
     { title: "Comedor", icon: "dining", description: "Espacio practico para disfrutar cada comida dentro del hotel." },
-    { title: "Restobar", icon: "restobar", description: "Bebidas y momentos de pausa con una atmosfera mas relajada." },
     { title: "Recepcion 24h", icon: "reception", description: "Asistencia continua para llegadas, consultas y apoyo en cualquier momento." },
   ];
 
