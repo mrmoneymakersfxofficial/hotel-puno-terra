@@ -74,6 +74,8 @@ function AmenityIcon({ icon, index }: { icon: string; index: number }) {
       return <Martini size={size} strokeWidth={strokeWidth} />;
     case "reception":
       return <Clock3 size={size} strokeWidth={strokeWidth} />;
+    case "heating":
+      return <Snowflake size={size} strokeWidth={strokeWidth} />;
     default:
       return <ConciergeBell size={size} strokeWidth={strokeWidth} />;
   }
