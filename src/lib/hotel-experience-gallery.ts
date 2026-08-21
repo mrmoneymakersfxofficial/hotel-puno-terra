@@ -12,6 +12,7 @@ type ExperienceGalleryDefinition = {
   id: string;
   src: string;
   title: LocalizedCopy;
+  embedVideo?: string; /* [SECCION: VIDEO_EMBEBIDO] */
 };
 
 export type HotelExperienceGalleryItem = {
@@ -21,51 +22,53 @@ export type HotelExperienceGalleryItem = {
   id: string;
   src: string;
   title: string;
+  embedVideo?: string; /* Video TikTok embebido */
 };
 
 const EXPERIENCE_GALLERY_ITEMS: ExperienceGalleryDefinition[] = [
-  /* [SECCION: AREAS_COMUNES_CARRUSEL] - UNICA SECCION ACTIVA */
+  /* [SECCION: SALA_CONFERENCIAS_CARRUSEL] */
   {
-    id: "areas-01",
+    id: "sala-01",
     areaKey: "areas",
-    areaLabel: { es: "Areas comunes", en: "Common areas" },
+    areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
     title: { es: "Recepción moderna con estilo Puno Terra", en: "Modern reception with Puno Terra style" },
     alt: { es: "Recepción del hotel con logo y sofas azules", en: "Hotel reception with logo and blue sofas" },
     src: "/assets/gallery/experiencia-curada/01-areas-recepcion.webp",
   },
   {
-    id: "areas-02",
+    id: "sala-02",
     areaKey: "areas",
-    areaLabel: { es: "Areas comunes", en: "Common areas" },
+    areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
     title: { es: "Patio con cultura viva", en: "Patio with living culture" },
     alt: { es: "Patio interior con huéspedes en traje típico", en: "Inner patio with guests in traditional dress" },
     src: "/assets/gallery/experiencia-curada/02-areas-patio.webp",
   },
   {
-    id: "areas-03",
+    id: "sala-03",
     areaKey: "areas",
-    areaLabel: { es: "Areas comunes", en: "Common areas" },
+    areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
     title: { es: "Jardín con cascada natural", en: "Garden with natural waterfall" },
     alt: { es: "Jardín interior con cascada y mesas blancas", en: "Inner garden with waterfall and white tables" },
     src: "/assets/gallery/experiencia-curada/03-areas-jardin.webp",
   },
   {
-    id: "areas-04",
+    id: "sala-04",
     areaKey: "areas",
-    areaLabel: { es: "Areas comunes", en: "Common areas" },
+    areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
     title: { es: "Buffet de desayuno con frutas frescas", en: "Breakfast buffet with fresh fruits" },
     alt: { es: "Buffet de desayuno variado con frutas tropicales", en: "Varied breakfast buffet with tropical fruits" },
     src: "/assets/gallery/experiencia-curada/04-areas-desayuno.webp",
   },
   {
-    id: "areas-05",
+    id: "sala-05",
     areaKey: "areas",
-    areaLabel: { es: "Areas comunes", en: "Common areas" },
-    title: { es: "Comedor servido para un desayuno completo", en: "Dining room served for complete breakfast" },
-    alt: { es: "Comedor del hotel con desayuno servido", en: "Hotel dining room with breakfast served" },
+    areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
+    title: { es: "Comedor servido para eventos", en: "Dining room served for events" },
+    alt: { es: "Comedor del hotel con capacidad para eventos", en: "Hotel dining room with event capacity" },
     src: "/assets/gallery/experiencia-curada/05-areas-comedor.webp",
+    embedVideo: "https://www.tiktok.com/@germanjohnnydiaztavera/video/7378591800329735429",
   },
-  /* [FIN_SECCION: AREAS_COMUNES_CARRUSEL] */
+  /* [FIN_SECCION: SALA_CONFERENCIAS_CARRUSEL] */
 ];
 
 export function getHotelExperienceGallery(locale: HotelLocale): HotelExperienceGalleryItem[] {
@@ -76,5 +79,6 @@ export function getHotelExperienceGallery(locale: HotelLocale): HotelExperienceG
     id: item.id,
     src: item.src,
     title: locale === "en" ? item.title.en : normalizeHotelSpanishText(item.title.es),
+    embedVideo: item.embedVideo,
   }));
 }
