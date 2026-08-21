@@ -100,117 +100,140 @@ export function HotelPremiumExperienceGallery({ items, locale }: HotelPremiumExp
 
     updateStep();
 
-    const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(updateStep);
-    if (observer && trackRef.current) {
+    const observer = new ResizeObserver(updateStep);
+    
+    if (trackRef.current) {
       observer.observe(trackRef.current);
     }
 
-    window.addEventListener("resize", updateStep);
-    return () => {
-      observer?.disconnect();
-      window.removeEventListener("resize", updateStep);
-    };
-  }, [activeGroupIndex, slideCount]);
+    return () => observer.disconnect();
+  }, [activeGroupIndex]);
 
-  useEffect(() => {
-    if (activeIndex <= Math.max(slideCount - 1, 0)) {
+  function handlePointerDown(event: React.PointerEvent<HTMLDivElement>) {
+    if (event.button !== 0) {
       return;
     }
 
-    setActiveIndex(Math.max(slideCount - 1, 0));
-  }, [activeIndex, slideCount]);
-
-  const moveToGroup = (groupIndex: number, nextIndex = 0) => {
-    setTransitionEnabled(true);
-    setActiveGroupIndex(groupIndex);
-    setActiveIndex(nextIndex);
-    setDragOffset(0);
-  };
-
-  const goNext = () => {
-    if (!groups.length) {
-      return;
-    }
-
-    if (activeIndex < slideCount - 1) {
-      setTransitionEnabled(true);
-      setActiveIndex((current) => current + 1);
-      return;
-    }
-
-    const nextGroupIndex = (activeGroupIndex + 1) % groups.length;
-    moveToGroup(nextGroupIndex, 0);
-  };
-
-  const goPrevious = () => {
-    if (!groups.length) {
-      return;
-    }
-
-    if (activeIndex > 0) {
-      setTransitionEnabled(true);
-      setActiveIndex((current) => current - 1);
-      return;
-    }
-
-    const previousGroupIndex = (activeGroupIndex - 1 + groups.length) % groups.length;
-    const previousGroup = groups[previousGroupIndex];
-    moveToGroup(previousGroupIndex, Math.max(previousGroup.items.length - 1, 0));
-  };
-
-  const handlePointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === "mouse" && event.button !== 0) {
-      return;
-    }
+    viewportRef.current?.setPointerCapture(event.pointerId);
 
     dragPointerIdRef.current = event.pointerId;
     dragStartXRef.current = event.clientX;
     dragDeltaXRef.current = 0;
-    setTransitionEnabled(false);
     setDragOffset(0);
     setIsDragging(true);
-    viewportRef.current?.setPointerCapture(event.pointerId);
-  };
+    setTransitionEnabled(false);
+  }
 
-  const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (dragPointerIdRef.current !== event.pointerId) {
+  function handlePointerMove(event: React.PointerEvent<HTMLDivElement>) {
+    if (!isDragging || dragPointerIdRef.current !== event.pointerId) {
       return;
     }
 
-    const deltaX = event.clientX - dragStartXRef.current;
-    dragDeltaXRef.current = deltaX;
-    setDragOffset(deltaX);
-  };
+    const delta = event.clientX - dragStartXRef.current;
+    const clampedDelta = Math.max(-DRAG_THRESHOLD_MAX, Math.min(DRAG_THRESHOLD_MAX, delta));
+    
+    dragDeltaXRef.current = clampedDelta;
+    setDragOffset(clampedDelta);
+  }
 
-  const releasePointer = (pointerId: number) => {
+  function releasePointer(pointerId: number) {
     if (dragPointerIdRef.current !== pointerId) {
       return;
     }
 
-    const threshold = step > 0 ? Math.min(Math.max(step * 0.18, DRAG_THRESHOLD_MIN), DRAG_THRESHOLD_MAX) : 72;
-    const deltaX = dragDeltaXRef.current;
-
     dragPointerIdRef.current = null;
-    dragDeltaXRef.current = 0;
     setIsDragging(false);
     setTransitionEnabled(true);
-    setDragOffset(0);
 
-    if (Math.abs(deltaX) >= threshold) {
-      if (deltaX < 0) {
+    const absDrag = Math.abs(dragDeltaXRef.current);
+
+    if (absDrag >= DRAG_THRESHOLD_MIN && absDrag <= DRAG_THRESHOLD_MAX) {
+      if (dragDeltaXRef.current < 0) {
         goNext();
       } else {
         goPrevious();
       }
     }
-  };
 
-  if (!groups.length || !currentGroup) {
-    return null;
+    setDragOffset(0);
+    dragDeltaXRef.current = 0;
   }
 
+  function goToSlide(index: number) {
+    if (index < 0) {
+      return;
+    }
+
+    if (index >= slideCount) {
+      return;
+    }
+
+    setActiveIndex(index);
+  }
+
+  function goToNextSlide() {
+    goToSlide(activeIndex + 1);
+  }
+
+  function goToPrevSlide() {
+    goToSlide(activeIndex - 1);
+  }
+
+  function goNext() {
+    if (activeIndex < slideCount - 1) {
+      goToNextSlide();
+      return;
+    }
+
+    goToSlide(0);
+  }
+
+  function goPrevious() {
+    if (activeIndex > 0) {
+      goToPrevSlide();
+      return;
+    }
+
+    goToSlide(slideCount - 1);
+  }
+
+  function moveToGroup(groupIndex: number, slideIndex?: number) {
+    if (groupIndex < 0 || groupIndex >= groups.length) {
+      return;
+    }
+
+    setActiveGroupIndex(groupIndex);
+    setActiveIndex(slideIndex ?? 0);
+  }
+
+  /* [SECCION: TIKTOK_EMBED_COMPONENT] */
+  function TikTokEmbed({ url }: { url: string }) {
+    const videoId = url.match(/video\/(\d+)/)?.[1] || "";
+    const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`;
+    
+    return (
+      <div className="hotel-experience-tiktok-embed">
+        <iframe
+          title="Video TikTok - Sala de Conferencias"
+          src={embedUrl}
+          style={{
+            width: "100%",
+            height: "100%",
+            minHeight: "400px",
+            border: "none",
+            borderRadius: "12px",
+          }}
+          allowFullScreen
+          sandbox="allow-scripts allow-same-origin allow-popups"
+        />
+      </div>
+    );
+  }
+  /* [FIN_SECCION: TIKTOK_EMBED_COMPONENT] */
+
   return (
-    <section className="scene hotel-deluxe-section hotel-deluxe-experience" id="experiencia">
+    /* [SECCION: SALA_CONFERENCIAS_SECTION] */
+    <section className="scene hotel-deluxe-section hotel-deluxe-experience" id="sala-de-conferencias">
       <div className="hotel-deluxe-section-heading hotel-deluxe-experience-heading">
         <span className="scene-chip">{ui.experience.chip}</span>
         <h2>{renderBalancedSectionTitle(ui.experience.title)}</h2>
@@ -330,24 +353,29 @@ export function HotelPremiumExperienceGallery({ items, locale }: HotelPremiumExp
           >
             {currentItems.map((item, index) => {
               const isCover = index === 0;
+              const hasVideo = !!item.embedVideo;
 
               return (
                 <figure
-                  className={`hotel-experience-carousel-slide${isCover ? " is-cover" : " is-clean"}`}
+                  className={`hotel-experience-carousel-slide${isCover ? " is-cover" : " is-clean"}${hasVideo ? " has-video" : ""}`}
                   data-experience-slide
                   key={`${currentGroup.areaKey}-${item.id}`}
                 >
                   <div className="hotel-experience-carousel-media">
-                    <Image
-                      alt={item.alt}
-                      className="hotel-experience-carousel-image"
-                      draggable={false}
-                      fill
-                      loading={index === 0 ? "eager" : "lazy"}
-                      priority={index === 0}
-                      sizes="(max-width: 640px) 94vw, (max-width: 860px) 92vw, (max-width: 1280px) 42vw, 34vw"
-                      src={item.src}
-                    />
+                    {hasVideo ? (
+                      <TikTokEmbed url={item.embedVideo!} />
+                    ) : (
+                      <Image
+                        alt={item.alt}
+                        className="hotel-experience-carousel-image"
+                        draggable={false}
+                        fill
+                        loading={index === 0 ? "eager" : "lazy"}
+                        priority={index === 0}
+                        sizes="(max-width: 640px) 94vw, (max-width: 860px) 92vw, (max-width: 1280px) 42vw, 34vw"
+                        src={item.src}
+                      />
+                    )}
                   </div>
 
                   {isCover ? (
@@ -363,5 +391,6 @@ export function HotelPremiumExperienceGallery({ items, locale }: HotelPremiumExp
         </div>
       </div>
     </section>
+    /* [FIN_SECCION: SALA_CONFERENCIAS_SECTION] */
   );
 }
