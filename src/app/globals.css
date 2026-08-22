@@ -21399,3 +21399,142 @@ body {
 /* =============================================
    [FIN_SECCION: TIKTOK_EMBED_STYLES]
    ============================================= */
+
+
+/* =============================================
+   [SECCION: TIKTOK_TESTIMONIAL_STYLES]
+   Estilos para video TikTok embebido en testimonios
+   ============================================= */
+
+/* Contenedor principal de testimonios con video */
+.hotel-tiktok-testimonial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Wrapper del iframe TikTok */
+.hotel-tiktok-embed-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Iframe TikTok responsivo */
+.hotel-tiktok-iframe {
+  display: block;
+  width: 100%;
+  min-height: 500px;
+  border: none;
+  border-radius: 16px;
+}
+
+/* Info section debajo del video */
+.hotel-tiktok-testimonial-info {
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(248,250,252,0.95) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Social proof badge */
+.hotel-tiktok-social-proof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.hotel-tiktok-badge {
+  font-size: 1.5rem;
+  color: #f59e0b;
+  letter-spacing: 4px;
+  font-weight: 800;
+}
+
+.hotel-tiktok-quote {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* CTA button para ver en TikTok */
+.hotel-tiktok-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-tiktok-cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #262626 0%, #000000 100%);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .hotel-tiktok-testimonial-container {
+    gap: 24px;
+    padding: 0 16px;
+  }
+  
+  .hotel-tiktok-iframe {
+    min-height: 400px;
+  }
+  
+  .hotel-tiktok-testimonial-info {
+    padding: 20px 16px;
+  }
+  
+  .hotel-tiktok-badge {
+    font-size: 1.2rem;
+  }
+  
+  .hotel-tiktok-quote {
+    font-size: 0.95rem;
+  }
+  
+  .hotel-tiktok-cta-button {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-tiktok-iframe {
+    min-height: 350px;
+  }
+  
+  .hotel-tiktok-embed-wrapper {
+    border-radius: 12px;
+  }
+  
+  .hotel-tiktok-testimonial-info {
+    border-radius: 12px;
+  }
+}
+
+/* =============================================
+   [FIN_SECCION: TIKTOK_TESTIMONIAL_STYLES]
+   ============================================= */
