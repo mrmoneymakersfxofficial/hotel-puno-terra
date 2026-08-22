@@ -328,7 +328,7 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
   if (locale === "en") {
     return {
       sectionLinks: [
-        { label: "Experience", href: "#experiencia" },
+        { label: "Conference Room", href: "#sala-de-conferencias" },
         { label: "Rooms", href: "#habitaciones" },
         { label: "Tour packages", href: "#paquetes-turisticos" },
         { label: "Services", href: "#servicios" },
@@ -478,7 +478,7 @@ export function getHotelUi(locale: HotelLocale): HotelUiCopy {
 
   return {
     sectionLinks: [
-      { label: "Experiencia", href: "#experiencia" },
+      { label: "Sala de Conferencias", href: "#sala-de-conferencias" },
       { label: "Habitaciones", href: "#habitaciones" },
       { label: "Paquetes Tur\u00edsticos", href: "#paquetes-turisticos" },
       { label: "Servicios", href: "#servicios" },
