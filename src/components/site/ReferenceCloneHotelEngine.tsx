@@ -286,26 +286,17 @@ export function ReferenceCloneHotelEngine({
 
         <HotelTourPackagesSection hotelName={displayBrandName} locale={locale} />
 
-        {testimonials.length ? (
-          <HotelPremiumTestimonials
-            items={testimonials.map((item, index) => ({
-              imageSrc: item.avatarSrc || galleryItems[index + 1]?.imageSrc || services[index]?.imageSrc || heroImage,
-              location: item.location,
-              name: item.name,
-              quote: item.quote,
-              role: item.role,
-              segment: item.segment,
-              rating: item.rating ?? 5,
-            }))}
-            locale={locale}
-            subtitle={t(
-              locale,
-              "Opiniones breves sobre descanso, ubicacion y buena atencion.",
-              "Short reviews about rest, location and attentive service.",
-            )}
-            title={t(locale, "Lo que dicen nuestros huespedes", "What our guests say")}
-          />
-        ) : null}
+        {/* [SECCION: TESTIMONIOS_VIDEO_TIKTOK] */}
+        <HotelPremiumTestimonials
+          locale={locale}
+          subtitle={t(
+            locale,
+            "Opiniones breves sobre descanso, ubicacion y buena atencion.",
+            "Short reviews about rest, location and attentive service.",
+          )}
+          title={t(locale, "Lo que dicen nuestros huespedes", "What our guests say")}
+        />
+        {/* [FIN_SECCION: TESTIMONIOS_VIDEO_TIKTOK] */}
 
         <HotelPremiumAmenities items={amenities} locale={locale} />
 
