@@ -12,7 +12,6 @@ type ExperienceGalleryDefinition = {
   id: string;
   src: string;
   title: LocalizedCopy;
-  embedVideo?: string; /* [SECCION: VIDEO_EMBEBIDO] */
 };
 
 export type HotelExperienceGalleryItem = {
@@ -22,7 +21,6 @@ export type HotelExperienceGalleryItem = {
   id: string;
   src: string;
   title: string;
-  embedVideo?: string; /* Video TikTok embebido */
 };
 
 const EXPERIENCE_GALLERY_ITEMS: ExperienceGalleryDefinition[] = [
@@ -63,10 +61,9 @@ const EXPERIENCE_GALLERY_ITEMS: ExperienceGalleryDefinition[] = [
     id: "sala-05",
     areaKey: "areas",
     areaLabel: { es: "Sala de Conferencias", en: "Conference Room" },
-    title: { es: "Comedor servido para eventos", en: "Dining room served for events" },
-    alt: { es: "Comedor del hotel con capacidad para eventos", en: "Hotel dining room with event capacity" },
-    src: "/assets/gallery/experiencia-curada/05-areas-comedor.webp",
-    embedVideo: "https://www.tiktok.com/@germanjohnnydiaztavera/video/7378591800329735429",
+    title: { es: "Sala de Conferencias equipada para eventos", en: "Equipped conference room for events" },
+    alt: { es: "Sala de conferencias del hotel con proyector y capacidad para grupos", en: "Hotel conference room with projector and group capacity" },
+    src: "/assets/gallery/experiencia-curada/05-sala-conferencias.webp",
   },
   /* [FIN_SECCION: SALA_CONFERENCIAS_CARRUSEL] */
 ];
@@ -79,6 +76,5 @@ export function getHotelExperienceGallery(locale: HotelLocale): HotelExperienceG
     id: item.id,
     src: item.src,
     title: locale === "en" ? item.title.en : normalizeHotelSpanishText(item.title.es),
-    embedVideo: item.embedVideo,
   }));
 }
