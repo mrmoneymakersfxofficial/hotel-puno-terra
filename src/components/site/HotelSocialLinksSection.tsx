@@ -61,7 +61,7 @@ export function HotelSocialLinksSection({ locale }: HotelSocialLinksSectionProps
   return (
     <section
       aria-labelledby="hotel-social-heading"
-      className={\`scene hotel-social-section\${isVisible ? " is-visible" : ""}\`}
+      className={`scene hotel-social-section${isVisible ? " is-visible" : ""}`}
       ref={sectionRef}
     >
       <div className="hotel-social-shell">
@@ -77,7 +77,7 @@ export function HotelSocialLinksSection({ locale }: HotelSocialLinksSectionProps
         >
           {SOCIAL_LINKS.map((item) => (
             <a
-              aria-label={\`\${ariaPrefix} \${item.label}\`}
+              aria-label={`${ariaPrefix} ${item.label}`}
               className="hotel-social-link"
               href={item.href}
               key={item.label}
