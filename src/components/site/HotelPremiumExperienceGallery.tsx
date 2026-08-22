@@ -206,31 +206,6 @@ export function HotelPremiumExperienceGallery({ items, locale }: HotelPremiumExp
     setActiveIndex(slideIndex ?? 0);
   }
 
-  /* [SECCION: TIKTOK_EMBED_COMPONENT] */
-  function TikTokEmbed({ url }: { url: string }) {
-    const videoId = url.match(/video\/(\d+)/)?.[1] || "";
-    const embedUrl = `https://www.tiktok.com/embed/v2/${videoId}`;
-    
-    return (
-      <div className="hotel-experience-tiktok-embed">
-        <iframe
-          title="Video TikTok - Sala de Conferencias"
-          src={embedUrl}
-          style={{
-            width: "100%",
-            height: "100%",
-            minHeight: "400px",
-            border: "none",
-            borderRadius: "12px",
-          }}
-          allowFullScreen
-          sandbox="allow-scripts allow-same-origin allow-popups"
-        />
-      </div>
-    );
-  }
-  /* [FIN_SECCION: TIKTOK_EMBED_COMPONENT] */
-
   return (
     /* [SECCION: SALA_CONFERENCIAS_SECTION] */
     <section className="scene hotel-deluxe-section hotel-deluxe-experience" id="sala-de-conferencias">
@@ -353,29 +328,24 @@ export function HotelPremiumExperienceGallery({ items, locale }: HotelPremiumExp
           >
             {currentItems.map((item, index) => {
               const isCover = index === 0;
-              const hasVideo = !!item.embedVideo;
 
               return (
                 <figure
-                  className={`hotel-experience-carousel-slide${isCover ? " is-cover" : " is-clean"}${hasVideo ? " has-video" : ""}`}
+                  className={`hotel-experience-carousel-slide${isCover ? " is-cover" : " is-clean"}`}
                   data-experience-slide
                   key={`${currentGroup.areaKey}-${item.id}`}
                 >
                   <div className="hotel-experience-carousel-media">
-                    {hasVideo ? (
-                      <TikTokEmbed url={item.embedVideo!} />
-                    ) : (
-                      <Image
-                        alt={item.alt}
-                        className="hotel-experience-carousel-image"
-                        draggable={false}
-                        fill
-                        loading={index === 0 ? "eager" : "lazy"}
-                        priority={index === 0}
-                        sizes="(max-width: 640px) 94vw, (max-width: 860px) 92vw, (max-width: 1280px) 42vw, 34vw"
-                        src={item.src}
-                      />
-                    )}
+                    <Image
+                      alt={item.alt}
+                      className="hotel-experience-carousel-image"
+                      draggable={false}
+                      fill
+                      loading={index === 0 ? "eager" : "lazy"}
+                      priority={index === 0}
+                      sizes="(max-width: 640px) 94vw, (max-width: 860px) 92vw, (max-width: 1280px) 42vw, 34vw"
+                      src={item.src}
+                    />
                   </div>
 
                   {isCover ? (
