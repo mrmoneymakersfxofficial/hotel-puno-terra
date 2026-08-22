@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import { renderBalancedSectionTitle } from "./headline-balance";
 import type { HotelLocale } from "@/lib/hotel-experience";
 import { getHotelUi } from "@/lib/hotel-experience";
@@ -10,13 +11,43 @@ type HotelPremiumTestimonialsProps = {
   title: string;
 };
 
-/* [SECCION: TESTIMONIOS_TIKTOK_LINK] */
+/* [SECCION: TESTIMONIOS_VIDEO_LOCAL] */
 export function HotelPremiumTestimonials({ locale, subtitle, title }: HotelPremiumTestimonialsProps) {
   const ui = getHotelUi(locale);
-  
-  // Link correcto al perfil del hotel
-  const tiktokProfileUrl = "https://www.tiktok.com/@punoterra";
-  const tiktokVideoUrl = "https://www.tiktok.com/@germanjohnnydiaztavera/video/7378591800329735429";
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Lazy load - solo cargar video cuando sea visible
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    
+    if (isPlaying) {
+      videoRef.current.pause();
+    } else {
+      videoRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   return (
     <section className="scene hotel-deluxe-section hotel-deluxe-testimonials hotel-home-testimonials" id="opiniones">
@@ -27,36 +58,44 @@ export function HotelPremiumTestimonials({ locale, subtitle, title }: HotelPremi
       </div>
 
       <div className="hotel-tiktok-testimonial-container">
-        {/* Video Card con link - evita error 403 de embed */}
-        <a 
-          href={tiktokVideoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hotel-tiktok-video-card"
+        {/* Video Player Local Optimizado */}
+        <div 
+          className={`hotel-video-player-container${isPlaying ? ' is-playing' : ''}`}
+          onClick={togglePlay}
         >
-          <div className="hotel-tiktok-play-overlay">
-            <div className="hotel-tiktok-play-button">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-            </div>
-            <span className="hotel-tiktok-play-text">
-              {locale === "en" ? "Watch on TikTok" : "Ver en TikTok"}
-            </span>
-          </div>
+          <video
+            ref={videoRef}
+            className="hotel-video-player"
+            src="/assets/videos/puno-terra-testimonio.mp4"
+            poster=""
+            preload="none"
+            playsInline
+            onPlay={() => setIsPlaying(true)}
+            onPause={() => setIsPlaying(false)}
+            onLoadedData={() => setIsLoaded(true)}
+            onError={(e) => console.error('Video error:', e)}
+          />
           
-          <div className="hotel-tiktok-video-info">
-            <div className="hotel-tiktok-logo-icon">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-              </svg>
+          {/* Play Button Overlay */}
+          {!isPlaying && (
+            <div className="hotel-video-play-overlay">
+              <div className="hotel-video-play-button">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="56" height="56">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <span className="hotel-video-play-text">
+                {locale === "en" ? "Watch Experience" : "Ver Experiencia"}
+              </span>
             </div>
-            <div className="hotel-tiktok-meta">
-              <strong>@germanjohnnydiaztavera</strong>
-              <p>{locale === "en" ? "Hotel Puno Terra Experience" : "Experiencia Hotel Puno Terra"}</p>
-            </div>
+          )}
+          
+          {/* Video Info Bar */}
+          <div className="hotel-video-info-bar">
+            <span className="hotel-video-badge">PUNO TERRA</span>
+            <span className="hotel-video-duration">0:26</span>
           </div>
-        </a>
+        </div>
         
         {/* Social Proof Section */}
         <div className="hotel-tiktok-social-proof">
@@ -75,9 +114,9 @@ export function HotelPremiumTestimonials({ locale, subtitle, title }: HotelPremi
           
           <cite className="hotel-tiktok-author">— Karla, México</cite>
           
-          {/* CTA Button - Link CORREGIDO a @punoterra */}
+          {/* CTA Button - Link a @punoterra */}
           <a 
-            href={tiktokProfileUrl}
+            href="https://www.tiktok.com/@punoterra"
             target="_blank"
             rel="noopener noreferrer"
             className="hotel-tiktok-cta-button"
@@ -92,4 +131,4 @@ export function HotelPremiumTestimonials({ locale, subtitle, title }: HotelPremi
     </section>
   );
 }
-/* [FIN_SECCION: TESTIMONIOS_TIKTOK_LINK] */
+/* [FIN_SECCION: TESTIMONIOS_VIDEO_LOCAL] */
