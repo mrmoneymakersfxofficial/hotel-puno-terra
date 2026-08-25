@@ -21402,220 +21402,147 @@ body {
 
 
 /* =============================================
-   [SECCION: VIDEO_PLAYER_TESTIMONIAL]
-   Estilos para reproductor de video local optimizado
+   [SECCION: TESTIMONIOS_Y_WIDGET_FIX]
+   Estilos testimonios con imagen + Widget legible
    ============================================= */
 
-/* Contenedor principal */
+/* ====== TESTIMONIOS CON IMAGEN ESTATICA ====== */
+
 .hotel-tiktok-testimonial-container {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Video Player Container - Optimizado */
-.hotel-video-player-container {
-  position: relative;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  aspect-ratio: 9 / 16;
-  background: #000;
+/* Card de imagen */
+.hotel-testimonial-image-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
   box-shadow: 
-    0 25px 60px rgba(0, 0, 0, 0.35),
-    0 10px 30px rgba(0, 0, 0, 0.25);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    0 25px 60px rgba(0, 0, 0, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.hotel-video-player-container:hover {
-  transform: translateY(-6px);
-  box-shadow: 
-    0 35px 80px rgba(0, 0, 0, 0.45),
-    0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-.hotel-video-player-container.is-playing {
-  box-shadow: 
-    0 30px 70px rgba(0, 0, 0, 0.5),
-    0 15px 35px rgba(0, 0, 0, 0.35);
-}
-
-/* Video Element */
-.hotel-video-player {
+/* Wrapper de imagen */
+.hotel-testimonial-image-wrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  outline: none;
+  aspect-ratio: 4/3;
+  background: #f3f4f6;
 }
 
-/* Play Overlay */
-.hotel-video-play-overlay {
+.hotel-testimonial-image {
+  object-fit: cover !important;
+}
+
+/* Overlay en imagen */
+.hotel-testimonial-image-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hotel-testimonial-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 14px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-testimonial-stars {
+  color: #f59e0b;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.hotel-testimonial-score {
+  color: #374151;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Contenido del testimonio */
+.hotel-testimonial-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: 16px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.1) 50%,
-    rgba(0, 0, 0, 0.4) 100%
-  );
-  z-index: 2;
-  transition: opacity 0.3s ease;
-}
-
-.hotel-video-player-container.is-playing .hotel-video-play-overlay {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Play Button */
-.hotel-video-play-button {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  color: #000000;
-  box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-}
-
-.hotel-video-player-container:hover .hotel-video-play-button {
-  transform: scale(1.1);
-  background: #ffffff;
-}
-
-.hotel-video-play-button svg {
-  margin-left: 4px;
-}
-
-/* Play Text */
-.hotel-video-play-text {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-/* Video Info Bar (bottom) */
-.hotel-video-info-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-  z-index: 2;
-}
-
-.hotel-video-badge {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.hotel-video-duration {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Social Proof Section */
-.hotel-tiktok-social-proof {
-  text-align: center;
+  gap: 18px;
   padding: 32px 28px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.98) 100%);
-  border-radius: 20px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
 }
 
-/* Stars Row */
-.hotel-tiktok-stars-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.hotel-tiktok-star-badge {
-  font-size: 1.3rem;
-  color: #f59e0b;
-  letter-spacing: 3px;
-  font-weight: 800;
-}
-
-.hotel-tiktok-rating-text {
-  font-size: 0.95rem;
-  color: #374151;
-  font-weight: 600;
-}
-
-/* Quote Block */
-.hotel-tiktok-quote {
-  font-size: 1.1rem;
-  color: #1f2937;
+/* Quote */
+.hotel-testimonial-quote {
+  font-size: 1.05rem;
+  color: #1f2937 !important;
   line-height: 1.7;
-  margin: 0 0 12px 0;
+  margin: 0;
   font-style: italic;
   font-weight: 500;
-  max-width: 550px;
-  margin-left: auto;
-  margin-right: auto;
+  border-left: 4px solid #16a34a;
+  padding-left: 16px;
 }
 
-.hotel-tiktok-author {
-  display: block;
-  font-style: normal;
+/* Autor */
+.hotel-testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hotel-testimonial-author strong {
+  color: #111827 !important;
   font-weight: 700;
-  color: #16a34a;
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+  font-size: 1.05rem;
 }
 
-/* CTA Button - Link a @punoterra */
+.hotel-testimonial-author span {
+  color: #6b7280 !important;
+  font-size: 0.9rem;
+}
+
+/* Badge verificado */
+.hotel-testimonial-badge {
+  display: inline-flex;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #16a34a !important;
+  background: #f0fdf4;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.02em;
+}
+
+/* CTA TikTok */
 .hotel-tiktok-cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 16px 32px;
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  gap: 8px;
+  padding: 14px 24px;
+  background: #000000 !important;
   color: #ffffff !important;
   text-decoration: none !important;
-  border-radius: 14px;
+  border-radius: 12px;
   font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
   border: none;
+  margin-top: 8px;
 }
 
 .hotel-tiktok-cta-button svg {
@@ -21623,63 +21550,217 @@ body {
 }
 
 .hotel-tiktok-cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-  background: linear-gradient(135deg, #262626 0%, #000000 100%) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+  background: #262626 !important;
 }
 
-/* Responsive Mobile */
+
+/* ====== WIDGET DE RESERVAS - TEXTOS OSCUROS LEGIBLES 100% ====== */
+
+/* Contenedor principal del widget - FONDO BLANCO SOLIDO */
+.page-shell.mode-reference-clone-hotel .hotel-reference-mobile-float,
+.page-shell.mode-reference-clone-hotel .hotel-floating-booking-panel,
+.hotel-reference-mobile-float,
+.hotel-floating-booking-panel,
+[class*="floating-booking"] {
+  background: #ffffff !important;
+  color: #111827 !important;
+}
+
+/* Panel del widget */
+.page-shell.mode-reference-clone-hotel .hotel-reference-mobile-float > div,
+.page-shell.mode-reference-clone-hotel .hotel-floating-booking-panel > div,
+.hotel-reference-mobile-float > div,
+.hotel-floating-booking-panel > div {
+  background: #ffffff !important;
+}
+
+/* Título del widget "Confirma tu estadía" */
+.page-shell.mode-reference-clone-hotel .hotel-floating-booking-panel h2,
+.page-shell.mode-reference-clone-hotel .hotel-floating-booking-panel h3,
+.hotel-floating-booking-panel h2,
+.hotel-floating-booking-panel h3 {
+  color: #111827 !important;
+  font-weight: 800 !important;
+}
+
+/* Subtítulo/descripción */
+.page-shell.mode-reference-clone-hotel .hotel-floating-booking-panel p,
+.hotel-floating-booking-panel p {
+  color: #4b5563 !important;
+  font-weight: 500 !important;
+}
+
+/* LABELS DE CAMPOS - TEXTO OSCURO */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-label-row span,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field span,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-field label,
+.hotel-deluxe-booking-label-row span,
+.hotel-reference-booking-field span,
+.hotel-reference-booking-field label {
+  color: #374151 !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* INPUTS Y SELECTS - FONDO BLANCO, TEXTO OSCURO */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input input,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input select,
+.hotel-reference-booking-input input,
+.hotel-reference-booking-input select {
+  background: #ffffff !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  border: 2px solid #d1d5db !important;
+  border-radius: 10px !important;
+  padding: 14px 16px !important;
+  min-height: 52px !important;
+  -webkit-text-fill-color: #111827 !important; /* Fix Safari */
+}
+
+/* Placeholder */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input input::placeholder,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input select::placeholder,
+.hotel-reference-booking-input input::placeholder,
+.hotel-reference-booking-input select::placeholder {
+  color: #9ca3af !important;
+  font-weight: 500 !important;
+  -webkit-text-fill-color: #9ca3af !important; /* Fix Safari */
+}
+
+/* Focus state */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input input:focus,
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input select:focus,
+.hotel-reference-booking-input input:focus,
+.hotel-reference-booking-input select:focus {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15) !important;
+  outline: none !important;
+}
+
+/* Iconos de campos */
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-field-icon,
+.hotel-deluxe-booking-field-icon {
+  color: #16a34a !important;
+}
+
+/* Opciones del select (dropdown) */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-input select option,
+.hotel-reference-booking-input select option {
+  background: #ffffff !important;
+  color: #111827 !important;
+  font-weight: 500 !important;
+}
+
+/* Info de habitación seleccionada */
+.page-shell.mode-reference-clone-hotel .hotel-home-booking-summary,
+.hotel-home-booking-summary {
+  background: #f9fafb !important;
+  color: #374151 !important;
+  border-color: #e5e7eb !important;
+}
+
+.page-shell.mode-reference-clone-hotel .hotel-home-booking-summary span,
+.page-shell.mode-reference-clone-hotel .hotel-home-booking-summary small,
+.page-shell.mode-reference-clone-hotel .hotel-home-booking-summary strong,
+.hotel-home-booking-summary span,
+.hotel-home-booking-summary small,
+.hotel-home-booking-summary strong {
+  color: #111827 !important;
+  font-weight: 600 !important;
+}
+
+/* Botón Reservar */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-button,
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-submit,
+.hotel-reference-booking-button,
+.hotel-deluxe-booking-submit {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  min-height: 56px !important;
+  border-radius: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  box-shadow: 0 8px 24px rgba(22, 163, 74, 0.35) !important;
+  border: none !important;
+}
+
+/* Botón hover */
+.page-shell.mode-reference-clone-hotel .hotel-reference-booking-button:hover,
+.page-shell.mode-reference-clone-hotel .hotel-deluxe-booking-submit:hover,
+.hotel-reference-boarding-button:hover,
+.hotel-deluxe-booking-submit:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 32px rgba(22, 163, 74, 0.45) !important;
+}
+
+/* Cerrar botón del modal */
+.page-shell.mode-reference-clone-hotel button[aria-label*="close"],
+.page-shell.mode-reference-clone-hotel button[aria-label*="Cerrar"],
+button[aria-label*="close"],
+button[aria-label*="Cerrar"] {
+  color: #6b7280 !important;
+  background: transparent !important;
+}
+
+/* Responsive Mobile - Widget */
 @media (max-width: 768px) {
-  .hotel-tiktok-testimonial-container {
-    gap: 20px;
-    padding: 0 16px;
+  .hotel-testimonial-image-card {
+    grid-template-columns: 1fr;
   }
   
-  .hotel-video-player-container {
-    max-width: 380px;
-    border-radius: 16px;
+  .hotel-testimonial-image-wrapper {
+    aspect-ratio: 16/9;
   }
   
-  .hotel-video-play-button {
-    width: 68px;
-    height: 68px;
-  }
-  
-  .hotel-video-play-button svg {
-    width: 42px;
-    height: 42px;
-  }
-  
-  .hotel-tiktok-social-proof {
+  .hotel-testimonial-content {
     padding: 24px 20px;
-    border-radius: 16px;
   }
   
-  .hotel-tiktok-quote {
-    font-size: 1rem;
+  /* Widget mobile - asegurar textos visibles */
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-bar,
+  .page-shell.mode-reference-clone-hotel .hotel-home-booking-form,
+  .hotel-reference-booking-bar,
+  .hotel-home-booking-form {
+    background: #ffffff !important;
+    padding: 16px !important;
+    border-radius: 16px !important;
   }
   
-  .hotel-tiktok-cta-button {
-    width: 100%;
-    padding: 16px 24px;
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-field,
+  .hotel-reference-boarding-field {
+    min-height: 56px !important;
+  }
+  
+  .page-shell.mode-reference-clone-hotel .hotel-reference-booking-button,
+  .hotel-reference-boarding-button {
+    width: 100% !important;
+    min-height: 60px !important;
   }
 }
 
 @media (max-width: 480px) {
-  .hotel-video-player-container {
-    max-width: 300px;
-    aspect-ratio: 9 / 14;
+  .hotel-testimonial-content {
+    padding: 20px 16px;
+    gap: 14px;
   }
   
-  .hotel-video-play-text {
-    font-size: 0.8rem;
+  .hotel-testimonial-quote {
+    font-size: 0.95rem;
   }
   
-  .hotel-video-info-bar {
-    padding: 12px 16px;
+  .hotel-tiktok-cta-button {
+    width: 100%;
+    justify-content: center;
   }
 }
 
 /* =============================================
-   [FIN_SECCION: VIDEO_PLAYER_TESTIMONIAL]
+   [FIN_SECCION: TESTIMONIOS_Y_WIDGET_FIX]
    ============================================= */
