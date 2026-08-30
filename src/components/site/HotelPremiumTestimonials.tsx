@@ -64,7 +64,6 @@ export function HotelPremiumTestimonials({ locale, subtitle, title }: HotelPremi
 
           </div>
         </figure>
-      </div>
     </section>
   );
 }
