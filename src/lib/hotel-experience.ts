@@ -654,7 +654,7 @@ export function localizeHotelContent(content: SiteContent, locale: HotelLocale):
       subheadline: "Comfortable rooms, pool and 24-hour assistance.",
       primaryCtaLabel: "Reserve",
       secondaryCtaLabel: "View rooms",
-      heroTag: "HOTEL IN TARAPOTO",
+      heroTag: "HOTEL IN PUNO",
     },
     narrative: {
       title: "Direct booking and calm rest",
