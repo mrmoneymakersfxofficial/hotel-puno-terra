@@ -1,5 +1,7 @@
 "use client";
 
+/* [CACHE-BUST: 20260830171221] Forces Vercel rebuild */
+
 import { useEffect, useState } from "react";
 import type { ClientProfile, SiteContent } from "@/types/site";
 import { HotelFloatingCta } from "./HotelFloatingCta";
